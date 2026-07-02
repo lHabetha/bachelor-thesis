@@ -41,7 +41,7 @@ rerunning anything.
 |------|---------|
 | [`thesis/main.pdf`](thesis/main.pdf) | Submitted thesis with signed declaration appended |
 | [`thesis/declaration-originality-signed.pdf`](thesis/declaration-originality-signed.pdf) | Signed Declaration of Originality source PDF |
-| [`Supplementary Material to written thesis/videos/`](Supplementary%20Material%20to%20written%20thesis/videos/) | Four Chapter 5 MP4s linked from the PDF |
+| [`Supplementary Material to written thesis/videos/`](https://github.com/lHabetha/bachelor-thesis/tree/main/Supplementary%20Material%20to%20written%20thesis/videos) | Four Chapter 5 MP4s linked from the PDF |
 | [`code/`](code/) | Public Python code by chapter (`chapter3_*` … `chapter7_*`) |
 | [`datasets/`](datasets/) | Released pools, labels, and benchmarks |
 | [`results/`](results/) | Frozen CSVs, figures, checkpoints, and summaries |
@@ -88,12 +88,10 @@ See [`viewers/README.md`](viewers/README.md) for scope and dependencies.
 
 ## Supplementary videos
 
-Four Chapter 5 recordings live under
-`Supplementary Material to written thesis/videos/`. Link from the PDF, for example:
-
-```
-https://github.com/lHabetha/bachelor-thesis/blob/main/Supplementary%20Material%20to%20written%20thesis/videos/<filename>.mp4
-```
+Four Chapter 5 recordings are in
+[`Supplementary Material to written thesis/videos/`](https://github.com/lHabetha/bachelor-thesis/tree/main/Supplementary%20Material%20to%20written%20thesis/videos).
+The thesis PDF links directly to each file, for example
+[`ch5_2_1_one_shot_gradient.mp4`](https://github.com/lHabetha/bachelor-thesis/blob/main/Supplementary%20Material%20to%20written%20thesis/videos/ch5_2_1_one_shot_gradient.mp4).
 
 ## License and redistribution
 
