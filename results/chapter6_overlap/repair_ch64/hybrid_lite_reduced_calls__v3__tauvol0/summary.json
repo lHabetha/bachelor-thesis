@@ -1,0 +1,18 @@
+{
+  "run_id": "hybrid_lite_reduced_calls__v3__tauvol0/shard_000_005",
+  "method": "hybrid_lite_reduced_calls",
+  "method_label": "hybrid_lite_reduced_calls__v3__tauvol0",
+  "model_kind": "v3",
+  "model_dir": "results/chapter6_overlap/checkpoints/overlap_regressor_regression_v3_selected",
+  "tau_vol": 0.0,
+  "tau_bin": null,
+  "strict_threshold_norm": 1e-06,
+  "starts_csv": "datasets/chapter6_overlap_clevis/benchmark_strict_repair_ch64_v1/starts.csv",
+  "n_starts": 5,
+  "strict_success": 3,
+  "mean_pct_overlap_reduction": 94.13368117042906,
+  "median_pct_overlap_reduction": 100.0,
+  "mean_verifier_calls": 51.2,
+  "mean_active_coordinates": 11.0,
+  "mean_wall_time_s": 2.0096910302000053
+}

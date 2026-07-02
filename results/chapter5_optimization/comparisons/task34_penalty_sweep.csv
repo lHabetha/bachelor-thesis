@@ -1,0 +1,6 @@
+label,family,run_id,optimizer_id,tau,constraint_id,verified_ok,surrogate_success,false_ok,no_crossing,mean_l2,mean_l2_verified,mean_l1,active_coords
+Adaptive penalty lambda=0.05,adaptive_penalty_sweep,task34_adaptive_penalty_lam0_05_tau0.75,adaptive_multistep_penalty_lam0_05_v1,0.75,,165,158,0,42,0.3314223022251045,0.36706152151097965,0.8914870532234025,12.115
+Adaptive penalty lambda=0.10,adaptive_penalty_sweep,task34_adaptive_penalty_lam0_10_tau0.75,adaptive_multistep_penalty_lam0_10_v1,0.75,,165,158,0,42,0.32996084255121766,0.36695293583664335,0.8875682711097497,12.12
+Adaptive penalty lambda=0.20,adaptive_penalty_sweep,task34_adaptive_penalty_lam0_20_tau0.75,adaptive_multistep_penalty_lam0_20_v1,0.75,,164,158,0,42,0.3290406138994084,0.3652689461465722,0.8852992730418968,12.125
+Adaptive penalty lambda=0.30,adaptive_penalty_sweep,task34_adaptive_penalty_lam0_30_tau0.75,adaptive_multistep_penalty_lam0_30_v1,0.75,,164,158,0,42,0.327994577671318,0.3652471277121062,0.8835668778597666,12.12
+Adaptive penalty lambda=0.50,adaptive_penalty_sweep,task34_adaptive_penalty_lam0_50_tau0.75,adaptive_multistep_penalty_lam0_50_v1,0.75,,161,155,0,45,0.3215672141056211,0.35405138707306255,0.8625214274269045,12.11

@@ -1,0 +1,22 @@
+{
+  "schema_version": "v1",
+  "run_id": "task34_adaptive_penalty_lam0_30_tau0.75",
+  "optimizer_id": "adaptive_multistep_penalty_lam0_30_v1",
+  "model_id": "row1_uncertainty_disagreement_B1000_T2500_best",
+  "model_dir": "results/chapter5_optimization/checkpoints/row1_uncertainty_disagreement_B1000_T2500_best",
+  "benchmark_set": "blocked_200_v1",
+  "tau": 0.75,
+  "n_starts": 200,
+  "constraint_id": null,
+  "locked_params": [],
+  "baseline_run_id": null,
+  "wall_time_s": 0.8805489540100098,
+  "timestamp": "2026-06-14T01:12:32.977018",
+  "results_summary": {
+    "surrogate_success": 158,
+    "oracle_confirmed": 164,
+    "false_success": 0,
+    "no_crossing": 42,
+    "mean_distance": 0.327994577671318
+  }
+}

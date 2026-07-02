@@ -1,0 +1,20 @@
+{
+  "schema_version": "v1",
+  "run_id": "ch64_mlp_only_v3",
+  "optimizer_id": "mlp__v3__tauvol0",
+  "model_id": "overlap_regressor_v3",
+  "benchmark_set": "strict_overlap_repair_ch64_v1",
+  "tau": 1e-06,
+  "n_starts": 50,
+  "timestamp": "2026-06-30T13:02:11.293012+00:00",
+  "task": "ch64_overlap_repair",
+  "category": "new_6_4",
+  "title": "MLP-only (v3 single-head)",
+  "results_summary": {
+    "oracle_confirmed": 12,
+    "false_success": 0,
+    "mean_distance": 0.16897432688158007,
+    "strict_success": 12,
+    "mean_pct_overlap_reduction": 59.662557500558165
+  }
+}

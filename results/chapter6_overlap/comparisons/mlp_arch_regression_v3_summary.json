@@ -1,0 +1,72 @@
+{
+  "run_id": "mlp_arch_regression_v3",
+  "train_csv": "datasets/chapter6_overlap_clevis/labeled/acquired_random_15k.csv",
+  "holdout_labeled_csv": "datasets/chapter6_overlap_clevis/labeled/holdout_labeled_5k.csv",
+  "budget": 15000,
+  "epochs": 140,
+  "headline_metric": "mae_log",
+  "architectures": {
+    "a_64_32": [
+      64,
+      32
+    ],
+    "b_128_64": [
+      128,
+      64
+    ],
+    "c_128_64_32": [
+      128,
+      64,
+      32
+    ],
+    "d_256_128_64": [
+      256,
+      128,
+      64
+    ],
+    "e_256_128_64_32": [
+      256,
+      128,
+      64,
+      32
+    ]
+  },
+  "best_by_mae_log": {
+    "architecture": "e_256_128_64_32",
+    "hidden": "256-128-64-32",
+    "param_count": 46849,
+    "budget": 15000,
+    "label_source": "random",
+    "train_overlap_mean": 0.0027238866314291954,
+    "train_overlap_median": 0.00010704831220209599,
+    "train_overlap_positive_rate": 0.5136666666666667,
+    "n": 5000,
+    "mae_norm": 0.0007627594470575651,
+    "rmse_norm": 0.0021431635447920912,
+    "median_ae_norm": 6.38241835986264e-05,
+    "mae_log": 0.37502019639493517,
+    "rmse_log": 0.6689779559695421,
+    "pearson_norm": 0.9270628450707781,
+    "spearman_norm": 0.8481924217356968,
+    "near_threshold_mae_norm": 0.00010104283587488858,
+    "n_bin_clean_or_below_threshold": 2413,
+    "mae_bin_clean_or_below_threshold": 2.035427725871741e-05,
+    "n_bin_tiny": 180,
+    "mae_bin_tiny": 0.00010968495466967296,
+    "n_bin_small": 605,
+    "mae_bin_small": 0.00027645031422659773,
+    "n_bin_moderate": 935,
+    "mae_bin_moderate": 0.0008380448180834846,
+    "n_bin_large": 867,
+    "mae_bin_large": 0.003222739016616897,
+    "mae_dominant_bracket__main_pin": 0.0026937664400914704,
+    "n_dominant_bracket__main_pin": 600,
+    "mae_dominant_clean": 2.035427725871741e-05,
+    "n_dominant_clean": 2413,
+    "mae_dominant_main_pin__splint": 0.0011302412649976002,
+    "n_dominant_main_pin__splint": 1637,
+    "mae_dominant_bracket__splint": 0.0008520501411616773,
+    "n_dominant_bracket__splint": 350
+  },
+  "selected_model_dir": "results/chapter6_overlap/checkpoints/overlap_regressor_regression_v3_selected"
+}

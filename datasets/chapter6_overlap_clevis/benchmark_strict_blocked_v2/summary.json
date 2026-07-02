@@ -1,0 +1,43 @@
+{
+  "name": "strict_overlap_blocked_v2",
+  "source_csv": [
+    "data/pools/holdout_v2_5k/pool.csv"
+  ],
+  "scanned_by_source": {
+    "data/pools/holdout_v2_5k/pool.csv": 5000
+  },
+  "candidate_count_strict_overlap_relaxed_valid": 2685,
+  "candidate_count_blocked": 316,
+  "candidate_count_assemblable_under_overlap": 2369,
+  "n_selected": 50,
+  "selected_blocked_at_start": 50,
+  "selected_assemblable_under_overlap": 0,
+  "strict_threshold_norm": 1e-06,
+  "category_counts": {
+    "splint_head_wall_candidate": 10,
+    "pin_head_or_shaft_wall_candidate": 10,
+    "pin_splint_cross_overlap": 10,
+    "bracket_splint_other": 10,
+    "other_overlap": 10
+  },
+  "dominant_pair_counts": {
+    "bracket__splint": 20,
+    "bracket__main_pin": 10,
+    "main_pin__splint": 10,
+    "clean": 10
+  },
+  "magnitude_bin_counts": {
+    "large": 17,
+    "moderate": 14,
+    "tiny": 13,
+    "small": 6
+  },
+  "start_reason_counts": {
+    "blocked": 50
+  },
+  "pair_columns": [
+    "bracket__main_pin",
+    "bracket__splint",
+    "main_pin__splint"
+  ]
+}

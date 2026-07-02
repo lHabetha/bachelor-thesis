@@ -1,0 +1,68 @@
+{
+  "experiment_name": "dense50k_v2_labelblind",
+  "description": "Task 31 label-blind label-efficiency rerun with 50k candidate pool",
+  "candidate_pool_size": 50000,
+  "candidate_pool_source": "datasets/chapter4_clevis_pools/pool_50k/candidate_pool.parquet",
+  "holdout_size": 5000,
+  "holdout_source": "datasets/chapter4_clevis_pools/holdout/holdout.parquet",
+  "t_max": 3500,
+  "step_size": 250,
+  "base_sizes": [0, 250, 500, 750, 1000, 1500, 2000, 2500],
+  "seed_splits": 8,
+  "rows": ["row1_uncertainty_disagreement", "row2_diverse_uncertainty"],
+  "baseline_replicates": 5,
+  "model": {
+    "architecture": "MLP 13->64->32->1",
+    "activation": "ReLU",
+    "dropout": 0.1,
+    "loss": "BCEWithLogitsLoss",
+    "pos_weight": "n_neg / n_pos (fit per training set)",
+    "optimizer": "Adam",
+    "lr": 0.003,
+    "weight_decay": 0.001,
+    "batch_size": 32,
+    "max_epochs": 160,
+    "patience": 22,
+    "val_fraction": 0.15
+  },
+  "acquisition": {
+    "label_blind": true,
+    "forbidden_pre_label_inputs": [
+      "label",
+      "label_class",
+      "label_subclass",
+      "validity_ok",
+      "formula_margin_min",
+      "formula_reason",
+      "blocked indicators",
+      "inward-movement indicators",
+      "any exact oracle diagnostic column"
+    ],
+    "row1_uncertainty_disagreement": {
+      "allowed_inputs": ["p_mean", "p_std"],
+      "model_uncertainty_weight": 0.60,
+      "ensemble_disagreement_weight": 0.40
+    },
+    "row2_diverse_uncertainty": {
+      "allowed_inputs": ["p_mean", "raw_13d_parameters"],
+      "preselect_top_n": 3000,
+      "score_weight": 0.70,
+      "diversity_weight": 0.30
+    },
+    "ensemble_size": 5
+  },
+  "pool_generation": {
+    "proposal_distribution": "rejection-conditioned smart_sampler mix",
+    "stream_mix": "seed%5 -> uniform/boundary/extreme/lhs/uniform",
+    "seed_base": 550001,
+    "holdout_exclusion": true
+  },
+  "geometry_version": "Task 24 corrected (D5 outer wall, D7, slack-aware D4, 5% head lengths)",
+  "oracle": "chapter3_clevis_setup.exact_assemblability",
+  "oracle_usage": "Formula oracle is used only to label selected samples and evaluation sets, never to score unlabeled candidates.",
+  "parallelization": {
+    "pool_workers": 16,
+    "grid_workers": 12,
+    "per_worker_threads": 1
+  }
+}

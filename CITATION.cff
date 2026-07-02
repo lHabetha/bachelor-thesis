@@ -1,0 +1,12 @@
+cff-version: 1.2.0
+message: "If you use this release, please cite the thesis PDF and this repository."
+type: software
+title: "Bachelor Thesis Public Release: Surrogate-Based Assemblability Prediction and Optimization for Parametric Mechanical Assemblies"
+authors:
+  - family-names: "Habetha"
+    given-names: "Linus"
+    affiliation: "ETH Zurich"
+date-released: "2026-07-01"
+license: "MIT"
+repository-code: "https://github.com/lHabetha/bachelor-thesis"
+abstract: "Public release artifacts for a bachelor's thesis on surrogate-based assemblability prediction and optimization for parametric mechanical assemblies."

@@ -1,0 +1,109 @@
+{
+  "experiment_name": "graph_surrogates_v1",
+  "task": "Task 27 alternative differentiable surrogate architectures",
+  "data": {
+    "candidate_pool": "datasets/chapter4_clevis_pools/pool_50k/candidate_pool.parquet",
+    "holdout": "datasets/chapter4_clevis_pools/holdout/holdout.parquet",
+    "seed_sets": "datasets/chapter4_clevis_pools/seed_sets/dense50k_v1",
+    "task22_trajectories": "results/chapter4_label_efficiency/mlp_dense50k_labelblind",
+    "task22_trajectories_note": "This release ships frozen CSV summaries (e.g. trajectory_metrics.csv)."
+  },
+  "architecture_screen": {
+    "architectures": [
+      "mlp64_control",
+      "wide_mlp_control",
+      "part_graph_mpnn_v1",
+      "constraint_graph_mpnn_v1",
+      "edge_pool_graph_v1"
+    ],
+    "rows": [
+      "row1_pure_hybrid",
+      "row2_hybrid_diverse_half",
+      "baseline_random"
+    ],
+    "base_sizes": [
+      0,
+      1000,
+      2500
+    ],
+    "total_labels": [
+      250,
+      500,
+      1000,
+      2000,
+      3500
+    ],
+    "seed_splits": 8,
+    "baseline_replicates": 5
+  },
+  "fixed_grid": {
+    "architectures": [
+      "mlp64_control",
+      "auto_best_graph"
+    ],
+    "rows": [
+      "row1_pure_hybrid",
+      "row2_hybrid_diverse_half"
+    ],
+    "base_sizes": [
+      0,
+      250,
+      500,
+      750,
+      1000,
+      1500,
+      2000,
+      2500
+    ],
+    "total_labels": [
+      250,
+      500,
+      750,
+      1000,
+      1250,
+      1500,
+      1750,
+      2000,
+      2250,
+      2500,
+      2750,
+      3000,
+      3250,
+      3500
+    ],
+    "seed_splits": 8,
+    "baseline_replicates": 5
+  },
+  "training": {
+    "loss": "BCEWithLogitsLoss",
+    "pos_weight": "n_neg / n_pos",
+    "optimizer": "Adam",
+    "lr": 0.003,
+    "weight_decay": 0.001,
+    "batch_size": 32,
+    "max_epochs": 160,
+    "patience": 22,
+    "val_fraction": 0.15,
+    "device": "cpu",
+    "per_worker_threads": 1
+  },
+  "active_learning_gate": {
+    "run_only_if": "best_graph beats mlp64_control in fixed-label balanced accuracy or blocked recall, or improves Chapter 5 optimizer smoke without higher false-success risk",
+    "pilot": {
+      "rows": [
+        "row1_pure_hybrid",
+        "row2_hybrid_diverse_half"
+      ],
+      "base_sizes": [
+        0,
+        1000,
+        2500
+      ],
+      "seed_splits": [
+        1,
+        2
+      ],
+      "ensemble_size": 3
+    }
+  }
+}

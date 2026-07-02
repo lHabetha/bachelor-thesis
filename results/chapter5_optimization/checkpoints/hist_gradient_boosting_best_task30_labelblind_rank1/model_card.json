@@ -1,0 +1,55 @@
+{
+  "architecture": "hist_gradient_boosting",
+  "feature_names": [
+    "wall_thickness",
+    "outer_span",
+    "leg_length",
+    "depth",
+    "main_hole_offset_from_open_end",
+    "main_hole_radius",
+    "main_pin_length",
+    "main_pin_radius",
+    "cross_hole_radius",
+    "cross_hole_distance_from_free_end",
+    "splint_radius",
+    "splint_length",
+    "overhang_span_y"
+  ],
+  "metadata": {
+    "kind": "sklearn_hist_gradient_boosting"
+  },
+  "metrics": {
+    "accuracy": 0.9642,
+    "balanced_accuracy": 0.9250448833034111,
+    "brier": 0.03142459760783984,
+    "ece_10bin": 0.05087522561236326,
+    "fit_wall_s": 1.8364359160186723,
+    "macro_f1": 0.9107751604825878,
+    "mcc": 0.8223388623121005,
+    "model_metadata": {
+      "kind": "sklearn_hist_gradient_boosting"
+    },
+    "pos_rate_pred": 0.8826,
+    "pos_rate_true": 0.8912,
+    "precision_assemblable": 0.9845909811919329,
+    "precision_blocked": 0.8109028960817717,
+    "predict_wall_s": 0.016260083066299558,
+    "recall_assemblable": 0.9750897666068222,
+    "recall_blocked": 0.875,
+    "roc_auc": 0.989808849931355,
+    "train_pos_rate": 0.653,
+    "train_size": 3000
+  },
+  "model_id": "hist_gradient_boosting_best_task30_labelblind_rank1",
+  "n_features": 13,
+  "provenance": {
+    "base_size": 600,
+    "model_id": "hist_gradient_boosting_best_task30_labelblind_rank1",
+    "n_train": 3000,
+    "row": "al_uncertainty_disagreement",
+    "seed_split": 7,
+    "source_file": "results/chapter4_label_efficiency/tree_runs/active_grid_labelblind/results/hist_gradient_boosting__al_uncertainty_disagreement__B0600__R007.json",
+    "total_labels": 2800
+  },
+  "task30_tree_surrogate": true
+}

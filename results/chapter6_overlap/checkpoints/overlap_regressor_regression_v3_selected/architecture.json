@@ -1,0 +1,12 @@
+{
+  "architecture": "e_256_128_64_32",
+  "hidden": [
+    256,
+    128,
+    64,
+    32
+  ],
+  "budget": 15000,
+  "selected_by": "mae_log",
+  "label_source": "random"
+}

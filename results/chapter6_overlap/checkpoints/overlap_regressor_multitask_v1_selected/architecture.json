@@ -1,0 +1,25 @@
+{
+  "architecture": "multitask_256_128_64_32",
+  "hidden": [
+    256,
+    128,
+    64,
+    32
+  ],
+  "multitask": true,
+  "heads": {
+    "head_vol": "log1p(total_overlap_norm / tau0) regression (SmoothL1)",
+    "head_bin": "P(overlap > tau0) logit (BCEWithLogits)"
+  },
+  "budget": 15000,
+  "lambda_bin": 1.0,
+  "bin_threshold_norm": 5e-05,
+  "threshold_norm": 5e-05,
+  "tau_bin_candidates": [
+    0.05,
+    0.1,
+    0.2
+  ],
+  "selected_by": "volume_mae_log_parity",
+  "label_source": "random"
+}

@@ -1,0 +1,22 @@
+{
+  "schema_version": "v1",
+  "run_id": "task30_labelblind_hgb_sphere_shrink_tau0.90",
+  "optimizer_id": "random_sphere_coordinate_shrink_v1",
+  "model_id": "hist_gradient_boosting_best_task30_labelblind_rank1",
+  "model_dir": "results/chapter5_optimization/checkpoints/hist_gradient_boosting_best_task30_labelblind_rank1",
+  "benchmark_set": "blocked_200_v1",
+  "tau": 0.9,
+  "n_starts": 200,
+  "constraint_id": null,
+  "locked_params": [],
+  "baseline_run_id": null,
+  "wall_time_s": 1917.1646029949188,
+  "timestamp": "2026-06-10T16:46:15.840824",
+  "results_summary": {
+    "surrogate_success": 100,
+    "oracle_confirmed": 168,
+    "false_success": 2,
+    "no_crossing": 100,
+    "mean_distance": 0.8999114594188427
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "schema_version": "v1",
+  "run_id": "ch65_zigzag_finish_line",
+  "optimizer_id": "strict_zigzag_ch65_finish_line_v3",
+  "model_id": "overlap_regressor_v3 + row1_uncertainty_disagreement_B1000_T2500_best",
+  "benchmark_set": "strict_overlap_blocked_v2",
+  "tau": 1e-06,
+  "n_starts": 50,
+  "timestamp": "2026-06-30T12:53:47.278384+00:00",
+  "task": "ch65_zigzag",
+  "category": "ch65_zigzag_success",
+  "title": "6.5 zig-zag (finish-line overlap + trust-region asm)",
+  "results_summary": {
+    "pipeline_success": 9,
+    "oracle_confirmed": 9,
+    "false_success": 0
+  }
+}

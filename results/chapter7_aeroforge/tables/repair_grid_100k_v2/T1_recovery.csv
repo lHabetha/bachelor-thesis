@@ -1,0 +1,9 @@
+# SOURCE: runs_dir=runs; benchmark=['overlap_ranked100_v2']; n_subgroups=42; generated=2026-07-01T17:57:43+00:00
+optimizer,a,b,c,d,e,f
+one_shot_gradient_line_search,81,75,86,80,83,81
+receding_multistep_gradient,92,89,92,91,88,92
+receding_multistep_penalty,92,89,92,91,87,92
+full_coordinate_grid_refine,62,63,62,63,53,62
+trust_region_hybrid,80,77,81,79,73,80
+trust_region_hybrid_shrinkage,76,70,68,70,64,76
+all,94,90,93,91,90,94

@@ -1,0 +1,29 @@
+{
+  "schema_version": "v1",
+  "run_id": "one_shot_gradient_bracket_v1_tau0.60_labelblind_lock_grad_bottom_11",
+  "optimizer_id": "one_shot_gradient_bracket_v1",
+  "model_id": "row1_uncertainty_disagreement_B1000_T2500_best",
+  "model_dir": "results/chapter5_optimization/checkpoints/row1_uncertainty_disagreement_B1000_T2500_best",
+  "benchmark_set": "blocked_200_v1",
+  "tau": 0.6,
+  "n_starts": 200,
+  "constraint_id": "grad_bottom_11",
+  "locked_params": [],
+  "baseline_run_id": "one_shot_gradient_bracket_v1_tau0.60_labelblind",
+  "wall_time_s": 1.6027820110321045,
+  "timestamp": "2026-06-13T19:47:40.809823",
+  "results_summary": {
+    "surrogate_success": 199,
+    "oracle_confirmed": 190,
+    "false_success": 9,
+    "no_crossing": 0,
+    "mean_distance": 0.5189293333333334
+  },
+  "constraint": {
+    "constraint_id": "grad_bottom_11",
+    "scenario_kind": "gradient_ranked",
+    "baseline_run_id": "one_shot_gradient_bracket_v1_tau0.60_labelblind",
+    "manual_locked_params": [],
+    "locked_names_vary_by_start": true
+  }
+}

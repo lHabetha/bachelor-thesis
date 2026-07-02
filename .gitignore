@@ -1,0 +1,20 @@
+.DS_Store
+*.tmp
+*.swp
+Thumbs.db
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Viewer / pipeline runtime outputs (generated locally, not part of release)
+viewers/**/cache/
+viewers/**/data/**/meshes/
+results/_smoke_runs/
+tmp_smoke/
+
+# Optional local AeroForge clone (see docs/environment.md)
+aeroforge/
+
+# Optional: uncomment if you want to track videos with Git LFS instead of plain git
+# *.mp4
+# *.mov

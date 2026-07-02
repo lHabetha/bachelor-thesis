@@ -1,0 +1,29 @@
+{
+  "schema_version": "v1",
+  "run_id": "ch5d20_multifixed_penalty_lam0_10_tau0.75_lock_lock_pin_user",
+  "optimizer_id": "multifixed_penalty_direction_frontier_lam0_10_v1",
+  "model_id": "row1_uncertainty_disagreement_B1000_T2500_best",
+  "model_dir": "results/chapter5_optimization/checkpoints/row1_uncertainty_disagreement_B1000_T2500_best",
+  "benchmark_set": "blocked_200_v1",
+  "tau": 0.75,
+  "n_starts": 200,
+  "constraint_id": "lock_pin_user",
+  "locked_params": [],
+  "baseline_run_id": "ch5d20_multifixed_penalty_lam0_10_tau0.75",
+  "wall_time_s": 2.845202922821045,
+  "timestamp": "2026-06-14T12:05:24.383611",
+  "results_summary": {
+    "surrogate_success": 151,
+    "oracle_confirmed": 156,
+    "false_success": 1,
+    "no_crossing": 49,
+    "mean_distance": 0.35184208714047377
+  },
+  "constraint": {
+    "constraint_id": "lock_pin_user",
+    "scenario_kind": "semantic_group",
+    "baseline_run_id": "ch5d20_multifixed_penalty_lam0_10_tau0.75",
+    "manual_locked_params": [],
+    "locked_names_vary_by_start": false
+  }
+}

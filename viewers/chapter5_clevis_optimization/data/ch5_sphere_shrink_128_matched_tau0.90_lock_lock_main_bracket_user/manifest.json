@@ -1,0 +1,29 @@
+{
+  "schema_version": "v1",
+  "run_id": "ch5_sphere_shrink_128_matched_tau0.90_lock_lock_main_bracket_user",
+  "optimizer_id": "random_sphere_coordinate_shrink_128_v1",
+  "model_id": "row1_uncertainty_disagreement_B1000_T2500_best",
+  "model_dir": "results/chapter5_optimization/checkpoints/row1_uncertainty_disagreement_B1000_T2500_best",
+  "benchmark_set": "blocked_200_v1",
+  "tau": 0.9,
+  "n_starts": 200,
+  "constraint_id": "lock_main_bracket_user",
+  "locked_params": [],
+  "baseline_run_id": "ch5_sphere_shrink_128_matched_tau0.90",
+  "wall_time_s": 20.058974981307983,
+  "timestamp": "2026-06-14T15:17:39.696778",
+  "results_summary": {
+    "surrogate_success": 167,
+    "oracle_confirmed": 174,
+    "false_success": 0,
+    "no_crossing": 33,
+    "mean_distance": 0.6106334533534837
+  },
+  "constraint": {
+    "constraint_id": "lock_main_bracket_user",
+    "scenario_kind": "semantic_group",
+    "baseline_run_id": "ch5_sphere_shrink_128_matched_tau0.90",
+    "manual_locked_params": [],
+    "locked_names_vary_by_start": false
+  }
+}

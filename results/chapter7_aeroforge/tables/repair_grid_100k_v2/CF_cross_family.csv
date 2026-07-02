@@ -1,0 +1,9 @@
+# SOURCE: runs_dir=runs; benchmark=['overlap_ranked100_v2']; n_subgroups=42; generated=2026-07-01T17:57:43+00:00
+optimizer,best_variant,model_id,gate,tau_decide_mm3,p_star,verified_ok,false_ok,mean_l2,mean_l1,mean_l0
+one_shot_gradient_line_search,e,raw_log_huber_100k,reg,0.1,,99,1,0.2843148108349981,0.5976840357775792,5.0
+receding_multistep_gradient,e,raw_log_huber_100k,reg,0.1,,100,0,0.34632199637607736,0.7511826245253872,5.52
+receding_multistep_penalty,e,raw_log_huber_100k,reg,0.1,,99,1,0.3073388642780729,0.6859850448816921,6.393939393939394
+full_coordinate_grid_refine,b,eng_log_huber_100k,reg,0.01,,88,1,0.2635502201761607,0.2635502201761607,1.0
+trust_region_hybrid,c,eng_multitask_gate_strong_100k,reg,0.1,,96,1,0.1742129907141237,0.45830391557116584,9.822916666666666
+trust_region_hybrid_shrinkage,e,raw_log_huber_100k,reg,0.1,,96,1,0.15297334631347792,0.3731565906449393,7.927083333333333
+all,a,eng_multitask_gate_strong_100k,-,1.0,,94,6,0.2371737707051549,0.38926717443326153,2.521276595744681

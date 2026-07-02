@@ -1,0 +1,18 @@
+{
+  "run_id": "axis_direct__none/shard_000_010",
+  "method": "axis_direct",
+  "method_label": "axis_direct__none",
+  "model_kind": "none",
+  "model_dir": null,
+  "tau_vol": 0.0,
+  "tau_bin": null,
+  "strict_threshold_norm": 1e-06,
+  "starts_csv": "datasets/chapter6_overlap_clevis/benchmark_strict_repair_ch64_v1/starts.csv",
+  "n_starts": 10,
+  "strict_success": 4,
+  "mean_pct_overlap_reduction": 75.43327563509915,
+  "median_pct_overlap_reduction": 84.28871672365435,
+  "mean_verifier_calls": 132.2,
+  "mean_active_coordinates": 2.3,
+  "mean_wall_time_s": 5.434065515099991
+}

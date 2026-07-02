@@ -1,0 +1,20 @@
+{
+  "schema_version": "v1",
+  "run_id": "ch64_hybrid_lite_multitask_taubin01",
+  "optimizer_id": "hybrid_lite__multitask__taubin0.1",
+  "model_id": "overlap_regressor_multitask_v1",
+  "benchmark_set": "strict_overlap_repair_ch64_v1",
+  "tau": 1e-06,
+  "n_starts": 50,
+  "timestamp": "2026-07-01T17:51:39.225290+00:00",
+  "task": "ch64_overlap_repair",
+  "category": "new_6_4",
+  "title": "Hybrid-lite (multitask, tau_bin=0.1)",
+  "results_summary": {
+    "oracle_confirmed": 50,
+    "false_success": 0,
+    "mean_distance": 0.17611689491197466,
+    "strict_success": 50,
+    "mean_pct_overlap_reduction": 100.0
+  }
+}

@@ -1,0 +1,1093 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Chapter 5 Optimization Viewer</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/OBJLoader.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/contrib/auto-render.min.js"></script>
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background:#1a1a2e; color:#eee; display:flex; height:100vh; width:100vw; overflow:hidden; }
+#sidebar { width:clamp(360px, 28vw, 520px); min-width:300px; max-width:55vw; background:#16213e; overflow:auto; padding:12px; display:flex; flex-direction:column; gap:8px; }
+#sidebar-resizer { width:7px; flex:0 0 7px; cursor:col-resize; background:#24345f; border-left:1px solid #10192f; border-right:1px solid #10192f; }
+#sidebar-resizer:hover { background:#4fc3f7; }
+#main { flex:1; min-width:0; display:flex; flex-direction:column; }
+#viewport { flex:1; min-height:180px; position:relative; }
+#viewport canvas { display:block; }
+#viewport-controls-resizer { height:7px; flex:0 0 7px; cursor:row-resize; background:#24345f; border-top:1px solid #10192f; border-bottom:1px solid #10192f; }
+#viewport-controls-resizer:hover { background:#4fc3f7; }
+#controls { --param-panel-width:690px; --info-panel-width:280px; height:260px; min-height:160px; max-height:55vh; background:#0f3460; padding:12px; overflow:auto; display:grid; grid-template-columns:minmax(560px, var(--param-panel-width)) 7px minmax(220px, var(--info-panel-width)); justify-content:start; column-gap:10px; }
+select, button { background:#1a1a2e; color:#eee; border:1px solid #555; padding:6px 10px; border-radius:4px; font-size:13px; cursor:pointer; }
+select:hover, button:hover { border-color:#4fc3f7; }
+label { font-size:12px; color:#aaa; display:block; margin-bottom:4px; }
+.section { margin-bottom:12px; }
+.badge { display:inline-block; padding:2px 6px; border-radius:3px; font-size:11px; font-weight:bold; margin-left:4px; }
+.badge-ok { background:#2e7d32; }
+.badge-surr { background:#f57c00; }
+.badge-stuck { background:#c62828; }
+#assembly-select { width:100%; height:min(48vh, 520px); min-height:260px; font-size:12px; line-height:1.35; }
+#assembly-info { font-size:12px; color:#c7d2fe; line-height:1.35; }
+#param-panel { min-width:0; overflow:auto; width:auto; max-width:100%; }
+#param-panel .param-header { display:flex; align-items:flex-end; justify-content:space-between; gap:12px; margin-bottom:10px; }
+#param-panel .param-title { font-size:13px; font-weight:700; color:#e0f2fe; }
+#param-panel .param-legend { display:flex; flex-wrap:wrap; gap:10px; font-size:11px; color:#bfd7ff; }
+#param-panel .legend-item { display:inline-flex; align-items:center; gap:5px; white-space:nowrap; }
+#param-panel .legend-swatch { width:14px; height:3px; border-radius:2px; display:inline-block; }
+#param-panel .param-table { display:grid; gap:6px; width:100%; min-width:560px; }
+#param-panel .param-row,
+#param-panel .param-row-labels { display:grid; grid-template-columns:minmax(165px, 215px) 70px 70px minmax(85px, 0.35fr) minmax(76px, 0.26fr); align-items:center; column-gap:10px; font-size:12px; }
+#param-panel .param-row-labels { color:#8fb3d9; font-size:10px; text-transform:uppercase; letter-spacing:0.04em; padding-bottom:2px; border-bottom:1px solid rgba(255,255,255,0.10); }
+#param-panel .param-row { padding:3px 0; border-bottom:1px solid rgba(255,255,255,0.04); }
+#param-panel .param-name { min-width:0; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; color:#e5edf8; }
+#param-panel .param-value, #param-panel .param-delta { font-family:ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; text-align:right; font-size:11px; }
+#param-panel .param-value { color:#eaf6ff; }
+#param-panel .param-delta.pos { color:#86efac; }
+#param-panel .param-delta.neg { color:#fca5a5; }
+#param-panel .param-delta.zero { color:#94a3b8; }
+#param-panel .range-bar { height:12px; background:#263247; border:1px solid #34445f; border-radius:999px; position:relative; overflow:hidden; }
+#param-panel .range-delta { position:absolute; top:2px; height:6px; border-radius:999px; background:#60a5fa; opacity:0.85; }
+#param-panel .range-marker { position:absolute; top:-3px; width:2px; height:18px; transform:translateX(-1px); }
+#param-panel .range-marker.start { background:#f8fafc; opacity:0.75; }
+#param-panel .range-marker.current { background:#facc15; width:7px; height:7px; top:2px; border-radius:50%; transform:translateX(-3.5px); box-shadow:0 0 0 2px rgba(250,204,21,0.18); }
+#param-panel .range-endpoints { display:flex; justify-content:space-between; margin-top:2px; color:#6f8bab; font-size:9px; font-family:ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+#param-panel .grad-bar { height:12px; background:#253044; border:1px solid #34445f; border-radius:999px; position:relative; overflow:hidden; }
+#param-panel .grad-center { position:absolute; left:50%; top:0; bottom:0; width:1px; background:#cbd5e1; opacity:0.65; }
+#param-panel .grad-fill { position:absolute; top:2px; height:6px; border-radius:999px; }
+#param-panel .grad-fill.pos { left:50%; background:#22c55e; }
+#param-panel .grad-fill.neg { right:50%; background:#ef4444; }
+#param-panel .grad-label { margin-top:2px; font-size:10px; color:#9fb7d4; font-family:ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; text-align:center; }
+#controls-inner-resizer { width:7px; align-self:stretch; cursor:col-resize; border-radius:4px; background:#17365f; border-left:1px solid #0b2342; border-right:1px solid #0b2342; }
+#controls-inner-resizer:hover, #controls-inner-resizer.dragging { background:#4fc3f7; }
+#info-panel { min-width:220px; max-width:none; overflow:auto; font-size:13px; line-height:1.35; justify-self:stretch; }
+#info-panel .info-row { margin:4px 0; }
+#info-panel .info-label { color:#aaa; }
+#timeline { display:flex; align-items:center; gap:8px; padding:8px 12px; background:#16213e; border-top:1px solid #333; }
+#timeline input[type=range] { flex:1; }
+#frame-indicator { font-size:12px; color:#4fc3f7; min-width:60px; }
+#prob-display { font-size:14px; font-weight:bold; min-width:80px; }
+.terminated-indicator { color:#ff5252; font-size:11px; }
+#modal-overlay { display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.8); z-index:1000; justify-content:center; align-items:center; }
+#modal-overlay.active { display:flex; }
+#modal-content { background:#15182b; border:1px solid #4a5578; border-radius:10px; max-width:min(980px, 92vw); max-height:86vh; overflow-y:auto; padding:34px 42px; width:90%; position:relative; box-shadow:0 24px 80px rgba(0,0,0,0.55); font-size:16px; line-height:1.62; color:#edf2ff; }
+#modal-content h1 { color:#7dd3fc; font-size:30px; line-height:1.15; margin:0 0 18px; padding-bottom:12px; border-bottom:1px solid #334269; }
+#modal-content h2 { color:#67e8f9; font-size:24px; line-height:1.2; margin:30px 0 12px; }
+#modal-content h3 { color:#a5f3fc; font-size:19px; margin:24px 0 10px; }
+#modal-content p { margin:10px 0 14px; }
+#modal-content ul, #modal-content ol { margin:10px 0 16px 24px; padding-left:8px; }
+#modal-content li { margin:6px 0; }
+#modal-content table { border-collapse:collapse; width:100%; margin:16px 0 22px; font-size:14px; overflow:hidden; border-radius:8px; }
+#modal-content th,#modal-content td { border:1px solid #3e4a70; padding:9px 12px; text-align:left; vertical-align:top; }
+#modal-content th { background:#16416a; color:#e0f2fe; font-weight:700; }
+#modal-content tr:nth-child(even) td { background:#1b2036; }
+#modal-content code { background:#0c1020; color:#dbeafe; padding:2px 6px; border-radius:5px; font-size:0.9em; font-family:ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+#modal-content pre { background:#080d1d; border:1px solid #283552; padding:16px 18px; border-radius:8px; overflow-x:auto; margin:14px 0 18px; line-height:1.45; }
+#modal-content pre code { background:none; padding:0; color:#e5e7eb; font-size:14px; }
+#modal-content strong { color:#ffffff; }
+#modal-content .katex { color:#f8fafc; font-size:1.08em; }
+#modal-content .katex-display { margin:18px 0; padding:14px 18px; overflow-x:auto; overflow-y:hidden; background:#080d1d; border:1px solid #283552; border-radius:8px; }
+#modal-close { position:sticky; top:0; float:right; font-size:28px; cursor:pointer; color:#cbd5e1; z-index:10; background:#20263d; border:1px solid #475569; border-radius:999px; width:34px; height:34px; line-height:29px; text-align:center; margin:-16px -24px 8px 16px; }
+#modal-close:hover { color:#fff; border-color:#7dd3fc; }
+#frame-warning { position:absolute; left:12px; bottom:12px; max-width:520px; background:rgba(8,13,29,0.86); border:1px solid #f59e0b; color:#fde68a; padding:8px 10px; border-radius:6px; font-size:12px; pointer-events:none; display:none; }
+</style>
+</head>
+<body>
+<div id="sidebar">
+  <div class="section">
+    <label>Thesis table / figure</label>
+    <select id="run-category-select" style="width:100%">
+      <option value="all">All Chapter 5 tables</option>
+    </select>
+  </div>
+  <div class="section">
+    <label>Optimizer Run (thesis table row)</label>
+    <select id="run-select" style="width:100%"></select>
+  </div>
+  <div style="display:flex;gap:6px;">
+    <button id="btn-info" title="Algorithm Info">ℹ Info</button>
+    <button id="btn-stats" title="Statistics">📊 Stats</button>
+    <button id="btn-lock-study" title="Parameter Lock Study">Lock Study</button>
+  </div>
+  <div class="section">
+    <label id="assembly-label">Assembly (blocked starts)</label>
+    <select id="assembly-select" size="24"></select>
+  </div>
+  <div id="assembly-info"></div>
+</div>
+<div id="sidebar-resizer" title="Drag to resize assembly panel"></div>
+<div id="main">
+  <div id="viewport"><div id="frame-warning"></div></div>
+  <div id="timeline">
+    <button id="btn-play">▶</button>
+    <button id="btn-first">⏮</button>
+    <input type="range" id="frame-slider" min="0" max="49" value="0">
+    <button id="btn-last">⏭</button>
+    <span id="frame-indicator">0/49</span>
+    <span id="prob-display">P=—</span>
+    <span id="terminated-display"></span>
+  </div>
+  <div id="viewport-controls-resizer" title="Drag to resize bottom panel"></div>
+  <div id="controls">
+    <div id="param-panel"></div>
+    <div id="controls-inner-resizer" title="Drag to resize parameter/frame-info split"></div>
+    <div id="info-panel"></div>
+  </div>
+</div>
+<div id="modal-overlay"><div id="modal-content"></div></div>
+
+<script>
+const API = '';
+let runs = {};
+let currentRun = null;
+let viewerData = [];
+let currentAssembly = 0;
+let currentFrame = 0;
+let playing = false;
+let playInterval = null;
+let _frameLoadId = 0;
+let _needsFitView = true;
+let _morph = null; // overlap (6.4) runs: {startGroup, endGroup, finalIdx} morph from start->final geometry
+let _zigzagMorph = null; // zig-zag (6.5) runs: {frameGroups:[Group|null per frame]} pre-generated stop-motion
+let benchmarkMetadata = {benchmark_id: 'unknown', n_starts: null, stds: {}};
+
+// Human-readable names for the thesis table anchors used to group the dropdown.
+const ANCHOR_LABELS = {
+  'tab:one-shot-gradient': '5.2.1 One-shot gradient',
+  'tab:multifixed-penalty': '5.2.2 Multi-fixed-step gradient & penalty',
+  'tab:adaptive-multistep': '5.2.3 Adaptive multi-step gradient',
+  'tab:adaptive-penalty-sweep': '5.2.3 Adaptive penalty sweep',
+  'tab:coordinate-axis': '5.2.4 Coordinate axis',
+  'tab:trust-region': '5.2.5 Trust region',
+  'tab:random-sphere': '5.2.6 Random sphere shrink',
+  'tab:tree-gradient-free-control': '5.2.7 Tree-surrogate controls',
+  'tab:semantic-locks': '5.3 Semantic parameter locks',
+  'tab:gradient-locks': '5.3 Gradient-ranked locks',
+  'tab:sparse-norm-selection': '5.4 Sparse-norm selection',
+};
+// Presentation order of table anchors in the "All Chapter 5 tables" view.
+const ANCHOR_ORDER = [
+  'tab:one-shot-gradient',
+  'tab:multifixed-penalty',
+  'tab:adaptive-multistep',
+  'tab:adaptive-penalty-sweep',
+  'tab:coordinate-axis',
+  'tab:trust-region',
+  'tab:random-sphere',
+  'tab:tree-gradient-free-control',
+  'tab:semantic-locks',
+  'tab:gradient-locks',
+  'tab:sparse-norm-selection',
+];
+window.__viewerStartupErrors = [];
+window.__viewerBootReached = false;
+window.addEventListener('error', e => {
+  window.__viewerStartupErrors.push(`${e.message || 'error'} @ ${e.filename || 'unknown'}:${e.lineno || 0}`);
+});
+window.addEventListener('unhandledrejection', e => {
+  window.__viewerStartupErrors.push(`unhandledrejection: ${e.reason?.message || e.reason || 'unknown'}`);
+});
+
+// Three.js setup
+const viewport = document.getElementById('viewport');
+const scene = new THREE.Scene();
+scene.background = new THREE.Color(0x1a1a2e);
+const camera = new THREE.PerspectiveCamera(50, 1, 0.1, 2000);
+camera.position.set(100, 80, 120);
+camera.lookAt(0, 0, 0);
+let renderer = null;
+try {
+  renderer = new THREE.WebGLRenderer({antialias:true});
+  viewport.appendChild(renderer.domElement);
+} catch(e) {
+  window.__viewerStartupErrors.push(`renderer init failed: ${e.message || e}`);
+  viewport.innerHTML = '<div style="padding:16px;color:#ffb74d">WebGL renderer unavailable. Data panels, markdown, and API checks still work.</div>';
+}
+
+const ambientLight = new THREE.AmbientLight(0xffffff, 0.4);
+scene.add(ambientLight);
+const dirLight = new THREE.DirectionalLight(0xffffff, 0.8);
+dirLight.position.set(50, 100, 50);
+scene.add(dirLight);
+
+let meshGroup = new THREE.Group();
+scene.add(meshGroup);
+let orbitControls = null;
+if (renderer && THREE.OrbitControls) {
+  orbitControls = new THREE.OrbitControls(camera, renderer.domElement);
+  orbitControls.enableDamping = true;
+  orbitControls.dampingFactor = 0.08;
+  orbitControls.screenSpacePanning = true;
+  orbitControls.enablePan = true;
+  orbitControls.enableZoom = true;
+  orbitControls.mouseButtons = {
+    LEFT: THREE.MOUSE.ROTATE,
+    MIDDLE: THREE.MOUSE.DOLLY,
+    RIGHT: THREE.MOUSE.PAN,
+  };
+  orbitControls.touches = {
+    ONE: THREE.TOUCH.ROTATE,
+    TWO: THREE.TOUCH.DOLLY_PAN,
+  };
+}
+
+function resize() {
+  if (!renderer) return;
+  const w = viewport.clientWidth, h = viewport.clientHeight;
+  camera.aspect = w/h;
+  camera.updateProjectionMatrix();
+  renderer.setSize(w, h);
+}
+window.addEventListener('resize', resize);
+resize();
+
+// Resizable panels ---------------------------------------------------------
+const sidebar = document.getElementById('sidebar');
+const sidebarResizer = document.getElementById('sidebar-resizer');
+const controls = document.getElementById('controls');
+const controlsResizer = document.getElementById('viewport-controls-resizer');
+const controlsInnerResizer = document.getElementById('controls-inner-resizer');
+
+sidebarResizer.addEventListener('mousedown', e => {
+  e.preventDefault();
+  document.body.style.cursor = 'col-resize';
+  const startX = e.clientX;
+  const startWidth = sidebar.getBoundingClientRect().width;
+  const onMove = ev => {
+    const nextWidth = Math.max(300, Math.min(window.innerWidth * 0.55, startWidth + ev.clientX - startX));
+    sidebar.style.width = `${nextWidth}px`;
+    resize();
+  };
+  const onUp = () => {
+    document.body.style.cursor = '';
+    window.removeEventListener('mousemove', onMove);
+    window.removeEventListener('mouseup', onUp);
+  };
+  window.addEventListener('mousemove', onMove);
+  window.addEventListener('mouseup', onUp);
+});
+
+controlsResizer.addEventListener('mousedown', e => {
+  e.preventDefault();
+  document.body.style.cursor = 'row-resize';
+  const startY = e.clientY;
+  const startHeight = controls.getBoundingClientRect().height;
+  const onMove = ev => {
+    const nextHeight = Math.max(160, Math.min(window.innerHeight * 0.60, startHeight - (ev.clientY - startY)));
+    controls.style.height = `${nextHeight}px`;
+    resize();
+  };
+  const onUp = () => {
+    document.body.style.cursor = '';
+    window.removeEventListener('mousemove', onMove);
+    window.removeEventListener('mouseup', onUp);
+  };
+  window.addEventListener('mousemove', onMove);
+  window.addEventListener('mouseup', onUp);
+});
+
+controlsInnerResizer.addEventListener('mousedown', e => {
+  e.preventDefault();
+  controlsInnerResizer.classList.add('dragging');
+  document.body.style.cursor = 'col-resize';
+  const startX = e.clientX;
+  const startParamWidth = parseFloat(getComputedStyle(controls).getPropertyValue('--param-panel-width')) || 690;
+  const startInfoWidth = parseFloat(getComputedStyle(controls).getPropertyValue('--info-panel-width')) || 280;
+  const onMove = ev => {
+    const dx = ev.clientX - startX;
+    const maxParamWidth = Math.max(560, controls.clientWidth - 260);
+    const nextParamWidth = Math.max(560, Math.min(maxParamWidth, startParamWidth + dx));
+    const nextInfoWidth = Math.max(220, startInfoWidth - dx);
+    controls.style.setProperty('--param-panel-width', `${nextParamWidth}px`);
+    controls.style.setProperty('--info-panel-width', `${nextInfoWidth}px`);
+    resize();
+  };
+  const onUp = () => {
+    controlsInnerResizer.classList.remove('dragging');
+    document.body.style.cursor = '';
+    window.removeEventListener('mousemove', onMove);
+    window.removeEventListener('mouseup', onUp);
+  };
+  window.addEventListener('mousemove', onMove);
+  window.addEventListener('mouseup', onUp);
+});
+
+function animate() {
+  requestAnimationFrame(animate);
+  if (orbitControls) orbitControls.update();
+  if (renderer) renderer.render(scene,camera);
+}
+if (renderer) animate();
+
+// API calls
+async function fetchJSON(url) { const r = await fetch(API+url, {cache:'no-store'}); return r.json(); }
+async function fetchText(url) { const r = await fetch(API+url, {cache:'no-store'}); return r.text(); }
+
+async function init() {
+  benchmarkMetadata = await fetchJSON('/api/benchmark_metadata');
+  const nStarts = benchmarkMetadata.n_starts || 'loaded';
+  document.getElementById('assembly-label').textContent = `Assembly (${nStarts} blocked starts)`;
+  runs = await fetchJSON('/api/runs');
+  populateCategorySelect();
+  document.getElementById('run-category-select').addEventListener('change', () => populateRunSelect());
+  populateRunSelect();
+}
+
+// Build the thesis-table dropdown from the anchors actually present in the
+// allowlist-driven run set. Keeps the top "All Chapter 5 tables" option.
+function populateCategorySelect() {
+  const sel = document.getElementById('run-category-select');
+  const present = new Set(Object.values(runs).map(info => info.thesis_anchor).filter(Boolean));
+  const ordered = ANCHOR_ORDER.filter(a => present.has(a));
+  for (const a of present) if (!ordered.includes(a)) ordered.push(a);
+  for (const anchor of ordered) {
+    const opt = document.createElement('option');
+    opt.value = anchor;
+    opt.textContent = ANCHOR_LABELS[anchor] || anchor;
+    sel.appendChild(opt);
+  }
+}
+
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+function compareEntries(a, b) {
+  return a[0].localeCompare(b[0], undefined, {numeric:true, sensitivity:'base'});
+}
+
+// One dropdown row per allowlist entry (= one thesis table row). The visible
+// text uses the allowlist display label plus the headline optimizer metrics.
+function runOptionText(entryId, info) {
+  const m = info.manifest || {};
+  const stats = info.statistics || {};
+  const oracle = m.results_summary?.oracle_confirmed ?? '?';
+  const falseSuccess = m.results_summary?.false_success ?? '?';
+  const meanDist = m.results_summary?.mean_distance;
+  const meanActive = stats.sparse_metrics?.active_coordinate_count_mean;
+  const constraint = m.constraint_id ? ` lock=${m.constraint_id}` : '';
+  const distText = Number.isFinite(Number(meanDist)) ? ` d=${Number(meanDist).toFixed(3)}` : '';
+  const activeText = Number.isFinite(Number(meanActive)) ? ` m_crd=${Number(meanActive).toFixed(3)}` : '';
+  const label = info.display_label || entryId;
+  return `${label} | ${m.optimizer_id} τ=${m.tau} (${oracle} oracle, ${falseSuccess} false${distText}${activeText}${constraint})`;
+}
+
+function populateRunSelect() {
+  const selectedCategory = document.getElementById('run-category-select').value;
+  const sel = document.getElementById('run-select');
+  const previous = currentRun || sel.value;
+  sel.innerHTML = '';
+
+  const grouped = {};
+  for (const entry of Object.entries(runs)) {
+    const anchor = entry[1].thesis_anchor || 'other';
+    (grouped[anchor] = grouped[anchor] || []).push(entry);
+  }
+
+  const anchors = selectedCategory === 'all'
+    ? ANCHOR_ORDER.filter(a => grouped[a]).concat(Object.keys(grouped).filter(a => !ANCHOR_ORDER.includes(a)))
+    : [selectedCategory];
+  for (const anchor of anchors) {
+    const entries = (grouped[anchor] || []).sort(compareEntries);
+    if (!entries.length) continue;
+    const group = document.createElement('optgroup');
+    group.label = `${ANCHOR_LABELS[anchor] || anchor} (${entries.length})`;
+    for (const [entryId, info] of entries) {
+      const opt = document.createElement('option');
+      opt.value = entryId;
+      opt.textContent = runOptionText(entryId, info);
+      group.appendChild(opt);
+    }
+    sel.appendChild(group);
+  }
+
+  const availableValues = Array.from(sel.options).map(o => o.value);
+  if (availableValues.includes(previous)) {
+    sel.value = previous;
+    loadRun(previous);
+  } else if (sel.options.length > 0) {
+    sel.selectedIndex = 0;
+    loadRun(sel.value);
+  } else {
+    currentRun = null;
+    viewerData = [];
+    document.getElementById('assembly-select').innerHTML = '';
+    document.getElementById('assembly-info').innerHTML = '<div>No runs in this table yet.</div>';
+  }
+}
+
+async function loadRun(entryId) {
+  currentRun = entryId;
+  viewerData = await fetchJSON(`/api/viewer_data/${entryId}`);
+  populateAssemblyList();
+  if (viewerData.length > 0) loadAssembly(0);
+}
+
+function isOverlapAssembly(a) {
+  return !!(a && a.overlap_mode);
+}
+
+function isZigzagAssembly(a) {
+  return !!(a && a.zigzag_mode);
+}
+
+function populateAssemblyList() {
+  const sel = document.getElementById('assembly-select');
+  sel.innerHTML = '';
+  const labelEl = document.getElementById('assembly-label');
+  if (labelEl) labelEl.textContent = isOverlapAssembly(viewerData[0]) ? 'Assembly (overlap starts)' : 'Assembly (blocked starts)';
+  viewerData.forEach((a, i) => {
+    const opt = document.createElement('option');
+    opt.value = i;
+    let badge = '·';
+    if (isOverlapAssembly(a)) {
+      if (a.success) badge = '✓';
+      else if ((a.pct_overlap_reduction || 0) >= 50) badge = '~';
+      const tag = a.start_magnitude_bin ? ` [${a.start_magnitude_bin[0].toUpperCase()}]` : '';
+      opt.textContent = `[${badge}]${tag} ${a.start_id} (${(a.subgroup || '').replace(/_/g, ' ')})`;
+    } else {
+      if (a.oracle_label === 1) badge = '✓';
+      else if (a.status === 'surrogate_success') badge = '~';
+      opt.textContent = `[${badge}] ${a.start_id} (${(a.subgroup || '').replace('nearest_', '')})`;
+    }
+    sel.appendChild(opt);
+  });
+}
+
+async function loadAssembly(idx) {
+  currentAssembly = idx;
+  currentFrame = 0;
+  _needsFitView = true;
+  document.getElementById('frame-slider').value = 0;
+  const a = viewerData[idx];
+  if (isZigzagAssembly(a)) {
+    const startN = Number(a.start_overlap_norm), finalN = Number(a.final_overlap_norm);
+    document.getElementById('assembly-info').innerHTML = `
+      <div><b>${a.start_id}</b> — ${a.subgroup} <span style="color:#9fb7d4">[${a.overlap_method||''}]</span></div>
+      <div>Pipeline success: <span style="color:#4caf50">YES</span> &nbsp; cycles: <b>${a.cycles_used??'—'}</b> &nbsp; stages: <b>${a.active_stages??'—'}</b> &nbsp; segments: <b>${a.n_segments??'—'}</b></div>
+      <div>Overlap reintroduced: <b>${a.reintroduced_overlap_count??0}×</b> &nbsp; overlap: ${Number.isFinite(startN)?startN.toExponential(2):'—'} → ${Number.isFinite(finalN)?finalN.toExponential(2):'—'} (strict τ=1e-6)</div>
+      <div style="margin-top:4px;font-size:10px;white-space:pre-wrap">${a.blocked_explanation||''}</div>
+    `;
+  } else if (isOverlapAssembly(a)) {
+    const okColor = a.success ? '#4caf50' : '#f44336';
+    const startN = Number(a.start_overlap_norm), finalN = Number(a.final_overlap_norm);
+    document.getElementById('assembly-info').innerHTML = `
+      <div><b>${a.start_id}</b> — ${a.subgroup} <span style="color:#9fb7d4">[${a.start_magnitude_bin||''}]</span></div>
+      <div>Strict success: <span style="color:${okColor}">${a.success?'YES':'NO'}</span> &nbsp; reduction: <b>${(a.pct_overlap_reduction||0).toFixed(1)}%</b></div>
+      <div>Overlap: ${Number.isFinite(startN)?startN.toExponential(2):'—'} → ${Number.isFinite(finalN)?finalN.toExponential(2):'—'} (strict τ=1e-6)</div>
+      <div>Stop: ${a.stop_reason||'—'} | distance: ${a.normalized_distance?.toFixed(4)||'—'}</div>
+      <div style="margin-top:4px;font-size:10px;white-space:pre-wrap">${a.blocked_explanation||''}</div>
+    `;
+  } else {
+    document.getElementById('assembly-info').innerHTML = `
+      <div><b>${a.start_id}</b> — ${a.subgroup}</div>
+      <div>Status: ${a.status} | Oracle: ${a.oracle_reason||'—'}</div>
+      <div>Distance: ${a.normalized_distance?.toFixed(4)||'—'}</div>
+      <div style="margin-top:4px;font-size:10px;white-space:pre-wrap">${a.blocked_explanation||''}</div>
+    `;
+  }
+  _morph = null;
+  disposeZigzagMorph();
+  if (isZigzagAssembly(a)) {
+    await setupZigzagFrames(a);
+  } else if (isOverlapAssembly(a)) {
+    await setupOverlapMorph(a);
+  }
+  await loadFrame(0);
+}
+
+async function loadFrame(frameIdx) {
+  currentFrame = frameIdx;
+  const loadId = ++_frameLoadId;
+  document.getElementById('frame-slider').value = frameIdx;
+  const a = viewerData[currentAssembly];
+  if (!a || !a.frames || !a.frames[frameIdx]) return;
+  const frame = a.frames[frameIdx];
+
+  document.getElementById('frame-indicator').textContent = `${frameIdx}/${a.frames.length-1}`;
+  const probEl = document.getElementById('prob-display');
+  if (isZigzagAssembly(a)) {
+    const ov = Number(frame.verified_overlap_norm);
+    const stageTag = `c${frame.cycle}·${frame.segment_stage === 'assemblability' ? 'asm' : 'overlap'}`;
+    const asmTag = frame.formula_assemblable ? ' assemblable' : ' blocked';
+    probEl.textContent = `${stageTag} | overlap=${Number.isFinite(ov)?ov.toExponential(2):'—'}${frame.overlap_ok?' ✓':''} |${asmTag}`;
+    probEl.style.color = (frame.overlap_ok && frame.formula_assemblable) ? '#4caf50' : (frame.overlap_ok ? '#ff9800' : '#f44336');
+  } else if (isOverlapAssembly(a)) {
+    const ov = Number(frame.verified_overlap_norm);
+    probEl.textContent = `overlap=${Number.isFinite(ov)?ov.toExponential(2):'—'}${frame.overlap_ok?' ✓':''}`;
+    probEl.style.color = frame.overlap_ok ? '#4caf50' : (ov < 1e-4 ? '#ff9800' : '#f44336');
+  } else {
+    const prob = frame.probability;
+    probEl.textContent = `P=${prob?.toFixed(3)||'—'}`;
+    probEl.style.color = prob >= (a.threshold||0.6) ? '#4caf50' : prob >= 0.3 ? '#ff9800' : '#f44336';
+  }
+
+  const termEl = document.getElementById('terminated-display');
+  if (frame.terminated) {
+    termEl.innerHTML = `<span class="terminated-indicator">TERMINATED @ frame ${frame.termination_frame||frameIdx}</span>`;
+  } else {
+    termEl.innerHTML = '';
+  }
+
+  updateParamPanel(frame);
+  updateInfoPanel(frame, a);
+
+  if (isZigzagAssembly(a)) {
+    // Zig-zag (6.5) runs are short, so we pre-generate every frame's real geometry and
+    // just reveal the active one (true stop-motion through each stage; see setupZigzagFrames).
+    showZigzagFrame(frameIdx);
+    return;
+  }
+
+  if (isOverlapAssembly(a)) {
+    // Overlap (6.4) runs hard-cut between solid start and final geometry (see setupOverlapMorph).
+    applyMorph(frameIdx);
+    showFrameWarning('');
+    return;
+  }
+
+  try {
+    const resp = await fetchJSON(`/api/frame/${currentRun}/${currentAssembly}/${frameIdx}`);
+    if (loadId !== _frameLoadId) return;
+    if (resp.obj && !resp.obj.error) {
+      updateMesh(resp.obj);
+      showFrameWarning('');
+    } else if (resp.obj && resp.obj.error) {
+      showFrameWarning(`Geometry for this frame could not be rendered: ${resp.obj.error}. Showing the last valid mesh while parameter/probability data still updates.`);
+    }
+  } catch(e) { console.warn('Frame load error:', e); }
+}
+
+const _PART_COLORS = {bracket:0x607d8b, main_pin:0x4fc3f7, splint:0xff7043};
+
+function clearMeshGroup() {
+  while(meshGroup.children.length) {
+    const child = meshGroup.children[0];
+    meshGroup.remove(child);
+    child.traverse(o => { if(o.geometry) o.geometry.dispose(); if(o.material) o.material.dispose(); });
+  }
+}
+
+// Dispose every pre-generated zig-zag frame group, then clear the state.
+// Safe to call when no zig-zag run is active.
+function disposeZigzagMorph() {
+  if (_zigzagMorph && _zigzagMorph.frameGroups) {
+    for (const g of _zigzagMorph.frameGroups) {
+      if (!g) continue;
+      if (g.parent) g.parent.remove(g);
+      g.traverse(o => { if(o.geometry) o.geometry.dispose(); if(o.material) o.material.dispose(); });
+    }
+  }
+  _zigzagMorph = null;
+}
+
+function updateMesh(objData) {
+  clearMeshGroup();
+  _morph = null;
+  disposeZigzagMorph();
+  const loader = new THREE.OBJLoader();
+
+  for (const [part, objText] of Object.entries(objData)) {
+    if (part === 'error') continue;
+    try {
+      const obj = loader.parse(objText);
+      obj.traverse(child => {
+        if (child.isMesh && child.geometry) {
+          if (!child.geometry.attributes.normal) child.geometry.computeVertexNormals();
+          child.material = new THREE.MeshPhongMaterial({
+            color: _PART_COLORS[part] || 0x888888,
+            flatShading: false,
+            side: THREE.DoubleSide,
+          });
+        }
+      });
+      meshGroup.add(obj);
+    } catch(e) { console.warn('OBJ parse error for', part, e); }
+  }
+  if (_needsFitView) {
+    fitView();
+    _needsFitView = false;
+  }
+}
+
+// --- Overlap (6.4) start->final geometry switch --------------------------------
+// Per-frame CAD generation cannot keep up with 50-frame playback, so for overlap
+// runs we fetch only the start (frame 0) and final geometry once. They are rendered
+// as normal solid/opaque parts (identical material to updateMesh) and shown with a
+// clean hard cut at the slider mid-point -- start (overlapping) parts for the first
+// half, the final repaired parts for the second half. No transparency, no ghosting.
+// The per-frame overlap data (norm, residuals, sparkline) still updates every frame.
+function buildMorphGroup(objData) {
+  if (!objData || objData.error) return null;
+  const loader = new THREE.OBJLoader();
+  const group = new THREE.Group();
+  let any = false;
+  for (const [part, objText] of Object.entries(objData)) {
+    if (part === 'error') continue;
+    try {
+      const obj = loader.parse(objText);
+      obj.traverse(child => {
+        if (child.isMesh && child.geometry) {
+          if (!child.geometry.attributes.normal) child.geometry.computeVertexNormals();
+          child.material = new THREE.MeshPhongMaterial({
+            color: _PART_COLORS[part] || 0x888888,
+            flatShading: false,
+            side: THREE.DoubleSide,
+          });
+        }
+      });
+      group.add(obj); any = true;
+    } catch(e) { console.warn('morph OBJ parse error for', part, e); }
+  }
+  return any ? group : null;
+}
+
+function setGroupShown(group, shown) {
+  if (group) group.visible = !!shown;
+}
+
+function applyMorph(frameIdx) {
+  if (!_morph) return;
+  const { startGroup, endGroup } = _morph;
+  const fin = _morph.finalIdx || 0;
+  const t = fin > 0 ? Math.min(1, Math.max(0, frameIdx / fin)) : (frameIdx > 0 ? 1 : 0);
+  // Exactly one solid group visible at a time (no blending): start until mid-point,
+  // then the final repaired assembly. Falls back to whichever side exists.
+  let showEnd;
+  if (!endGroup) showEnd = false;
+  else if (!startGroup) showEnd = true;
+  else showEnd = t >= 0.5;
+  setGroupShown(startGroup, !showEnd);
+  setGroupShown(endGroup, showEnd);
+}
+
+async function setupOverlapMorph(a) {
+  clearMeshGroup();
+  _morph = null;
+  disposeZigzagMorph();
+  const finalIdx = (a.frames ? a.frames.length : 1) - 1;
+  const asmAtRequest = currentAssembly;
+  const runAtRequest = currentRun;
+  ++_frameLoadId; // invalidate any in-flight per-frame geometry fetch
+  let startResp, endResp;
+  try {
+    [startResp, endResp] = await Promise.all([
+      fetchJSON(`/api/frame/${currentRun}/${currentAssembly}/0`),
+      fetchJSON(`/api/frame/${currentRun}/${currentAssembly}/${finalIdx}`),
+    ]);
+  } catch(e) { console.warn('morph fetch error', e); showFrameWarning('Could not fetch start/final geometry.'); return; }
+  if (asmAtRequest !== currentAssembly || runAtRequest !== currentRun) return; // superseded by a newer load
+  const startGroup = buildMorphGroup(startResp && startResp.obj);
+  const endGroup = buildMorphGroup(endResp && endResp.obj);
+  if (!startGroup && !endGroup) {
+    showFrameWarning('Start/final geometry could not be rendered for this assembly.');
+    return;
+  }
+  if (startGroup) meshGroup.add(startGroup);
+  if (endGroup) meshGroup.add(endGroup);
+  _morph = { startGroup, endGroup, finalIdx };
+  showFrameWarning('');
+  if (_needsFitView) { fitView(); _needsFitView = false; }
+}
+
+// --- Zig-zag (6.5) per-frame stop-motion --------------------------------------
+// A successful zig-zag run is a sequence of stages (overlap -> asm -> overlap ...)
+// whose frames are a *real* trajectory: each frame has its own params/geometry. Zig-
+// zag runs are short (<= ~17 frames), so unlike the 50-frame 6.4 run (start/final only)
+// we can afford to pre-generate the true geometry of every frame once and then just
+// toggle which one is visible. This shows the actual motion through every stage (solid
+// parts, no ghosting) and stitches the stages end-to-start automatically, because each stage's
+// final frame and the next stage's first frame share the same params. Geometry is
+// fetched sequentially so the CAD server only generates one part set at a time.
+async function setupZigzagFrames(a) {
+  clearMeshGroup();
+  _morph = null;
+  disposeZigzagMorph();
+  const frames = a.frames || [];
+  if (!frames.length) return;
+  const asmAtRequest = currentAssembly;
+  const runAtRequest = currentRun;
+  const loadId = ++_frameLoadId; // invalidate any in-flight per-frame geometry fetch
+  const frameGroups = new Array(frames.length).fill(null);
+  for (let i = 0; i < frames.length; i++) {
+    showFrameWarning(`Generating stage geometry… ${i + 1}/${frames.length}`);
+    let resp;
+    try {
+      resp = await fetchJSON(`/api/frame/${currentRun}/${currentAssembly}/${i}`);
+    } catch(e) { console.warn('zigzag frame fetch error', i, e); continue; }
+    // Abort if the user switched runs/assemblies, or a newer load superseded us.
+    if (loadId !== _frameLoadId || asmAtRequest !== currentAssembly || runAtRequest !== currentRun) return;
+    const g = buildMorphGroup(resp && resp.obj);
+    if (g) { frameGroups[i] = g; meshGroup.add(g); setGroupShown(g, false); } // hidden until revealed
+  }
+  if (!frameGroups.some(Boolean)) {
+    showFrameWarning('Geometry could not be rendered for this run.');
+    return;
+  }
+  _zigzagMorph = { frameGroups };
+  // Frame the camera once over the whole trajectory. Box3.setFromObject includes hidden
+  // meshes, so the union framing is stable even though only one frame is shown at a time.
+  if (_needsFitView) { fitView(); _needsFitView = false; }
+  showFrameWarning('');
+}
+
+// Show exactly one frame's real geometry, solid and opaque; hide the rest. No blending.
+function showZigzagFrame(frameIdx) {
+  if (!_zigzagMorph || !_zigzagMorph.frameGroups) return;
+  const groups = _zigzagMorph.frameGroups;
+  for (let i = 0; i < groups.length; i++) {
+    if (groups[i]) setGroupShown(groups[i], i === frameIdx);
+  }
+}
+
+function showFrameWarning(message) {
+  const warning = document.getElementById('frame-warning');
+  if (!warning) return;
+  warning.textContent = message || '';
+  warning.style.display = message ? 'block' : 'none';
+}
+
+function fitView() {
+  if (!renderer || !orbitControls || meshGroup.children.length === 0) return;
+  const box = new THREE.Box3().setFromObject(meshGroup);
+  if (box.isEmpty()) return;
+  const sphere = box.getBoundingSphere(new THREE.Sphere());
+  const radius = Math.max(sphere.radius, 1);
+  const fov = camera.fov * Math.PI / 180;
+  const distance = (radius / Math.sin(fov / 2)) * 1.35;
+  const direction = camera.position.clone().sub(orbitControls.target);
+  if (direction.lengthSq() < 1e-9) direction.set(1, 0.75, 1);
+  direction.normalize();
+  camera.position.copy(sphere.center).add(direction.multiplyScalar(distance));
+  orbitControls.target.copy(sphere.center);
+  camera.near = Math.max(distance / 1000, 0.01);
+  camera.far = distance * 1000;
+  camera.updateProjectionMatrix();
+  orbitControls.update();
+}
+
+const PARAM_NAMES = ["wall_thickness","outer_span","leg_length","depth","main_hole_offset_from_open_end","main_hole_radius","main_pin_length","main_pin_radius","cross_hole_radius","cross_hole_distance_from_free_end","splint_radius","splint_length","overhang_span_y"];
+const PARAM_RANGES = {"wall_thickness":[2,12],"outer_span":[30,100],"leg_length":[20,80],"depth":[12,60],"main_hole_offset_from_open_end":[2,62],"main_hole_radius":[2,10],"main_pin_length":[39,182],"main_pin_radius":[1.5,10],"cross_hole_radius":[1,5.5],"cross_hole_distance_from_free_end":[1.5,30],"splint_radius":[0.8,4],"splint_length":[7,42],"overhang_span_y":[24,200]};
+function paramStd(name) {
+  return benchmarkMetadata?.stds?.[name] || 1;
+}
+
+function updateParamPanel(frame) {
+  const panel = document.getElementById('param-panel');
+  if (!frame.params) { panel.innerHTML=''; return; }
+  const assembly = viewerData[currentAssembly];
+  const startParams = assembly?.frames?.[0]?.params || frame.params;
+  const grad = frame.gradient_direction;
+  const maxGrad = grad ? Math.max(...grad.map(g => Math.abs(g)), 1e-9) : 1;
+  let html = `
+    <div class="param-header">
+      <div>
+        <div class="param-title">Parameters and Gradient</div>
+        <div style="font-size:11px;color:#9fb7d4;margin-top:2px">Range shows start -> current. Delta color intensity uses normalized change. Gradient is separate and centered at zero.</div>
+      </div>
+      <div class="param-legend">
+        <span class="legend-item"><span class="legend-swatch" style="background:#f8fafc"></span>start</span>
+        <span class="legend-item"><span class="legend-swatch" style="background:#facc15"></span>current</span>
+        <span class="legend-item"><span class="legend-swatch" style="background:#60a5fa"></span>change</span>
+        <span class="legend-item"><span class="legend-swatch" style="background:#22c55e"></span>+grad</span>
+        <span class="legend-item"><span class="legend-swatch" style="background:#ef4444"></span>-grad</span>
+      </div>
+    </div>
+    <div class="param-table">
+      <div class="param-row-labels">
+        <span>Parameter</span><span style="text-align:right">Value</span><span style="text-align:right">Delta</span><span>Physical range</span><span>Gradient direction</span>
+      </div>
+  `;
+  PARAM_NAMES.forEach((name, i) => {
+    const val = frame.params[name];
+    const startVal = startParams[name] ?? val;
+    const [lo,hi] = PARAM_RANGES[name];
+    const span = hi - lo;
+    const pct = Math.max(0, Math.min(100, ((val - lo) / span) * 100));
+    const startPct = Math.max(0, Math.min(100, ((startVal - lo) / span) * 100));
+    const leftPct = Math.min(startPct, pct);
+    const widthPct = Math.abs(pct - startPct);
+    const delta = val - startVal;
+    const deltaClass = delta > 1e-9 ? 'pos' : delta < -1e-9 ? 'neg' : 'zero';
+    const normDelta = delta / (paramStd(name) || span || 1);
+    const deltaColor = deltaColorFor(normDelta);
+    const g = grad && grad[i] !== undefined ? grad[i] : 0;
+    const gradWidth = Math.min(50, Math.abs(g) / maxGrad * 50);
+    const gradClass = g >= 0 ? 'pos' : 'neg';
+    const gradColor = gradientColorFor(g);
+    const gradText = grad ? `${g >= 0 ? '+' : ''}${g.toFixed(3)}` : 'n/a';
+    const displayName = name.replace(/_/g, ' ');
+
+    html += `
+      <div class="param-row" title="${displayName}: start ${formatNumber(startVal)}, current ${formatNumber(val)}, delta ${formatSigned(delta)} (${formatSigned(normDelta)} std), gradient ${gradText}">
+        <span class="param-name">${displayName}</span>
+        <span class="param-value">${formatNumber(val)}</span>
+        <span class="param-delta ${deltaClass}" style="color:${deltaColor}">${formatSigned(delta)}</span>
+        <div>
+          <div class="range-bar">
+            <div class="range-delta" style="left:${leftPct}%;width:${Math.max(widthPct, 0.3)}%"></div>
+            <div class="range-marker start" style="left:${startPct}%"></div>
+            <div class="range-marker current" style="left:${pct}%"></div>
+          </div>
+          <div class="range-endpoints"><span>${formatNumber(lo)}</span><span>${formatNumber(hi)}</span></div>
+        </div>
+        <div>
+          <div class="grad-bar">
+            <div class="grad-center"></div>
+            <div class="grad-fill ${gradClass}" style="width:${gradWidth}%;background:${gradColor}"></div>
+          </div>
+          <div class="grad-label">${gradText}</div>
+        </div>
+      </div>
+    `;
+  });
+  html += '</div>';
+  panel.innerHTML = html;
+}
+
+function formatNumber(value) {
+  if (value === undefined || value === null || Number.isNaN(value)) return '—';
+  const abs = Math.abs(value);
+  if (abs >= 100) return value.toFixed(1);
+  if (abs >= 10) return value.toFixed(2);
+  return value.toFixed(3);
+}
+
+function formatSigned(value) {
+  if (value === undefined || value === null || Number.isNaN(value)) return '—';
+  if (Math.abs(value) < 1e-9) return '0';
+  return `${value > 0 ? '+' : ''}${formatNumber(value)}`;
+}
+
+function deltaColorFor(normDelta) {
+  const magnitude = Math.min(1, Math.abs(normDelta) / 0.75);
+  if (magnitude < 1e-6) return '#94a3b8';
+  const weak = normDelta > 0 ? [187, 247, 208] : [254, 202, 202];
+  const strong = normDelta > 0 ? [34, 197, 94] : [239, 68, 68];
+  const rgb = weak.map((channel, i) => Math.round(channel + (strong[i] - channel) * magnitude));
+  return `rgb(${rgb[0]},${rgb[1]},${rgb[2]})`;
+}
+
+function gradientColorFor(g) {
+  const intensity = Math.min(1, Math.abs(g) * 2.5);
+  if (Math.abs(g) < 1e-9) return 'rgb(150,150,150)';
+  if (g > 0) {
+    const r = Math.round(150 * (1 - intensity) + 40 * intensity);
+    const gr = Math.round(150 * (1 - intensity) + 220 * intensity);
+    const b = Math.round(150 * (1 - intensity) + 60 * intensity);
+    return `rgb(${r},${gr},${b})`;
+  }
+  const r = Math.round(150 * (1 - intensity) + 230 * intensity);
+  const gr = Math.round(150 * (1 - intensity) + 60 * intensity);
+  const b = Math.round(150 * (1 - intensity) + 60 * intensity);
+  return `rgb(${r},${gr},${b})`;
+}
+
+function overlapSparkline(assembly, curIdx) {
+  const fs = assembly.frames || [];
+  if (fs.length < 2) return '';
+  const logs = fs.map(f => Math.log10(Math.max(Number(f.verified_overlap_norm) || 0, 1e-9)));
+  const lo = Math.min(...logs), hi = Math.max(...logs);
+  const W = 248, H = 48, pad = 4, span = (hi - lo) || 1, n = fs.length - 1;
+  const pts = logs.map((l, i) => {
+    const x = pad + (W - 2 * pad) * (i / n);
+    const y = pad + (H - 2 * pad) * (1 - (l - lo) / span);
+    return `${x.toFixed(1)},${y.toFixed(1)}`;
+  }).join(' ');
+  const cx = pad + (W - 2 * pad) * (curIdx / n);
+  let thr = '';
+  const tlog = -6;
+  if (tlog >= lo && tlog <= hi) {
+    const ty = pad + (H - 2 * pad) * (1 - (tlog - lo) / span);
+    thr = `<line x1="${pad}" y1="${ty.toFixed(1)}" x2="${W - pad}" y2="${ty.toFixed(1)}" stroke="#4caf50" stroke-dasharray="3 2" stroke-width="1"/>`;
+  }
+  return `<svg width="${W}" height="${H}" style="background:#0b1f3a;border:1px solid #1c3a63;border-radius:4px;margin-top:3px">`
+    + thr
+    + `<polyline points="${pts}" fill="none" stroke="#ffb74d" stroke-width="1.5"/>`
+    + `<line x1="${cx.toFixed(1)}" y1="${pad}" x2="${cx.toFixed(1)}" y2="${H - pad}" stroke="#4fc3f7" stroke-width="1"/>`
+    + `</svg>`
+    + `<div style="font-size:9px;color:#9fb7d4">log10 overlap; green dashes = strict τ=1e-6; blue = current frame</div>`;
+}
+
+function updateInfoPanel(frame, assembly) {
+  const panel = document.getElementById('info-panel');
+  if (isOverlapAssembly(assembly)) {
+    const ov = Number(frame.verified_overlap_norm);
+    let html = '<div style="font-size:11px;font-weight:bold;margin-bottom:4px">Overlap (analytic)</div>';
+    html += `<div class="info-row"><span class="info-label">Overlap norm:</span> ${Number.isFinite(ov)?ov.toExponential(3):'—'} ${frame.overlap_ok?'<span style="color:#4caf50">✓ clean</span>':'<span style="color:#f44336">✗</span>'}</div>`;
+    if (frame.pred_overlap_norm != null) html += `<div class="info-row"><span class="info-label">MLP predicted:</span> ${Number(frame.pred_overlap_norm).toExponential(3)}</div>`;
+    html += `<div class="info-row"><span class="info-label">Phase:</span> ${frame.phase||'—'}</div>`;
+    html += `<div class="info-row"><span class="info-label">Distance:</span> ${frame.normalized_distance?.toFixed(4)||'—'}</div>`;
+    html += `<div class="info-row"><span class="info-label">Strict τ:</span> 1e-6</div>`;
+    if (frame.terminated && frame.stop_reason) html += `<div class="info-row"><span class="info-label">Stop:</span> ${frame.stop_reason}</div>`;
+    const pr = frame.pair_residuals || {};
+    const prKeys = Object.keys(pr);
+    if (prKeys.length) {
+      html += '<div style="font-size:11px;font-weight:bold;margin-top:6px">Per-pair residuals</div>';
+      for (const k of prKeys) {
+        const v = Number(pr[k]);
+        const dom = (k === frame.dominant_pair);
+        html += `<div class="info-row"><span class="info-label">${k.replace(/__/g, ' ↔ ')}:</span> <span style="color:${dom?'#ffb74d':'#c7d2fe'}">${Number.isFinite(v)?v.toExponential(2):'—'}${dom?' ◄':''}</span></div>`;
+      }
+    }
+    html += '<div style="font-size:11px;font-weight:bold;margin-top:6px">Overlap-norm trajectory</div>';
+    html += overlapSparkline(assembly, frame.frame_idx ?? currentFrame);
+    panel.innerHTML = html;
+    return;
+  }
+  let html = '<div style="font-size:11px;font-weight:bold;margin-bottom:4px">Frame Info</div>';
+  html += `<div class="info-row"><span class="info-label">Step magnitude:</span> ${frame.step_magnitude?.toExponential(2)||'—'}</div>`;
+  html += `<div class="info-row"><span class="info-label">Distance:</span> ${frame.normalized_distance?.toFixed(4)||'—'}</div>`;
+  html += `<div class="info-row"><span class="info-label">Valid:</span> ${frame.valid ? '✓':'✗'}</div>`;
+  html += `<div class="info-row"><span class="info-label">Oracle:</span> ${frame.oracle_reason||'—'}</div>`;
+  html += `<div class="info-row"><span class="info-label">Threshold τ:</span> ${assembly.threshold||'—'}</div>`;
+  if (frame.stop_reason) html += `<div class="info-row"><span class="info-label">Stop:</span> ${frame.stop_reason}</div>`;
+  panel.innerHTML = html;
+}
+
+// Controls
+document.getElementById('run-select').addEventListener('change', e => loadRun(e.target.value));
+document.getElementById('assembly-select').addEventListener('change', e => loadAssembly(+e.target.value));
+document.getElementById('frame-slider').addEventListener('input', e => loadFrame(+e.target.value));
+document.getElementById('btn-play').addEventListener('click', () => {
+  if (playing) { clearInterval(playInterval); playing=false; document.getElementById('btn-play').textContent='▶'; }
+  else { playing=true; document.getElementById('btn-play').textContent='⏸'; playInterval=setInterval(()=>{let f=currentFrame+1; if(f>=50){f=0;} loadFrame(f);},250); }
+});
+document.getElementById('btn-first').addEventListener('click', () => loadFrame(0));
+document.getElementById('btn-last').addEventListener('click', () => loadFrame(49));
+
+// Modal for info/stats
+function showModal(html) {
+  const content = document.getElementById('modal-content');
+  content.innerHTML = `<span id="modal-close" onclick="closeModal()">×</span>` + html;
+  renderLatexIn(content);
+  document.getElementById('modal-overlay').classList.add('active');
+}
+function closeModal() { document.getElementById('modal-overlay').classList.remove('active'); }
+document.getElementById('modal-overlay').addEventListener('click', e => { if(e.target.id==='modal-overlay') closeModal(); });
+
+function renderLatexIn(element) {
+  if (!window.renderMathInElement) {
+    setTimeout(() => renderLatexIn(element), 100);
+    return;
+  }
+  window.renderMathInElement(element, {
+    delimiters: [
+      {left: '$$', right: '$$', display: true},
+      {left: '$', right: '$', display: false},
+      {left: '\\[', right: '\\]', display: true},
+      {left: '\\(', right: '\\)', display: false},
+    ],
+    throwOnError: false,
+    ignoredTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+  });
+}
+
+document.getElementById('btn-info').addEventListener('click', async () => {
+  if (!currentRun) return;
+  const md = await fetchText(`/api/algorithm_md/${currentRun}`);
+  showModal(marked.parse(md));
+});
+document.getElementById('btn-stats').addEventListener('click', async () => {
+  if (!currentRun) return;
+  const md = await fetchText(`/api/statistics_md/${currentRun}`);
+  showModal(marked.parse(md));
+});
+document.getElementById('btn-lock-study').addEventListener('click', async () => {
+  const md = await fetchText('/api/constraint_study_md/parameter_locks_v1');
+  showModal(marked.parse(md));
+});
+
+document.addEventListener('keydown', e => { if(e.key==='Escape') closeModal(); });
+
+function writeSmokeResult(status, checks, error) {
+  let node = document.getElementById('smoke-result');
+  if (!node) {
+    node = document.createElement('pre');
+    node.id = 'smoke-result';
+    node.style.display = 'none';
+    document.body.appendChild(node);
+  }
+  node.textContent = JSON.stringify({status, checks, error: error ? String(error) : null}, null, 2);
+}
+
+async function runSmokeTest() {
+  const checks = [];
+  const check = (name, ok, detail = '') => {
+    checks.push({name, ok: !!ok, detail});
+    if (!ok) throw new Error(`${name}: ${detail}`);
+  };
+
+  const expectedStarts = benchmarkMetadata.n_starts;
+  for (let i = 0; i < 60 && expectedStarts && viewerData.length !== expectedStarts; i++) {
+    await sleep(250);
+  }
+  check('run selector populated', document.getElementById('run-select').options.length >= 1);
+  check('viewer data loaded', viewerData.length === expectedStarts, `length=${viewerData.length}, expected=${expectedStarts}`);
+  check('assembly selector populated', document.getElementById('assembly-select').options.length === expectedStarts);
+
+  const successIdx = viewerData.findIndex(a => a.oracle_label === 1 && a.status === 'surrogate_success');
+  check('has renderable oracle-confirmed surrogate success', successIdx >= 0);
+  await loadAssembly(successIdx);
+  await sleep(300);
+  check('assembly info updated', document.getElementById('assembly-info').textContent.includes(viewerData[successIdx].start_id));
+  check('parameter panel has 13 bars', document.querySelectorAll('#param-panel .param-row').length === 13);
+
+  const successAssembly = viewerData[successIdx];
+  const renderFrameIdx = successAssembly.frames.findIndex(f => f.valid && f.probability >= successAssembly.threshold);
+  check('has valid renderable success frame', renderFrameIdx >= 0);
+  await loadFrame(renderFrameIdx);
+  await sleep(1500);
+  check('probability display updated', document.getElementById('prob-display').textContent.startsWith('P='));
+  check('mesh group populated', meshGroup.children.length >= 3, `children=${meshGroup.children.length}`);
+
+  await loadFrame(49);
+  await sleep(300);
+  check('termination indicator visible at final frame', document.getElementById('terminated-display').textContent.includes('TERMINATED'));
+
+  document.getElementById('btn-info').click();
+  await sleep(300);
+  check('info modal opens', document.getElementById('modal-overlay').classList.contains('active'));
+  check('info modal renders markdown', document.getElementById('modal-content').textContent.includes('Intuition'));
+  closeModal();
+  await sleep(100);
+
+  document.getElementById('btn-stats').click();
+  await sleep(300);
+  check('statistics modal opens', document.getElementById('modal-overlay').classList.contains('active'));
+  check('statistics modal renders markdown', document.getElementById('modal-content').textContent.includes('Overall'));
+  closeModal();
+  await sleep(100);
+
+  document.getElementById('btn-lock-study').click();
+  await sleep(300);
+  check('lock study modal opens', document.getElementById('modal-overlay').classList.contains('active'));
+  check('lock study modal renders markdown', document.getElementById('modal-content').textContent.includes('Parameter Lock Robustness Study'));
+  closeModal();
+
+  const before = currentFrame;
+  document.getElementById('btn-play').click();
+  await sleep(650);
+  document.getElementById('btn-play').click();
+  check('playback advances frames', currentFrame !== before, `before=${before}, after=${currentFrame}`);
+
+  const invalidResp = await fetchJSON(`/api/frame/${currentRun}/0/0`);
+  check('invalid geometry response is graceful', invalidResp.obj && (invalidResp.obj.error || Object.keys(invalidResp.obj).length >= 1));
+
+  writeSmokeResult('PASS', checks);
+}
+
+window.__viewerBootReached = true;
+const initPromise = init();
+window.__viewerInitPromise = initPromise;
+if (new URLSearchParams(window.location.search).get('smoke') === '1') {
+  initPromise
+    .then(runSmokeTest)
+    .catch(error => writeSmokeResult('FAIL', [], error));
+}
+</script>
+</body>
+</html>

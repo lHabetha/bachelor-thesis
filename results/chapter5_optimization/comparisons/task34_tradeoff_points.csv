@@ -1,0 +1,17 @@
+label,family,run_id,optimizer_id,tau,constraint_id,verified_ok,surrogate_success,false_ok,no_crossing,mean_l2,mean_l2_verified,mean_l1,active_coords
+One-shot gradient,baseline,one_shot_gradient_bracket_v1_tau0.75_ch5,one_shot_gradient_bracket_v1,0.75,,151,143,0,50,0.31643309523809526,0.3560769473352255,0.851155334787882,11.99
+Multi-fixed-step gradient,baseline,receding_multiscale_ch5_tau0.75,receding_gradient_multiscale_v1,0.75,,164,159,0,41,0.45042958611853506,0.5130345868504207,1.209238759566253,12.005
+Proximity lambda=0.10,baseline,penalized_proximity_tau0.75_labelblind,penalized_proximity_descent_v1,0.75,,158,151,0,33,0.29312605953454307,0.33536630676453005,0.7684695708086831,11.705
+Trust region hybrid,baseline,trust_region_tau0.75_labelblind,trust_region_hybrid_v1,0.75,,200,200,0,0,0.57705,0.57705,0.8767740137528659,6.015
+Coordinate-axis bracket,baseline,coordinate_axis_tau0.75_labelblind,coordinate_axis_bracket_v1,0.75,,200,200,0,0,0.5857,0.5857,0.5857,1.0
+Adaptive gradient,adaptive_gradient,task34_adaptive_gradient_tau0.60,adaptive_multistep_gradient_v1,0.6,,157,162,8,38,0.31482128928947734,0.3596973892475024,0.8505098404077586,11.765
+Adaptive gradient,adaptive_gradient,task34_adaptive_gradient_tau0.75,adaptive_multistep_gradient_v1,0.75,,165,158,0,42,0.33203114699883657,0.36718677275407335,0.8931535716398844,12.12
+Adaptive gradient,adaptive_gradient,task34_adaptive_gradient_tau0.90,adaptive_multistep_gradient_v1,0.9,,165,157,0,43,0.3574944607482638,0.3980518970950028,0.9559186186518318,12.225
+Adaptive penalty lambda=0.10,adaptive_penalty,task34_adaptive_penalty_lam0_10_tau0.60,adaptive_multistep_penalty_lam0_10_v1,0.6,,158,163,8,37,0.3129599982664114,0.36006796341451314,0.8453840555197101,11.765
+Adaptive penalty lambda=0.10,adaptive_penalty,task34_adaptive_penalty_lam0_10_tau0.75,adaptive_multistep_penalty_lam0_10_v1,0.75,,165,158,0,42,0.32996084255121766,0.36695293583664335,0.8875682711097497,12.12
+Adaptive penalty lambda=0.10,adaptive_penalty,task34_adaptive_penalty_lam0_10_tau0.90,adaptive_multistep_penalty_lam0_10_v1,0.9,,165,157,0,43,0.35539947705188746,0.3977881459366556,0.9502501173011431,12.225
+Adaptive penalty lambda=0.05,adaptive_penalty_sweep,task34_adaptive_penalty_lam0_05_tau0.75,adaptive_multistep_penalty_lam0_05_v1,0.75,,165,158,0,42,0.3314223022251045,0.36706152151097965,0.8914870532234025,12.115
+Adaptive penalty lambda=0.10,adaptive_penalty_sweep,task34_adaptive_penalty_lam0_10_tau0.75,adaptive_multistep_penalty_lam0_10_v1,0.75,,165,158,0,42,0.32996084255121766,0.36695293583664335,0.8875682711097497,12.12
+Adaptive penalty lambda=0.20,adaptive_penalty_sweep,task34_adaptive_penalty_lam0_20_tau0.75,adaptive_multistep_penalty_lam0_20_v1,0.75,,164,158,0,42,0.3290406138994084,0.3652689461465722,0.8852992730418968,12.125
+Adaptive penalty lambda=0.30,adaptive_penalty_sweep,task34_adaptive_penalty_lam0_30_tau0.75,adaptive_multistep_penalty_lam0_30_v1,0.75,,164,158,0,42,0.327994577671318,0.3652471277121062,0.8835668778597666,12.12
+Adaptive penalty lambda=0.50,adaptive_penalty_sweep,task34_adaptive_penalty_lam0_50_tau0.75,adaptive_multistep_penalty_lam0_50_v1,0.75,,161,155,0,45,0.3215672141056211,0.35405138707306255,0.8625214274269045,12.11

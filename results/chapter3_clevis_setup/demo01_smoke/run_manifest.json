@@ -1,0 +1,13 @@
+{
+  "out_dir": "results/chapter3_clevis_setup",
+  "n_samples": 1,
+  "records": [
+    {
+      "sample_name": "from_params_json",
+      "label_reason": "assemb-splint_clearance",
+      "validity_ok": true,
+      "assemblable": 1,
+      "overlap_ok": true
+    }
+  ]
+}

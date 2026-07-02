@@ -1,0 +1,22 @@
+{
+  "schema_version": "v1",
+  "run_id": "ch5_sphere_shrink_32_matched_tau0.90",
+  "optimizer_id": "random_sphere_coordinate_shrink_32_v1",
+  "model_id": "row1_uncertainty_disagreement_B1000_T2500_best",
+  "model_dir": "results/chapter5_optimization/checkpoints/row1_uncertainty_disagreement_B1000_T2500_best",
+  "benchmark_set": "blocked_200_v1",
+  "tau": 0.9,
+  "n_starts": 200,
+  "constraint_id": null,
+  "locked_params": [],
+  "baseline_run_id": null,
+  "wall_time_s": 8.54964828491211,
+  "timestamp": "2026-06-14T14:47:39.614004",
+  "results_summary": {
+    "surrogate_success": 148,
+    "oracle_confirmed": 163,
+    "false_success": 0,
+    "no_crossing": 52,
+    "mean_distance": 0.5718447552342958
+  }
+}

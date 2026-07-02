@@ -1,0 +1,27 @@
+{
+  "out_dir": "results/chapter3_clevis_setup",
+  "n_samples": 3,
+  "records": [
+    {
+      "sample_name": "seed_42_extreme",
+      "label_reason": "assemb-splint_clearance",
+      "validity_ok": true,
+      "assemblable": 1,
+      "overlap_ok": null
+    },
+    {
+      "sample_name": "seed_43_latin_hypercube",
+      "label_reason": "blocked",
+      "validity_ok": true,
+      "assemblable": 0,
+      "overlap_ok": null
+    },
+    {
+      "sample_name": "seed_44_uniform",
+      "label_reason": "assemb-inward_movement",
+      "validity_ok": true,
+      "assemblable": 1,
+      "overlap_ok": null
+    }
+  ]
+}

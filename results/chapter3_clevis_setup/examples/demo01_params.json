@@ -1,0 +1,23 @@
+{
+  "wall_thickness": 8.0,
+  "outer_span": 60.0,
+  "leg_length": 50.0,
+  "depth": 24.0,
+  "main_hole_offset_from_open_end": 20.0,
+  "main_hole_radius": 4.0,
+  "main_pin_length": 90.0,
+  "main_pin_radius": 3.95,
+  "cross_hole_radius": 2.5,
+  "cross_hole_distance_from_free_end": 5.0,
+  "splint_radius": 2.2,
+  "splint_length": 30.0,
+  "overhang_span_y": 110.0,
+  "exploded_gap": 30.0,
+  "_derived": {
+    "pin_half": 45.0,
+    "hole_z": -34.0,
+    "cross_y": -40.0,
+    "head_len": 3.6,
+    "head_r": 7.9
+  }
+}

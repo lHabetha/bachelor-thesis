@@ -1,0 +1,1205 @@
+{
+  "chapter": 7,
+  "title": "AeroForge overlap repair and aero-preserve viewer allowlist",
+  "policy": {
+    "viewer_dropdown_rule": "One allowlist entry per grid cell in tab:aeroforge-overlap-repair-grid (42 runs = 6 model columns × 7 optimizer rows) plus one entry per thesis row in tab:aeroforge-aero-preserve (7 runs). Column A entries also anchor tab:aeroforge-overlap-repair (headline table is the A column subset).",
+    "allowlist_entries": 49,
+    "unique_run_folders": 49,
+    "repair_grid_runs": 42,
+    "aero_preserve_runs": 7
+  },
+  "required_files": [
+    "manifest.json",
+    "viewer_data.json",
+    "statistics.json"
+  ],
+  "optional_files": {
+    "sim_eval.json": "Post-repair quick-sim aggregate; required for aero-preserve entries, optional for grid repair.",
+    "meshes/": "Not shipped - meshes are rendered on demand by the public viewer."
+  },
+  "entries": [
+    {
+      "entry_id": "7/repair/a/one_shot_gradient_line_search",
+      "thesis_anchors": [
+        "tab:aeroforge-overlap-repair",
+        "tab:aeroforge-overlap-repair-grid"
+      ],
+      "display_label": "§7 — Col A: One-shot gradient",
+      "category": "overlap_repair",
+      "variant_key": "a",
+      "grid_column": "A",
+      "optimizer_id": "one_shot_gradient_line_search",
+      "optimizer_label": "One-shot gradient",
+      "model_id": "eng_multitask_gate_strong_100k",
+      "group_id": "model_a_eng_multitask_gate_strong_featgrad_detached",
+      "run_id": "model_a_eng_multitask_gate_strong_featgrad_detached__one_shot_gradient_line_search__eng_multitask_gate_strong_100k",
+      "public_viewer_path": "viewers/chapter7_aeroforge_repair/data/model_a_eng_multitask_gate_strong_featgrad_detached__one_shot_gradient_line_search__eng_multitask_gate_strong_100k/",
+      "false_ok": 16,
+      "required_files": [
+        "manifest.json",
+        "viewer_data.json",
+        "statistics.json"
+      ],
+      "optional_files": [
+        "sim_eval.json"
+      ]
+    },
+    {
+      "entry_id": "7/repair/a/receding_multistep_gradient",
+      "thesis_anchors": [
+        "tab:aeroforge-overlap-repair",
+        "tab:aeroforge-overlap-repair-grid"
+      ],
+      "display_label": "§7 — Col A: Receding gradient",
+      "category": "overlap_repair",
+      "variant_key": "a",
+      "grid_column": "A",
+      "optimizer_id": "receding_multistep_gradient",
+      "optimizer_label": "Receding gradient",
+      "model_id": "eng_multitask_gate_strong_100k",
+      "group_id": "model_a_eng_multitask_gate_strong_featgrad_detached",
+      "run_id": "model_a_eng_multitask_gate_strong_featgrad_detached__receding_multistep_gradient__eng_multitask_gate_strong_100k",
+      "public_viewer_path": "viewers/chapter7_aeroforge_repair/data/model_a_eng_multitask_gate_strong_featgrad_detached__receding_multistep_gradient__eng_multitask_gate_strong_100k/",
+      "false_ok": 8,
+      "required_files": [
+        "manifest.json",
+        "viewer_data.json",
+        "statistics.json"
+      ],
+      "optional_files": [
+        "sim_eval.json"
+      ]
+    },
+    {
+      "entry_id": "7/repair/a/receding_multistep_penalty",
+      "thesis_anchors": [
+        "tab:aeroforge-overlap-repair",
+        "tab:aeroforge-overlap-repair-grid"
+      ],
+      "display_label": "§7 — Col A: Receding penalty",
+      "category": "overlap_repair",
+      "variant_key": "a",
+      "grid_column": "A",
+      "optimizer_id": "receding_multistep_penalty",
+      "optimizer_label": "Receding penalty",
+      "model_id": "eng_multitask_gate_strong_100k",
+      "group_id": "model_a_eng_multitask_gate_strong_featgrad_detached",
+      "run_id": "model_a_eng_multitask_gate_strong_featgrad_detached__receding_multistep_penalty__eng_multitask_gate_strong_100k",
+      "public_viewer_path": "viewers/chapter7_aeroforge_repair/data/model_a_eng_multitask_gate_strong_featgrad_detached__receding_multistep_penalty__eng_multitask_gate_strong_100k/",
+      "false_ok": 8,
+      "required_files": [
+        "manifest.json",
+        "viewer_data.json",
+        "statistics.json"
+      ],
+      "optional_files": [
+        "sim_eval.json"
+      ]
+    },
+    {
+      "entry_id": "7/repair/a/full_coordinate_grid_refine",
+      "thesis_anchors": [
+        "tab:aeroforge-overlap-repair",
+        "tab:aeroforge-overlap-repair-grid"
+      ],
+      "display_label": "§7 — Col A: Coordinate grid refine",
+      "category": "overlap_repair",
+      "variant_key": "a",
+      "grid_column": "A",
+      "optimizer_id": "full_coordinate_grid_refine",
+      "optimizer_label": "Coordinate grid refine",
+      "model_id": "eng_multitask_gate_strong_100k",
+      "group_id": "model_a_eng_multitask_gate_strong_featgrad_detached",
+      "run_id": "model_a_eng_multitask_gate_strong_featgrad_detached__full_coordinate_grid_refine__eng_multitask_gate_strong_100k",
+      "public_viewer_path": "viewers/chapter7_aeroforge_repair/data/model_a_eng_multitask_gate_strong_featgrad_detached__full_coordinate_grid_refine__eng_multitask_gate_strong_100k/",
+      "false_ok": 27,
+      "required_files": [
+        "manifest.json",
+        "viewer_data.json",
+        "statistics.json"
+      ],
+      "optional_files": [
+        "sim_eval.json"
+      ]
+    },
+    {
+      "entry_id": "7/repair/a/trust_region_hybrid",
+      "thesis_anchors": [
+        "tab:aeroforge-overlap-repair",
+        "tab:aeroforge-overlap-repair-grid"
+      ],
+      "display_label": "§7 — Col A: Trust region",
+      "category": "overlap_repair",
+      "variant_key": "a",
+      "grid_column": "A",
+      "optimizer_id": "trust_region_hybrid",
+      "optimizer_label": "Trust region",
+      "model_id": "eng_multitask_gate_strong_100k",
+      "group_id": "model_a_eng_multitask_gate_strong_featgrad_detached",
+      "run_id": "model_a_eng_multitask_gate_strong_featgrad_detached__trust_region_hybrid__eng_multitask_gate_strong_100k",
+      "public_viewer_path": "viewers/chapter7_aeroforge_repair/data/model_a_eng_multitask_gate_strong_featgrad_detached__trust_region_hybrid__eng_multitask_gate_strong_100k/",
+      "false_ok": 15,
+      "required_files": [
+        "manifest.json",
+        "viewer_data.json",
+        "statistics.json"
+      ],
+      "optional_files": [
+        "sim_eval.json"
+      ]
+    },
+    {
+      "entry_id": "7/repair/a/trust_region_hybrid_shrinkage",
+      "thesis_anchors": [
+        "tab:aeroforge-overlap-repair",
+        "tab:aeroforge-overlap-repair-grid"
+      ],
+      "display_label": "§7 — Col A: Trust region + shrinkage",
+      "category": "overlap_repair",
+      "variant_key": "a",
+      "grid_column": "A",
+      "optimizer_id": "trust_region_hybrid_shrinkage",
+      "optimizer_label": "Trust region + shrinkage",
+      "model_id": "eng_multitask_gate_strong_100k",
+      "group_id": "model_a_eng_multitask_gate_strong_featgrad_detached",
+      "run_id": "model_a_eng_multitask_gate_strong_featgrad_detached__trust_region_hybrid_shrinkage__eng_multitask_gate_strong_100k",
+      "public_viewer_path": "viewers/chapter7_aeroforge_repair/data/model_a_eng_multitask_gate_strong_featgrad_detached__trust_region_hybrid_shrinkage__eng_multitask_gate_strong_100k/",
+      "false_ok": 19,
+      "required_files": [
+        "manifest.json",
+        "viewer_data.json",
+        "statistics.json"
+      ],
+      "optional_files": [
+        "sim_eval.json"
+      ]
+    },
+    {
+      "entry_id": "7/repair/a/all",
+      "thesis_anchors": [
+        "tab:aeroforge-overlap-repair",
+        "tab:aeroforge-overlap-repair-grid"
+      ],
+      "display_label": "§7 — Col A: All methods, best verified repair",
+      "category": "overlap_repair",
+      "variant_key": "a",
+      "grid_column": "A",
+      "optimizer_id": "all",
+      "optimizer_label": "All methods, best verified repair",
+      "model_id": "eng_multitask_gate_strong_100k",
+      "group_id": "model_a_eng_multitask_gate_strong_featgrad_detached",
+      "run_id": "model_a_eng_multitask_gate_strong_featgrad_detached__all__eng_multitask_gate_strong_100k",
+      "public_viewer_path": "viewers/chapter7_aeroforge_repair/data/model_a_eng_multitask_gate_strong_featgrad_detached__all__eng_multitask_gate_strong_100k/",
+      "false_ok": 6,
+      "required_files": [
+        "manifest.json",
+        "viewer_data.json",
+        "statistics.json"
+      ],
+      "optional_files": [
+        "sim_eval.json"
+      ]
+    },
+    {
+      "entry_id": "7/repair/b/one_shot_gradient_line_search",
+      "thesis_anchors": [
+        "tab:aeroforge-overlap-repair-grid"
+      ],
+      "display_label": "§7 — Col B: One-shot gradient",
+      "category": "overlap_repair",
+      "variant_key": "b",
+      "grid_column": "B",
+      "optimizer_id": "one_shot_gradient_line_search",
+      "optimizer_label": "One-shot gradient",
+      "model_id": "eng_log_huber_100k",
+      "group_id": "model_b_eng_log_huber_featgrad_detached",
+      "run_id": "model_b_eng_log_huber_featgrad_detached__one_shot_gradient_line_search__eng_log_huber_100k",
+      "public_viewer_path": "viewers/chapter7_aeroforge_repair/data/model_b_eng_log_huber_featgrad_detached__one_shot_gradient_line_search__eng_log_huber_100k/",
+      "false_ok": 15,
+      "required_files": [
+        "manifest.json",
+        "viewer_data.json",
+        "statistics.json"
+      ],
+      "optional_files": [
+        "sim_eval.json"
+      ]
+    },
+    {
+      "entry_id": "7/repair/b/receding_multistep_gradient",
+      "thesis_anchors": [
+        "tab:aeroforge-overlap-repair-grid"
+      ],
+      "display_label": "§7 — Col B: Receding gradient",
+      "category": "overlap_repair",
+      "variant_key": "b",
+      "grid_column": "B",
+      "optimizer_id": "receding_multistep_gradient",
+      "optimizer_label": "Receding gradient",
+      "model_id": "eng_log_huber_100k",
+      "group_id": "model_b_eng_log_huber_featgrad_detached",
+      "run_id": "model_b_eng_log_huber_featgrad_detached__receding_multistep_gradient__eng_log_huber_100k",
+      "public_viewer_path": "viewers/chapter7_aeroforge_repair/data/model_b_eng_log_huber_featgrad_detached__receding_multistep_gradient__eng_log_huber_100k/",
+      "false_ok": 6,
+      "required_files": [
+        "manifest.json",
+        "viewer_data.json",
+        "statistics.json"
+      ],
+      "optional_files": [
+        "sim_eval.json"
+      ]
+    },
+    {
+      "entry_id": "7/repair/b/receding_multistep_penalty",
+      "thesis_anchors": [
+        "tab:aeroforge-overlap-repair-grid"
+      ],
+      "display_label": "§7 — Col B: Receding penalty",
+      "category": "overlap_repair",
+      "variant_key": "b",
+      "grid_column": "B",
+      "optimizer_id": "receding_multistep_penalty",
+      "optimizer_label": "Receding penalty",
+      "model_id": "eng_log_huber_100k",
+      "group_id": "model_b_eng_log_huber_featgrad_detached",
+      "run_id": "model_b_eng_log_huber_featgrad_detached__receding_multistep_penalty__eng_log_huber_100k",
+      "public_viewer_path": "viewers/chapter7_aeroforge_repair/data/model_b_eng_log_huber_featgrad_detached__receding_multistep_penalty__eng_log_huber_100k/",
+      "false_ok": 6,
+      "required_files": [
+        "manifest.json",
+        "viewer_data.json",
+        "statistics.json"
+      ],
+      "optional_files": [
+        "sim_eval.json"
+      ]
+    },
+    {
+      "entry_id": "7/repair/b/full_coordinate_grid_refine",
+      "thesis_anchors": [
+        "tab:aeroforge-overlap-repair-grid"
+      ],
+      "display_label": "§7 — Col B: Coordinate grid refine",
+      "category": "overlap_repair",
+      "variant_key": "b",
+      "grid_column": "B",
+      "optimizer_id": "full_coordinate_grid_refine",
+      "optimizer_label": "Coordinate grid refine",
+      "model_id": "eng_log_huber_100k",
+      "group_id": "model_b_eng_log_huber_featgrad_detached",
+      "run_id": "model_b_eng_log_huber_featgrad_detached__full_coordinate_grid_refine__eng_log_huber_100k",
+      "public_viewer_path": "viewers/chapter7_aeroforge_repair/data/model_b_eng_log_huber_featgrad_detached__full_coordinate_grid_refine__eng_log_huber_100k/",
+      "false_ok": 27,
+      "required_files": [
+        "manifest.json",
+        "viewer_data.json",
+        "statistics.json"
+      ],
+      "optional_files": [
+        "sim_eval.json"
+      ]
+    },
+    {
+      "entry_id": "7/repair/b/trust_region_hybrid",
+      "thesis_anchors": [
+        "tab:aeroforge-overlap-repair-grid"
+      ],
+      "display_label": "§7 — Col B: Trust region",
+      "category": "overlap_repair",
+      "variant_key": "b",
+      "grid_column": "B",
+      "optimizer_id": "trust_region_hybrid",
+      "optimizer_label": "Trust region",
+      "model_id": "eng_log_huber_100k",
+      "group_id": "model_b_eng_log_huber_featgrad_detached",
+      "run_id": "model_b_eng_log_huber_featgrad_detached__trust_region_hybrid__eng_log_huber_100k",
+      "public_viewer_path": "viewers/chapter7_aeroforge_repair/data/model_b_eng_log_huber_featgrad_detached__trust_region_hybrid__eng_log_huber_100k/",
+      "false_ok": 15,
+      "required_files": [
+        "manifest.json",
+        "viewer_data.json",
+        "statistics.json"
+      ],
+      "optional_files": [
+        "sim_eval.json"
+      ]
+    },
+    {
+      "entry_id": "7/repair/b/trust_region_hybrid_shrinkage",
+      "thesis_anchors": [
+        "tab:aeroforge-overlap-repair-grid"
+      ],
+      "display_label": "§7 — Col B: Trust region + shrinkage",
+      "category": "overlap_repair",
+      "variant_key": "b",
+      "grid_column": "B",
+      "optimizer_id": "trust_region_hybrid_shrinkage",
+      "optimizer_label": "Trust region + shrinkage",
+      "model_id": "eng_log_huber_100k",
+      "group_id": "model_b_eng_log_huber_featgrad_detached",
+      "run_id": "model_b_eng_log_huber_featgrad_detached__trust_region_hybrid_shrinkage__eng_log_huber_100k",
+      "public_viewer_path": "viewers/chapter7_aeroforge_repair/data/model_b_eng_log_huber_featgrad_detached__trust_region_hybrid_shrinkage__eng_log_huber_100k/",
+      "false_ok": 22,
+      "required_files": [
+        "manifest.json",
+        "viewer_data.json",
+        "statistics.json"
+      ],
+      "optional_files": [
+        "sim_eval.json"
+      ]
+    },
+    {
+      "entry_id": "7/repair/b/all",
+      "thesis_anchors": [
+        "tab:aeroforge-overlap-repair-grid"
+      ],
+      "display_label": "§7 — Col B: All methods, best verified repair",
+      "category": "overlap_repair",
+      "variant_key": "b",
+      "grid_column": "B",
+      "optimizer_id": "all",
+      "optimizer_label": "All methods, best verified repair",
+      "model_id": "eng_log_huber_100k",
+      "group_id": "model_b_eng_log_huber_featgrad_detached",
+      "run_id": "model_b_eng_log_huber_featgrad_detached__all__eng_log_huber_100k",
+      "public_viewer_path": "viewers/chapter7_aeroforge_repair/data/model_b_eng_log_huber_featgrad_detached__all__eng_log_huber_100k/",
+      "false_ok": 6,
+      "required_files": [
+        "manifest.json",
+        "viewer_data.json",
+        "statistics.json"
+      ],
+      "optional_files": [
+        "sim_eval.json"
+      ]
+    },
+    {
+      "entry_id": "7/repair/c/one_shot_gradient_line_search",
+      "thesis_anchors": [
+        "tab:aeroforge-overlap-repair-grid"
+      ],
+      "display_label": "§7 — Col C: One-shot gradient",
+      "category": "overlap_repair",
+      "variant_key": "c",
+      "grid_column": "C",
+      "optimizer_id": "one_shot_gradient_line_search",
+      "optimizer_label": "One-shot gradient",
+      "model_id": "eng_multitask_gate_strong_100k",
+      "group_id": "model_c_eng_multitask_gate_strong_featgrad_full",
+      "run_id": "model_c_eng_multitask_gate_strong_featgrad_full__one_shot_gradient_line_search__eng_multitask_gate_strong_100k",
+      "public_viewer_path": "viewers/chapter7_aeroforge_repair/data/model_c_eng_multitask_gate_strong_featgrad_full__one_shot_gradient_line_search__eng_multitask_gate_strong_100k/",
+      "false_ok": 14,
+      "required_files": [
+        "manifest.json",
+        "viewer_data.json",
+        "statistics.json"
+      ],
+      "optional_files": [
+        "sim_eval.json"
+      ]
+    },
+    {
+      "entry_id": "7/repair/c/receding_multistep_gradient",
+      "thesis_anchors": [
+        "tab:aeroforge-overlap-repair-grid"
+      ],
+      "display_label": "§7 — Col C: Receding gradient",
+      "category": "overlap_repair",
+      "variant_key": "c",
+      "grid_column": "C",
+      "optimizer_id": "receding_multistep_gradient",
+      "optimizer_label": "Receding gradient",
+      "model_id": "eng_multitask_gate_strong_100k",
+      "group_id": "model_c_eng_multitask_gate_strong_featgrad_full",
+      "run_id": "model_c_eng_multitask_gate_strong_featgrad_full__receding_multistep_gradient__eng_multitask_gate_strong_100k",
+      "public_viewer_path": "viewers/chapter7_aeroforge_repair/data/model_c_eng_multitask_gate_strong_featgrad_full__receding_multistep_gradient__eng_multitask_gate_strong_100k/",
+      "false_ok": 8,
+      "required_files": [
+        "manifest.json",
+        "viewer_data.json",
+        "statistics.json"
+      ],
+      "optional_files": [
+        "sim_eval.json"
+      ]
+    },
+    {
+      "entry_id": "7/repair/c/receding_multistep_penalty",
+      "thesis_anchors": [
+        "tab:aeroforge-overlap-repair-grid"
+      ],
+      "display_label": "§7 — Col C: Receding penalty",
+      "category": "overlap_repair",
+      "variant_key": "c",
+      "grid_column": "C",
+      "optimizer_id": "receding_multistep_penalty",
+      "optimizer_label": "Receding penalty",
+      "model_id": "eng_multitask_gate_strong_100k",
+      "group_id": "model_c_eng_multitask_gate_strong_featgrad_full",
+      "run_id": "model_c_eng_multitask_gate_strong_featgrad_full__receding_multistep_penalty__eng_multitask_gate_strong_100k",
+      "public_viewer_path": "viewers/chapter7_aeroforge_repair/data/model_c_eng_multitask_gate_strong_featgrad_full__receding_multistep_penalty__eng_multitask_gate_strong_100k/",
+      "false_ok": 8,
+      "required_files": [
+        "manifest.json",
+        "viewer_data.json",
+        "statistics.json"
+      ],
+      "optional_files": [
+        "sim_eval.json"
+      ]
+    },
+    {
+      "entry_id": "7/repair/c/full_coordinate_grid_refine",
+      "thesis_anchors": [
+        "tab:aeroforge-overlap-repair-grid"
+      ],
+      "display_label": "§7 — Col C: Coordinate grid refine",
+      "category": "overlap_repair",
+      "variant_key": "c",
+      "grid_column": "C",
+      "optimizer_id": "full_coordinate_grid_refine",
+      "optimizer_label": "Coordinate grid refine",
+      "model_id": "eng_multitask_gate_strong_100k",
+      "group_id": "model_c_eng_multitask_gate_strong_featgrad_full",
+      "run_id": "model_c_eng_multitask_gate_strong_featgrad_full__full_coordinate_grid_refine__eng_multitask_gate_strong_100k",
+      "public_viewer_path": "viewers/chapter7_aeroforge_repair/data/model_c_eng_multitask_gate_strong_featgrad_full__full_coordinate_grid_refine__eng_multitask_gate_strong_100k/",
+      "false_ok": 27,
+      "required_files": [
+        "manifest.json",
+        "viewer_data.json",
+        "statistics.json"
+      ],
+      "optional_files": [
+        "sim_eval.json"
+      ]
+    },
+    {
+      "entry_id": "7/repair/c/trust_region_hybrid",
+      "thesis_anchors": [
+        "tab:aeroforge-overlap-repair-grid"
+      ],
+      "display_label": "§7 — Col C: Trust region",
+      "category": "overlap_repair",
+      "variant_key": "c",
+      "grid_column": "C",
+      "optimizer_id": "trust_region_hybrid",
+      "optimizer_label": "Trust region",
+      "model_id": "eng_multitask_gate_strong_100k",
+      "group_id": "model_c_eng_multitask_gate_strong_featgrad_full",
+      "run_id": "model_c_eng_multitask_gate_strong_featgrad_full__trust_region_hybrid__eng_multitask_gate_strong_100k",
+      "public_viewer_path": "viewers/chapter7_aeroforge_repair/data/model_c_eng_multitask_gate_strong_featgrad_full__trust_region_hybrid__eng_multitask_gate_strong_100k/",
+      "false_ok": 16,
+      "required_files": [
+        "manifest.json",
+        "viewer_data.json",
+        "statistics.json"
+      ],
+      "optional_files": [
+        "sim_eval.json"
+      ]
+    },
+    {
+      "entry_id": "7/repair/c/trust_region_hybrid_shrinkage",
+      "thesis_anchors": [
+        "tab:aeroforge-overlap-repair-grid"
+      ],
+      "display_label": "§7 — Col C: Trust region + shrinkage",
+      "category": "overlap_repair",
+      "variant_key": "c",
+      "grid_column": "C",
+      "optimizer_id": "trust_region_hybrid_shrinkage",
+      "optimizer_label": "Trust region + shrinkage",
+      "model_id": "eng_multitask_gate_strong_100k",
+      "group_id": "model_c_eng_multitask_gate_strong_featgrad_full",
+      "run_id": "model_c_eng_multitask_gate_strong_featgrad_full__trust_region_hybrid_shrinkage__eng_multitask_gate_strong_100k",
+      "public_viewer_path": "viewers/chapter7_aeroforge_repair/data/model_c_eng_multitask_gate_strong_featgrad_full__trust_region_hybrid_shrinkage__eng_multitask_gate_strong_100k/",
+      "false_ok": 29,
+      "required_files": [
+        "manifest.json",
+        "viewer_data.json",
+        "statistics.json"
+      ],
+      "optional_files": [
+        "sim_eval.json"
+      ]
+    },
+    {
+      "entry_id": "7/repair/c/all",
+      "thesis_anchors": [
+        "tab:aeroforge-overlap-repair-grid"
+      ],
+      "display_label": "§7 — Col C: All methods, best verified repair",
+      "category": "overlap_repair",
+      "variant_key": "c",
+      "grid_column": "C",
+      "optimizer_id": "all",
+      "optimizer_label": "All methods, best verified repair",
+      "model_id": "eng_multitask_gate_strong_100k",
+      "group_id": "model_c_eng_multitask_gate_strong_featgrad_full",
+      "run_id": "model_c_eng_multitask_gate_strong_featgrad_full__all__eng_multitask_gate_strong_100k",
+      "public_viewer_path": "viewers/chapter7_aeroforge_repair/data/model_c_eng_multitask_gate_strong_featgrad_full__all__eng_multitask_gate_strong_100k/",
+      "false_ok": 7,
+      "required_files": [
+        "manifest.json",
+        "viewer_data.json",
+        "statistics.json"
+      ],
+      "optional_files": [
+        "sim_eval.json"
+      ]
+    },
+    {
+      "entry_id": "7/repair/d/one_shot_gradient_line_search",
+      "thesis_anchors": [
+        "tab:aeroforge-overlap-repair-grid"
+      ],
+      "display_label": "§7 — Col D: One-shot gradient",
+      "category": "overlap_repair",
+      "variant_key": "d",
+      "grid_column": "D",
+      "optimizer_id": "one_shot_gradient_line_search",
+      "optimizer_label": "One-shot gradient",
+      "model_id": "eng_log_huber_100k",
+      "group_id": "model_d_eng_log_huber_featgrad_full",
+      "run_id": "model_d_eng_log_huber_featgrad_full__one_shot_gradient_line_search__eng_log_huber_100k",
+      "public_viewer_path": "viewers/chapter7_aeroforge_repair/data/model_d_eng_log_huber_featgrad_full__one_shot_gradient_line_search__eng_log_huber_100k/",
+      "false_ok": 14,
+      "required_files": [
+        "manifest.json",
+        "viewer_data.json",
+        "statistics.json"
+      ],
+      "optional_files": [
+        "sim_eval.json"
+      ]
+    },
+    {
+      "entry_id": "7/repair/d/receding_multistep_gradient",
+      "thesis_anchors": [
+        "tab:aeroforge-overlap-repair-grid"
+      ],
+      "display_label": "§7 — Col D: Receding gradient",
+      "category": "overlap_repair",
+      "variant_key": "d",
+      "grid_column": "D",
+      "optimizer_id": "receding_multistep_gradient",
+      "optimizer_label": "Receding gradient",
+      "model_id": "eng_log_huber_100k",
+      "group_id": "model_d_eng_log_huber_featgrad_full",
+      "run_id": "model_d_eng_log_huber_featgrad_full__receding_multistep_gradient__eng_log_huber_100k",
+      "public_viewer_path": "viewers/chapter7_aeroforge_repair/data/model_d_eng_log_huber_featgrad_full__receding_multistep_gradient__eng_log_huber_100k/",
+      "false_ok": 7,
+      "required_files": [
+        "manifest.json",
+        "viewer_data.json",
+        "statistics.json"
+      ],
+      "optional_files": [
+        "sim_eval.json"
+      ]
+    },
+    {
+      "entry_id": "7/repair/d/receding_multistep_penalty",
+      "thesis_anchors": [
+        "tab:aeroforge-overlap-repair-grid"
+      ],
+      "display_label": "§7 — Col D: Receding penalty",
+      "category": "overlap_repair",
+      "variant_key": "d",
+      "grid_column": "D",
+      "optimizer_id": "receding_multistep_penalty",
+      "optimizer_label": "Receding penalty",
+      "model_id": "eng_log_huber_100k",
+      "group_id": "model_d_eng_log_huber_featgrad_full",
+      "run_id": "model_d_eng_log_huber_featgrad_full__receding_multistep_penalty__eng_log_huber_100k",
+      "public_viewer_path": "viewers/chapter7_aeroforge_repair/data/model_d_eng_log_huber_featgrad_full__receding_multistep_penalty__eng_log_huber_100k/",
+      "false_ok": 7,
+      "required_files": [
+        "manifest.json",
+        "viewer_data.json",
+        "statistics.json"
+      ],
+      "optional_files": [
+        "sim_eval.json"
+      ]
+    },
+    {
+      "entry_id": "7/repair/d/full_coordinate_grid_refine",
+      "thesis_anchors": [
+        "tab:aeroforge-overlap-repair-grid"
+      ],
+      "display_label": "§7 — Col D: Coordinate grid refine",
+      "category": "overlap_repair",
+      "variant_key": "d",
+      "grid_column": "D",
+      "optimizer_id": "full_coordinate_grid_refine",
+      "optimizer_label": "Coordinate grid refine",
+      "model_id": "eng_log_huber_100k",
+      "group_id": "model_d_eng_log_huber_featgrad_full",
+      "run_id": "model_d_eng_log_huber_featgrad_full__full_coordinate_grid_refine__eng_log_huber_100k",
+      "public_viewer_path": "viewers/chapter7_aeroforge_repair/data/model_d_eng_log_huber_featgrad_full__full_coordinate_grid_refine__eng_log_huber_100k/",
+      "false_ok": 27,
+      "required_files": [
+        "manifest.json",
+        "viewer_data.json",
+        "statistics.json"
+      ],
+      "optional_files": [
+        "sim_eval.json"
+      ]
+    },
+    {
+      "entry_id": "7/repair/d/trust_region_hybrid",
+      "thesis_anchors": [
+        "tab:aeroforge-overlap-repair-grid"
+      ],
+      "display_label": "§7 — Col D: Trust region",
+      "category": "overlap_repair",
+      "variant_key": "d",
+      "grid_column": "D",
+      "optimizer_id": "trust_region_hybrid",
+      "optimizer_label": "Trust region",
+      "model_id": "eng_log_huber_100k",
+      "group_id": "model_d_eng_log_huber_featgrad_full",
+      "run_id": "model_d_eng_log_huber_featgrad_full__trust_region_hybrid__eng_log_huber_100k",
+      "public_viewer_path": "viewers/chapter7_aeroforge_repair/data/model_d_eng_log_huber_featgrad_full__trust_region_hybrid__eng_log_huber_100k/",
+      "false_ok": 17,
+      "required_files": [
+        "manifest.json",
+        "viewer_data.json",
+        "statistics.json"
+      ],
+      "optional_files": [
+        "sim_eval.json"
+      ]
+    },
+    {
+      "entry_id": "7/repair/d/trust_region_hybrid_shrinkage",
+      "thesis_anchors": [
+        "tab:aeroforge-overlap-repair-grid"
+      ],
+      "display_label": "§7 — Col D: Trust region + shrinkage",
+      "category": "overlap_repair",
+      "variant_key": "d",
+      "grid_column": "D",
+      "optimizer_id": "trust_region_hybrid_shrinkage",
+      "optimizer_label": "Trust region + shrinkage",
+      "model_id": "eng_log_huber_100k",
+      "group_id": "model_d_eng_log_huber_featgrad_full",
+      "run_id": "model_d_eng_log_huber_featgrad_full__trust_region_hybrid_shrinkage__eng_log_huber_100k",
+      "public_viewer_path": "viewers/chapter7_aeroforge_repair/data/model_d_eng_log_huber_featgrad_full__trust_region_hybrid_shrinkage__eng_log_huber_100k/",
+      "false_ok": 26,
+      "required_files": [
+        "manifest.json",
+        "viewer_data.json",
+        "statistics.json"
+      ],
+      "optional_files": [
+        "sim_eval.json"
+      ]
+    },
+    {
+      "entry_id": "7/repair/d/all",
+      "thesis_anchors": [
+        "tab:aeroforge-overlap-repair-grid"
+      ],
+      "display_label": "§7 — Col D: All methods, best verified repair",
+      "category": "overlap_repair",
+      "variant_key": "d",
+      "grid_column": "D",
+      "optimizer_id": "all",
+      "optimizer_label": "All methods, best verified repair",
+      "model_id": "eng_log_huber_100k",
+      "group_id": "model_d_eng_log_huber_featgrad_full",
+      "run_id": "model_d_eng_log_huber_featgrad_full__all__eng_log_huber_100k",
+      "public_viewer_path": "viewers/chapter7_aeroforge_repair/data/model_d_eng_log_huber_featgrad_full__all__eng_log_huber_100k/",
+      "false_ok": 7,
+      "required_files": [
+        "manifest.json",
+        "viewer_data.json",
+        "statistics.json"
+      ],
+      "optional_files": [
+        "sim_eval.json"
+      ]
+    },
+    {
+      "entry_id": "7/repair/e/one_shot_gradient_line_search",
+      "thesis_anchors": [
+        "tab:aeroforge-overlap-repair-grid"
+      ],
+      "display_label": "§7 — Col E: One-shot gradient",
+      "category": "overlap_repair",
+      "variant_key": "e",
+      "grid_column": "E",
+      "optimizer_id": "one_shot_gradient_line_search",
+      "optimizer_label": "One-shot gradient",
+      "model_id": "raw_log_huber_100k",
+      "group_id": "model_e_raw_log_huber_featgrad_raw",
+      "run_id": "model_e_raw_log_huber_featgrad_raw__one_shot_gradient_line_search__raw_log_huber_100k",
+      "public_viewer_path": "viewers/chapter7_aeroforge_repair/data/model_e_raw_log_huber_featgrad_raw__one_shot_gradient_line_search__raw_log_huber_100k/",
+      "false_ok": 17,
+      "required_files": [
+        "manifest.json",
+        "viewer_data.json",
+        "statistics.json"
+      ],
+      "optional_files": [
+        "sim_eval.json"
+      ]
+    },
+    {
+      "entry_id": "7/repair/e/receding_multistep_gradient",
+      "thesis_anchors": [
+        "tab:aeroforge-overlap-repair-grid"
+      ],
+      "display_label": "§7 — Col E: Receding gradient",
+      "category": "overlap_repair",
+      "variant_key": "e",
+      "grid_column": "E",
+      "optimizer_id": "receding_multistep_gradient",
+      "optimizer_label": "Receding gradient",
+      "model_id": "raw_log_huber_100k",
+      "group_id": "model_e_raw_log_huber_featgrad_raw",
+      "run_id": "model_e_raw_log_huber_featgrad_raw__receding_multistep_gradient__raw_log_huber_100k",
+      "public_viewer_path": "viewers/chapter7_aeroforge_repair/data/model_e_raw_log_huber_featgrad_raw__receding_multistep_gradient__raw_log_huber_100k/",
+      "false_ok": 12,
+      "required_files": [
+        "manifest.json",
+        "viewer_data.json",
+        "statistics.json"
+      ],
+      "optional_files": [
+        "sim_eval.json"
+      ]
+    },
+    {
+      "entry_id": "7/repair/e/receding_multistep_penalty",
+      "thesis_anchors": [
+        "tab:aeroforge-overlap-repair-grid"
+      ],
+      "display_label": "§7 — Col E: Receding penalty",
+      "category": "overlap_repair",
+      "variant_key": "e",
+      "grid_column": "E",
+      "optimizer_id": "receding_multistep_penalty",
+      "optimizer_label": "Receding penalty",
+      "model_id": "raw_log_huber_100k",
+      "group_id": "model_e_raw_log_huber_featgrad_raw",
+      "run_id": "model_e_raw_log_huber_featgrad_raw__receding_multistep_penalty__raw_log_huber_100k",
+      "public_viewer_path": "viewers/chapter7_aeroforge_repair/data/model_e_raw_log_huber_featgrad_raw__receding_multistep_penalty__raw_log_huber_100k/",
+      "false_ok": 13,
+      "required_files": [
+        "manifest.json",
+        "viewer_data.json",
+        "statistics.json"
+      ],
+      "optional_files": [
+        "sim_eval.json"
+      ]
+    },
+    {
+      "entry_id": "7/repair/e/full_coordinate_grid_refine",
+      "thesis_anchors": [
+        "tab:aeroforge-overlap-repair-grid"
+      ],
+      "display_label": "§7 — Col E: Coordinate grid refine",
+      "category": "overlap_repair",
+      "variant_key": "e",
+      "grid_column": "E",
+      "optimizer_id": "full_coordinate_grid_refine",
+      "optimizer_label": "Coordinate grid refine",
+      "model_id": "raw_log_huber_100k",
+      "group_id": "model_e_raw_log_huber_featgrad_raw",
+      "run_id": "model_e_raw_log_huber_featgrad_raw__full_coordinate_grid_refine__raw_log_huber_100k",
+      "public_viewer_path": "viewers/chapter7_aeroforge_repair/data/model_e_raw_log_huber_featgrad_raw__full_coordinate_grid_refine__raw_log_huber_100k/",
+      "false_ok": 35,
+      "required_files": [
+        "manifest.json",
+        "viewer_data.json",
+        "statistics.json"
+      ],
+      "optional_files": [
+        "sim_eval.json"
+      ]
+    },
+    {
+      "entry_id": "7/repair/e/trust_region_hybrid",
+      "thesis_anchors": [
+        "tab:aeroforge-overlap-repair-grid"
+      ],
+      "display_label": "§7 — Col E: Trust region",
+      "category": "overlap_repair",
+      "variant_key": "e",
+      "grid_column": "E",
+      "optimizer_id": "trust_region_hybrid",
+      "optimizer_label": "Trust region",
+      "model_id": "raw_log_huber_100k",
+      "group_id": "model_e_raw_log_huber_featgrad_raw",
+      "run_id": "model_e_raw_log_huber_featgrad_raw__trust_region_hybrid__raw_log_huber_100k",
+      "public_viewer_path": "viewers/chapter7_aeroforge_repair/data/model_e_raw_log_huber_featgrad_raw__trust_region_hybrid__raw_log_huber_100k/",
+      "false_ok": 24,
+      "required_files": [
+        "manifest.json",
+        "viewer_data.json",
+        "statistics.json"
+      ],
+      "optional_files": [
+        "sim_eval.json"
+      ]
+    },
+    {
+      "entry_id": "7/repair/e/trust_region_hybrid_shrinkage",
+      "thesis_anchors": [
+        "tab:aeroforge-overlap-repair-grid"
+      ],
+      "display_label": "§7 — Col E: Trust region + shrinkage",
+      "category": "overlap_repair",
+      "variant_key": "e",
+      "grid_column": "E",
+      "optimizer_id": "trust_region_hybrid_shrinkage",
+      "optimizer_label": "Trust region + shrinkage",
+      "model_id": "raw_log_huber_100k",
+      "group_id": "model_e_raw_log_huber_featgrad_raw",
+      "run_id": "model_e_raw_log_huber_featgrad_raw__trust_region_hybrid_shrinkage__raw_log_huber_100k",
+      "public_viewer_path": "viewers/chapter7_aeroforge_repair/data/model_e_raw_log_huber_featgrad_raw__trust_region_hybrid_shrinkage__raw_log_huber_100k/",
+      "false_ok": 33,
+      "required_files": [
+        "manifest.json",
+        "viewer_data.json",
+        "statistics.json"
+      ],
+      "optional_files": [
+        "sim_eval.json"
+      ]
+    },
+    {
+      "entry_id": "7/repair/e/all",
+      "thesis_anchors": [
+        "tab:aeroforge-overlap-repair-grid"
+      ],
+      "display_label": "§7 — Col E: All methods, best verified repair",
+      "category": "overlap_repair",
+      "variant_key": "e",
+      "grid_column": "E",
+      "optimizer_id": "all",
+      "optimizer_label": "All methods, best verified repair",
+      "model_id": "raw_log_huber_100k",
+      "group_id": "model_e_raw_log_huber_featgrad_raw",
+      "run_id": "model_e_raw_log_huber_featgrad_raw__all__raw_log_huber_100k",
+      "public_viewer_path": "viewers/chapter7_aeroforge_repair/data/model_e_raw_log_huber_featgrad_raw__all__raw_log_huber_100k/",
+      "false_ok": 10,
+      "required_files": [
+        "manifest.json",
+        "viewer_data.json",
+        "statistics.json"
+      ],
+      "optional_files": [
+        "sim_eval.json"
+      ]
+    },
+    {
+      "entry_id": "7/repair/f/one_shot_gradient_line_search",
+      "thesis_anchors": [
+        "tab:aeroforge-overlap-repair-grid"
+      ],
+      "display_label": "§7 — Col F: One-shot gradient",
+      "category": "overlap_repair",
+      "variant_key": "f",
+      "grid_column": "F",
+      "optimizer_id": "one_shot_gradient_line_search",
+      "optimizer_label": "One-shot gradient",
+      "model_id": "eng_multitask_gate_strong_100k",
+      "group_id": "model_f_eng_multitask_gate_strong_binarygate_detached",
+      "run_id": "model_f_eng_multitask_gate_strong_binarygate_detached__one_shot_gradient_line_search__eng_multitask_gate_strong_100k",
+      "public_viewer_path": "viewers/chapter7_aeroforge_repair/data/model_f_eng_multitask_gate_strong_binarygate_detached__one_shot_gradient_line_search__eng_multitask_gate_strong_100k/",
+      "false_ok": 16,
+      "required_files": [
+        "manifest.json",
+        "viewer_data.json",
+        "statistics.json"
+      ],
+      "optional_files": [
+        "sim_eval.json"
+      ]
+    },
+    {
+      "entry_id": "7/repair/f/receding_multistep_gradient",
+      "thesis_anchors": [
+        "tab:aeroforge-overlap-repair-grid"
+      ],
+      "display_label": "§7 — Col F: Receding gradient",
+      "category": "overlap_repair",
+      "variant_key": "f",
+      "grid_column": "F",
+      "optimizer_id": "receding_multistep_gradient",
+      "optimizer_label": "Receding gradient",
+      "model_id": "eng_multitask_gate_strong_100k",
+      "group_id": "model_f_eng_multitask_gate_strong_binarygate_detached",
+      "run_id": "model_f_eng_multitask_gate_strong_binarygate_detached__receding_multistep_gradient__eng_multitask_gate_strong_100k",
+      "public_viewer_path": "viewers/chapter7_aeroforge_repair/data/model_f_eng_multitask_gate_strong_binarygate_detached__receding_multistep_gradient__eng_multitask_gate_strong_100k/",
+      "false_ok": 8,
+      "required_files": [
+        "manifest.json",
+        "viewer_data.json",
+        "statistics.json"
+      ],
+      "optional_files": [
+        "sim_eval.json"
+      ]
+    },
+    {
+      "entry_id": "7/repair/f/receding_multistep_penalty",
+      "thesis_anchors": [
+        "tab:aeroforge-overlap-repair-grid"
+      ],
+      "display_label": "§7 — Col F: Receding penalty",
+      "category": "overlap_repair",
+      "variant_key": "f",
+      "grid_column": "F",
+      "optimizer_id": "receding_multistep_penalty",
+      "optimizer_label": "Receding penalty",
+      "model_id": "eng_multitask_gate_strong_100k",
+      "group_id": "model_f_eng_multitask_gate_strong_binarygate_detached",
+      "run_id": "model_f_eng_multitask_gate_strong_binarygate_detached__receding_multistep_penalty__eng_multitask_gate_strong_100k",
+      "public_viewer_path": "viewers/chapter7_aeroforge_repair/data/model_f_eng_multitask_gate_strong_binarygate_detached__receding_multistep_penalty__eng_multitask_gate_strong_100k/",
+      "false_ok": 8,
+      "required_files": [
+        "manifest.json",
+        "viewer_data.json",
+        "statistics.json"
+      ],
+      "optional_files": [
+        "sim_eval.json"
+      ]
+    },
+    {
+      "entry_id": "7/repair/f/full_coordinate_grid_refine",
+      "thesis_anchors": [
+        "tab:aeroforge-overlap-repair-grid"
+      ],
+      "display_label": "§7 — Col F: Coordinate grid refine",
+      "category": "overlap_repair",
+      "variant_key": "f",
+      "grid_column": "F",
+      "optimizer_id": "full_coordinate_grid_refine",
+      "optimizer_label": "Coordinate grid refine",
+      "model_id": "eng_multitask_gate_strong_100k",
+      "group_id": "model_f_eng_multitask_gate_strong_binarygate_detached",
+      "run_id": "model_f_eng_multitask_gate_strong_binarygate_detached__full_coordinate_grid_refine__eng_multitask_gate_strong_100k",
+      "public_viewer_path": "viewers/chapter7_aeroforge_repair/data/model_f_eng_multitask_gate_strong_binarygate_detached__full_coordinate_grid_refine__eng_multitask_gate_strong_100k/",
+      "false_ok": 27,
+      "required_files": [
+        "manifest.json",
+        "viewer_data.json",
+        "statistics.json"
+      ],
+      "optional_files": [
+        "sim_eval.json"
+      ]
+    },
+    {
+      "entry_id": "7/repair/f/trust_region_hybrid",
+      "thesis_anchors": [
+        "tab:aeroforge-overlap-repair-grid"
+      ],
+      "display_label": "§7 — Col F: Trust region",
+      "category": "overlap_repair",
+      "variant_key": "f",
+      "grid_column": "F",
+      "optimizer_id": "trust_region_hybrid",
+      "optimizer_label": "Trust region",
+      "model_id": "eng_multitask_gate_strong_100k",
+      "group_id": "model_f_eng_multitask_gate_strong_binarygate_detached",
+      "run_id": "model_f_eng_multitask_gate_strong_binarygate_detached__trust_region_hybrid__eng_multitask_gate_strong_100k",
+      "public_viewer_path": "viewers/chapter7_aeroforge_repair/data/model_f_eng_multitask_gate_strong_binarygate_detached__trust_region_hybrid__eng_multitask_gate_strong_100k/",
+      "false_ok": 15,
+      "required_files": [
+        "manifest.json",
+        "viewer_data.json",
+        "statistics.json"
+      ],
+      "optional_files": [
+        "sim_eval.json"
+      ]
+    },
+    {
+      "entry_id": "7/repair/f/trust_region_hybrid_shrinkage",
+      "thesis_anchors": [
+        "tab:aeroforge-overlap-repair-grid"
+      ],
+      "display_label": "§7 — Col F: Trust region + shrinkage",
+      "category": "overlap_repair",
+      "variant_key": "f",
+      "grid_column": "F",
+      "optimizer_id": "trust_region_hybrid_shrinkage",
+      "optimizer_label": "Trust region + shrinkage",
+      "model_id": "eng_multitask_gate_strong_100k",
+      "group_id": "model_f_eng_multitask_gate_strong_binarygate_detached",
+      "run_id": "model_f_eng_multitask_gate_strong_binarygate_detached__trust_region_hybrid_shrinkage__eng_multitask_gate_strong_100k",
+      "public_viewer_path": "viewers/chapter7_aeroforge_repair/data/model_f_eng_multitask_gate_strong_binarygate_detached__trust_region_hybrid_shrinkage__eng_multitask_gate_strong_100k/",
+      "false_ok": 19,
+      "required_files": [
+        "manifest.json",
+        "viewer_data.json",
+        "statistics.json"
+      ],
+      "optional_files": [
+        "sim_eval.json"
+      ]
+    },
+    {
+      "entry_id": "7/repair/f/all",
+      "thesis_anchors": [
+        "tab:aeroforge-overlap-repair-grid"
+      ],
+      "display_label": "§7 — Col F: All methods, best verified repair",
+      "category": "overlap_repair",
+      "variant_key": "f",
+      "grid_column": "F",
+      "optimizer_id": "all",
+      "optimizer_label": "All methods, best verified repair",
+      "model_id": "eng_multitask_gate_strong_100k",
+      "group_id": "model_f_eng_multitask_gate_strong_binarygate_detached",
+      "run_id": "model_f_eng_multitask_gate_strong_binarygate_detached__all__eng_multitask_gate_strong_100k",
+      "public_viewer_path": "viewers/chapter7_aeroforge_repair/data/model_f_eng_multitask_gate_strong_binarygate_detached__all__eng_multitask_gate_strong_100k/",
+      "false_ok": 6,
+      "required_files": [
+        "manifest.json",
+        "viewer_data.json",
+        "statistics.json"
+      ],
+      "optional_files": [
+        "sim_eval.json"
+      ]
+    },
+    {
+      "entry_id": "7/aero/lambda_0",
+      "thesis_anchors": [
+        "tab:aeroforge-aero-preserve"
+      ],
+      "display_label": "§7 aero — Penalized λ=0",
+      "category": "aero_preserve",
+      "run_id": "aero_preserve__aero_penalized_receding__lambda_0__eng_multitask_gate_strong_100k",
+      "public_viewer_path": "viewers/chapter7_aeroforge_repair/data/aero_preserve__aero_penalized_receding__lambda_0__eng_multitask_gate_strong_100k/",
+      "false_ok": 8,
+      "median_R_aero": 0.39707089729412215,
+      "required_files": [
+        "manifest.json",
+        "viewer_data.json",
+        "statistics.json",
+        "sim_eval.json"
+      ]
+    },
+    {
+      "entry_id": "7/aero/lambda_10",
+      "thesis_anchors": [
+        "tab:aeroforge-aero-preserve"
+      ],
+      "display_label": "§7 aero — Penalized λ=10",
+      "category": "aero_preserve",
+      "run_id": "aero_preserve__aero_penalized_receding__lambda_10__eng_multitask_gate_strong_100k",
+      "public_viewer_path": "viewers/chapter7_aeroforge_repair/data/aero_preserve__aero_penalized_receding__lambda_10__eng_multitask_gate_strong_100k/",
+      "false_ok": 13,
+      "median_R_aero": 0.1595565425849725,
+      "required_files": [
+        "manifest.json",
+        "viewer_data.json",
+        "statistics.json",
+        "sim_eval.json"
+      ]
+    },
+    {
+      "entry_id": "7/aero/lambda_100",
+      "thesis_anchors": [
+        "tab:aeroforge-aero-preserve"
+      ],
+      "display_label": "§7 aero — Penalized λ=100",
+      "category": "aero_preserve",
+      "run_id": "aero_preserve__aero_penalized_receding__lambda_100__eng_multitask_gate_strong_100k",
+      "public_viewer_path": "viewers/chapter7_aeroforge_repair/data/aero_preserve__aero_penalized_receding__lambda_100__eng_multitask_gate_strong_100k/",
+      "false_ok": 12,
+      "median_R_aero": 0.07287530288525473,
+      "required_files": [
+        "manifest.json",
+        "viewer_data.json",
+        "statistics.json",
+        "sim_eval.json"
+      ]
+    },
+    {
+      "entry_id": "7/aero/alpha_0",
+      "thesis_anchors": [
+        "tab:aeroforge-aero-preserve"
+      ],
+      "display_label": "§7 aero — Tangent α=0",
+      "category": "aero_preserve",
+      "run_id": "aero_preserve__aero_tangent_receding__alpha_0__eng_multitask_gate_strong_100k",
+      "public_viewer_path": "viewers/chapter7_aeroforge_repair/data/aero_preserve__aero_tangent_receding__alpha_0__eng_multitask_gate_strong_100k/",
+      "false_ok": 8,
+      "median_R_aero": 0.4950936946433709,
+      "required_files": [
+        "manifest.json",
+        "viewer_data.json",
+        "statistics.json",
+        "sim_eval.json"
+      ]
+    },
+    {
+      "entry_id": "7/aero/alpha_0p9",
+      "thesis_anchors": [
+        "tab:aeroforge-aero-preserve"
+      ],
+      "display_label": "§7 aero — Tangent α=0.9",
+      "category": "aero_preserve",
+      "run_id": "aero_preserve__aero_tangent_receding__alpha_0p9__eng_multitask_gate_strong_100k",
+      "public_viewer_path": "viewers/chapter7_aeroforge_repair/data/aero_preserve__aero_tangent_receding__alpha_0p9__eng_multitask_gate_strong_100k/",
+      "false_ok": 7,
+      "median_R_aero": 0.12655580158585886,
+      "required_files": [
+        "manifest.json",
+        "viewer_data.json",
+        "statistics.json",
+        "sim_eval.json"
+      ]
+    },
+    {
+      "entry_id": "7/aero/beta_inf",
+      "thesis_anchors": [
+        "tab:aeroforge-aero-preserve"
+      ],
+      "display_label": "§7 aero — Trust budget β=∞",
+      "category": "aero_preserve",
+      "run_id": "aero_preserve__aero_budget_trust_region__beta_inf__eng_multitask_gate_strong_100k",
+      "public_viewer_path": "viewers/chapter7_aeroforge_repair/data/aero_preserve__aero_budget_trust_region__beta_inf__eng_multitask_gate_strong_100k/",
+      "false_ok": 22,
+      "median_R_aero": 0.04846843858346111,
+      "required_files": [
+        "manifest.json",
+        "viewer_data.json",
+        "statistics.json",
+        "sim_eval.json"
+      ]
+    },
+    {
+      "entry_id": "7/aero/all_aero",
+      "thesis_anchors": [
+        "tab:aeroforge-aero-preserve"
+      ],
+      "display_label": "§7 aero — All aero-aware meta",
+      "category": "aero_preserve",
+      "run_id": "aero_preserve__all_aero__eng_multitask_gate_strong_100k",
+      "public_viewer_path": "viewers/chapter7_aeroforge_repair/data/aero_preserve__all_aero__eng_multitask_gate_strong_100k/",
+      "false_ok": 6,
+      "median_R_aero": 0.04661359185012839,
+      "required_files": [
+        "manifest.json",
+        "viewer_data.json",
+        "statistics.json",
+        "sim_eval.json"
+      ]
+    }
+  ]
+}

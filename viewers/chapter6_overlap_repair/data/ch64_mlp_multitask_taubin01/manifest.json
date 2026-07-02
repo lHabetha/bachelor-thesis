@@ -1,0 +1,20 @@
+{
+  "schema_version": "v1",
+  "run_id": "ch64_mlp_multitask_taubin01",
+  "optimizer_id": "mlp__multitask__taubin0.1",
+  "model_id": "overlap_regressor_multitask_v1",
+  "benchmark_set": "strict_overlap_repair_ch64_v1",
+  "tau": 1e-06,
+  "n_starts": 50,
+  "timestamp": "2026-07-01T17:51:43.321794+00:00",
+  "task": "ch64_overlap_repair",
+  "category": "new_6_4",
+  "title": "MLP-only (multitask, binary-head stop)",
+  "results_summary": {
+    "oracle_confirmed": 11,
+    "false_success": 0,
+    "mean_distance": 0.1608677340624854,
+    "strict_success": 11,
+    "mean_pct_overlap_reduction": 57.38162179542409
+  }
+}

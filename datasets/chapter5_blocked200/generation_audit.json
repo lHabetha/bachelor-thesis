@@ -1,0 +1,60 @@
+{
+  "seed": 6202001,
+  "max_attempts": 250000,
+  "attempts": 9076,
+  "elapsed_s": 0.44579291343688965,
+  "counters": {
+    "attempt_uniform": 2269,
+    "not_blocked_or_invalid": 8014,
+    "attempt_boundary": 2269,
+    "attempt_extreme": 2269,
+    "attempt_lhs": 2269,
+    "accepted_typical_blocked": 388,
+    "accepted_extreme_roof_cage": 150,
+    "accepted_stress_extreme_corner": 203,
+    "accepted_near_boundary": 321
+  },
+  "bucket_candidates": {
+    "typical_blocked": 388,
+    "near_boundary": 321,
+    "extreme_roof_cage": 150,
+    "stress_extreme_corner": 203
+  },
+  "exclusion_counts": {
+    "dense50k_pool": 50000,
+    "task22_holdout": 5000,
+    "legacy_blocked_100": 100,
+    "default_model_train_ids": 2500
+  },
+  "benchmark_id": "blocked_200_v1",
+  "n_starts": 200,
+  "quotas": {
+    "near_boundary": 70,
+    "typical_blocked": 50,
+    "extreme_roof_cage": 50,
+    "stress_extreme_corner": 30
+  },
+  "selected_bucket_counts": {
+    "near_boundary": 70,
+    "typical_blocked": 50,
+    "extreme_roof_cage": 50,
+    "stress_extreme_corner": 30
+  },
+  "selected_stream_counts": {
+    "boundary": 96,
+    "lhs": 29,
+    "extreme": 42,
+    "uniform": 33
+  },
+  "selected_subgroup_counts": {
+    "nearest_inward_movement": 66,
+    "nearest_splint_clearance": 134
+  },
+  "selected_overlap_counts": {
+    "dense50k_pool": 0,
+    "task22_holdout": 0,
+    "legacy_blocked_100": 0,
+    "default_model_train_ids": 0
+  },
+  "all_selected_valid_formula_blocked": true
+}

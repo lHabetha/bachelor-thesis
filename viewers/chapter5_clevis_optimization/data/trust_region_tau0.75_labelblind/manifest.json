@@ -1,0 +1,22 @@
+{
+  "schema_version": "v1",
+  "run_id": "trust_region_tau0.75_labelblind",
+  "optimizer_id": "trust_region_hybrid_v1",
+  "model_id": "row1_uncertainty_disagreement_B1000_T2500_best",
+  "model_dir": "results/chapter5_optimization/checkpoints/row1_uncertainty_disagreement_B1000_T2500_best",
+  "benchmark_set": "blocked_200_v1",
+  "tau": 0.75,
+  "n_starts": 200,
+  "constraint_id": null,
+  "locked_params": [],
+  "baseline_run_id": null,
+  "wall_time_s": 8.321225881576538,
+  "timestamp": "2026-06-10T14:30:48.327736",
+  "results_summary": {
+    "surrogate_success": 200,
+    "oracle_confirmed": 200,
+    "false_success": 0,
+    "no_crossing": 0,
+    "mean_distance": 0.57705
+  }
+}

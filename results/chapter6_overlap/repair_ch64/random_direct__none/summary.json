@@ -1,0 +1,18 @@
+{
+  "run_id": "random_direct__none/shard_000_010",
+  "method": "random_direct",
+  "method_label": "random_direct__none",
+  "model_kind": "none",
+  "model_dir": null,
+  "tau_vol": 0.0,
+  "tau_bin": null,
+  "strict_threshold_norm": 1e-06,
+  "starts_csv": "datasets/chapter6_overlap_clevis/benchmark_strict_repair_ch64_v1/starts.csv",
+  "n_starts": 10,
+  "strict_success": 7,
+  "mean_pct_overlap_reduction": 92.66108840771834,
+  "median_pct_overlap_reduction": 100.0,
+  "mean_verifier_calls": 266.4,
+  "mean_active_coordinates": 13.0,
+  "mean_wall_time_s": 10.707100300499985
+}

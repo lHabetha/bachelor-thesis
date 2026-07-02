@@ -1,0 +1,33 @@
+name: bachelor-thesis
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11
+  - pip
+  - cadquery=2.7.0
+  - numpy
+  - scipy
+  - pandas
+  - pyarrow
+  - matplotlib
+  - seaborn
+  - pillow
+  - tqdm
+  - scikit-learn
+  - joblib=1.5.3
+  - trimesh=4.12.2
+  - rtree
+  - networkx
+  - pyquaternion
+  - pytorch
+  - xgboost=3.2.0
+  - lightgbm=4.6.0
+  - imageio
+  - imageio-ffmpeg
+  - pyglet
+  - ipython
+  - jupyter
+  - pip:
+      - aerosandbox==4.2.9
+      - casadi==3.7.2
+      - manifold3d

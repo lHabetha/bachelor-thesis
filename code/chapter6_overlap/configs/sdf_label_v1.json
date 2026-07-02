@@ -1,0 +1,30 @@
+{
+  "label_backend_version": "analytic_voxel_clevis_v1",
+  "created": "2026-06-15",
+  "description": "Fast analytic voxel overlap labeler for Task 25 active-learning acquisition, calibrated against mesh booleans.",
+  "part_pairs": [
+    ["bracket", "main_pin"],
+    ["bracket", "splint"],
+    ["main_pin", "splint"]
+  ],
+  "method": "Evaluate analytic clevis part occupancy at grid-cell centers inside each pair's AABB intersection and count overlapping cells.",
+  "initial_sweeps": {
+    "pitch_mm": [1.0, 0.75, 0.5],
+    "epsilon_mm": []
+  },
+  "default_after_calibration": {
+    "pitch_mm": 0.5,
+    "epsilon_mm": null,
+    "overlap_threshold_norm": 0.00005
+  },
+  "disk_cache_policy": {
+    "retain_obj": true,
+    "geometry_disk_cap_gb": 8.0,
+    "evict_geometry_only": true
+  },
+  "notes": [
+    "Initial calibration run analytic_calibration_v1_n12 found pitch=0.5 mm to be the best speed/accuracy tradeoff.",
+    "Mesh-backed signed-distance labeling was too slow for active learning on this machine, taking roughly 10-25 seconds per sample depending on setting.",
+    "The nonzero normalized threshold intentionally ignores tiny boolean slivers around ~2 mm^3 that center-sampled voxels can miss and that are not useful repair targets."
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "name": "strict_overlap_repair_ch64_v1",
+  "source_csv": "datasets/chapter6_overlap_clevis/benchmark_strict_repair_ch64_v1/starts.csv",
+  "n_starts": 50,
+  "strict_threshold_norm": 1e-06,
+  "acquisition_threshold_norm": 5e-05,
+  "category_counts": {
+    "splint_head_wall_candidate": 10,
+    "pin_head_or_shaft_wall_candidate": 10,
+    "pin_splint_cross_overlap": 10,
+    "bracket_splint_other": 10,
+    "other_overlap": 10
+  },
+  "magnitude_bin_counts": {
+    "large": 33,
+    "tiny": 10,
+    "moderate": 7
+  },
+  "dominant_pair_counts": {
+    "bracket__splint": 20,
+    "bracket__main_pin": 10,
+    "main_pin__splint": 10,
+    "clean": 10
+  },
+  "near_zero_band_starts": 10,
+  "start_overlap_norm_min": 4.295520441825859e-05,
+  "start_overlap_norm_max": 0.01994238076118022,
+  "purpose": "Chapter 6.4 overlap-only strict repair benchmark (Task 37 #5f)."
+}

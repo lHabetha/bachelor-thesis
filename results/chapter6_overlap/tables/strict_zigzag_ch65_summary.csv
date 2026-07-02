@@ -1,0 +1,3 @@
+asm_stage_invocations,fail_assemblability_exhausted,fail_max_cycles,fail_overlap_exhausted,final_assemblable,final_overlap_ok,mean_active_stages,mean_cycles,mean_first_overlap_pct_reduction,mean_overall_pct_overlap_reduction,mean_verifier_calls,n_starts,overlap_reintroduced_runs,pipeline_success,runs_using_asm_stage,still_blocked_after_overlap_only,variant
+45,0,0,0,50,50,1.96,2.96,100.0,100.0,644.56,50,3,50,45,45,hybrid_lite
+9,0,0,41,9,9,1.18,1.36,57.28824018851533,57.28824018851533,106.24,50,0,9,9,50,finish_line

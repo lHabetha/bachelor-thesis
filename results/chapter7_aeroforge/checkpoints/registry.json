@@ -1,0 +1,60 @@
+{
+  "note": "Optimizer-ready overlap surrogate checkpoints. Gradients use the regression overlap head (z). Multitask models ignore the binary head at inference/optimization time.",
+  "default_for_optimizer": {
+    "best_volume_mae": "eng_multitask_gate_strong_100k",
+    "best_cond_mae_log": "eng_multitask_gate_strong_100k",
+    "best_gate_f1": "eng_gate_aug_strong_100k",
+    "best_spearman": "eng_gate_aug_strong_100k",
+    "best_multitask_binary": "eng_multitask_gate_strong_100k"
+  },
+  "models": [
+    {
+      "model_id": "eng_gate_aug_strong_100k",
+      "variant_id": "eng_gate_aug_strong",
+      "path": "results/chapter7_aeroforge/checkpoints/eng_gate_aug_strong_100k.pt",
+      "loss_variant": "gate_augmented",
+      "engineered": true,
+      "multitask": false,
+      "train_rows": 100000,
+      "labels_path": "datasets/chapter7_aeroforge_adv/labels_cloud/labels.jsonl",
+      "optimizer_use": "regression head z for predict + gradient",
+      "recommended_for": "best gate F1 / Spearman for boundary-aware repair"
+    },
+    {
+      "model_id": "eng_log_huber_100k",
+      "variant_id": "eng_log_huber",
+      "path": "results/chapter7_aeroforge/checkpoints/eng_log_huber_100k.pt",
+      "loss_variant": "log_huber",
+      "engineered": true,
+      "multitask": false,
+      "train_rows": 100000,
+      "labels_path": "datasets/chapter7_aeroforge_adv/labels_cloud/labels.jsonl",
+      "optimizer_use": "regression head z for predict + gradient",
+      "recommended_for": "best headline overlap volume accuracy"
+    },
+    {
+      "model_id": "eng_multitask_gate_strong_100k",
+      "variant_id": "eng_multitask_gate_strong",
+      "path": "results/chapter7_aeroforge/checkpoints/eng_multitask_gate_strong_100k.pt",
+      "loss_variant": "multitask_gate",
+      "engineered": true,
+      "multitask": true,
+      "train_rows": 100000,
+      "labels_path": "datasets/chapter7_aeroforge_adv/labels_cloud/labels.jsonl",
+      "optimizer_use": "regression head z for predict + gradient",
+      "recommended_for": "explicit binary overlap head (reg head still used by optimizer)"
+    },
+    {
+      "model_id": "raw_log_huber_100k",
+      "variant_id": "raw_log_huber",
+      "path": "results/chapter7_aeroforge/checkpoints/raw_log_huber_100k.pt",
+      "loss_variant": "log_huber",
+      "engineered": false,
+      "multitask": false,
+      "train_rows": 100000,
+      "labels_path": "datasets/chapter7_aeroforge_adv/labels_cloud/labels.jsonl",
+      "optimizer_use": "regression head z for predict + gradient",
+      "recommended_for": "volume MAE baseline without engineered features"
+    }
+  ]
+}

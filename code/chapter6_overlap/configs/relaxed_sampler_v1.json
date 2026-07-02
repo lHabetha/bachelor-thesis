@@ -1,0 +1,50 @@
+{
+  "sampler_version": "relaxed_sampler_v1",
+  "created": "2026-06-15",
+  "description": "Controlled-overlap DummyParams sampler for Task 25. Candidate pools remain params-only until labels are acquired.",
+  "hard_constraints": [
+    "A3",
+    "B1",
+    "B3",
+    "B4",
+    "B5",
+    "D1",
+    "D2",
+    "D3",
+    "E1",
+    "E2",
+    "E3"
+  ],
+  "modified_constraints": {
+    "B2": "main_hole_offset_from_open_end + main_hole_radius <= 0.99 * leg_length",
+    "C1": "outer_span > wall_thickness + eps_access and inner cavity distance remains positive"
+  },
+  "relaxed_constraints": [
+    "A1",
+    "A2",
+    "D4",
+    "D5",
+    "D6",
+    "D7"
+  ],
+  "streams": {
+    "clean_valid": 0.25,
+    "near_boundary": 0.20,
+    "single_relaxation": 0.35,
+    "multi_relaxation": 0.15,
+    "extreme_meaningful": 0.05
+  },
+  "intended_violation_caps_mm": {
+    "A1_pin_too_large": 1.5,
+    "A2_splint_too_large": 0.8,
+    "D4_splint_head_roof": 8.0,
+    "D5_splint_head_wall": 8.0,
+    "D6_splint_head_bore": 3.0,
+    "D7_pin_head_roof": 8.0
+  },
+  "notes": [
+    "Caps are initial implementation settings, not thesis results.",
+    "The sampler records original margins and actual voxel/SDF labels decide whether visible overlap exists.",
+    "If calibration shows too many absurd or non-informative samples, supersede this config rather than silently changing it."
+  ]
+}

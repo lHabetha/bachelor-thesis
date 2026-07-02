@@ -1,0 +1,55 @@
+{
+  "architecture": "xgboost",
+  "feature_names": [
+    "wall_thickness",
+    "outer_span",
+    "leg_length",
+    "depth",
+    "main_hole_offset_from_open_end",
+    "main_hole_radius",
+    "main_pin_length",
+    "main_pin_radius",
+    "cross_hole_radius",
+    "cross_hole_distance_from_free_end",
+    "splint_radius",
+    "splint_length",
+    "overhang_span_y"
+  ],
+  "metadata": {
+    "kind": "xgboost"
+  },
+  "metrics": {
+    "accuracy": 0.9488,
+    "balanced_accuracy": 0.9406121290526983,
+    "brier": 0.05913995797636535,
+    "ece_10bin": 0.13085536276996138,
+    "fit_wall_s": 0.07188345806207508,
+    "macro_f1": 0.8843949012371191,
+    "mcc": 0.779776878069574,
+    "model_metadata": {
+      "kind": "xgboost"
+    },
+    "pos_rate_pred": 0.8552,
+    "pos_rate_true": 0.8912,
+    "precision_assemblable": 0.9911131898971001,
+    "precision_blocked": 0.6988950276243094,
+    "predict_wall_s": 0.0035935420310124755,
+    "recall_assemblable": 0.9510771992818672,
+    "recall_blocked": 0.9301470588235294,
+    "roc_auc": 0.9867581879026297,
+    "train_pos_rate": 0.817,
+    "train_size": 3000
+  },
+  "model_id": "xgboost_best_task30_labelblind_rank1",
+  "n_features": 13,
+  "provenance": {
+    "base_size": 800,
+    "model_id": "xgboost_best_task30_labelblind_rank1",
+    "n_train": 3000,
+    "row": "al_uncertainty_disagreement",
+    "seed_split": 7,
+    "source_file": "results/chapter4_label_efficiency/tree_runs/active_grid_labelblind/results/xgboost__al_uncertainty_disagreement__B0800__R007.json",
+    "total_labels": 2400
+  },
+  "task30_tree_surrogate": true
+}

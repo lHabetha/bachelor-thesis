@@ -1,0 +1,219 @@
+[
+  {
+    "constraint_id": "grad_top_1",
+    "kind": "gradient_ranked",
+    "description": "Lock the largest absolute normalized MLP-gradient coordinate.",
+    "fixed_locked_names": [],
+    "requires_baseline": false
+  },
+  {
+    "constraint_id": "grad_top_2",
+    "kind": "gradient_ranked",
+    "description": "Lock the two largest absolute normalized MLP-gradient coordinates.",
+    "fixed_locked_names": [],
+    "requires_baseline": false
+  },
+  {
+    "constraint_id": "grad_top_3",
+    "kind": "gradient_ranked",
+    "description": "Lock the three largest absolute normalized MLP-gradient coordinates.",
+    "fixed_locked_names": [],
+    "requires_baseline": false
+  },
+  {
+    "constraint_id": "grad_bottom_1",
+    "kind": "gradient_ranked",
+    "description": "Lock the smallest absolute normalized MLP-gradient coordinate.",
+    "fixed_locked_names": [],
+    "requires_baseline": false
+  },
+  {
+    "constraint_id": "grad_bottom_2",
+    "kind": "gradient_ranked",
+    "description": "Lock the two smallest absolute normalized MLP-gradient coordinates.",
+    "fixed_locked_names": [],
+    "requires_baseline": false
+  },
+  {
+    "constraint_id": "grad_bottom_3",
+    "kind": "gradient_ranked",
+    "description": "Lock the three smallest absolute normalized MLP-gradient coordinates.",
+    "fixed_locked_names": [],
+    "requires_baseline": false
+  },
+  {
+    "constraint_id": "grad_middle_2",
+    "kind": "gradient_ranked",
+    "description": "Lock the two middle-ranked absolute normalized MLP-gradient coordinates.",
+    "fixed_locked_names": [],
+    "requires_baseline": false
+  },
+  {
+    "constraint_id": "delta_top_1",
+    "kind": "baseline_delta_ranked",
+    "description": "Lock the coordinate with largest unconstrained normalized movement.",
+    "fixed_locked_names": [],
+    "requires_baseline": true
+  },
+  {
+    "constraint_id": "delta_top_2",
+    "kind": "baseline_delta_ranked",
+    "description": "Lock the two coordinates with largest unconstrained normalized movement.",
+    "fixed_locked_names": [],
+    "requires_baseline": true
+  },
+  {
+    "constraint_id": "delta_top_3",
+    "kind": "baseline_delta_ranked",
+    "description": "Lock the three coordinates with largest unconstrained normalized movement.",
+    "fixed_locked_names": [],
+    "requires_baseline": true
+  },
+  {
+    "constraint_id": "lock_pin",
+    "kind": "semantic_group",
+    "description": "Lock main pin length and radius.",
+    "fixed_locked_names": [
+      "main_pin_length",
+      "main_pin_radius"
+    ],
+    "requires_baseline": false
+  },
+  {
+    "constraint_id": "lock_pin_user",
+    "kind": "semantic_group",
+    "description": "Lock main pin length, main pin radius, and main-hole radius.",
+    "fixed_locked_names": [
+      "main_pin_length",
+      "main_pin_radius",
+      "main_hole_radius"
+    ],
+    "requires_baseline": false
+  },
+  {
+    "constraint_id": "lock_bracket",
+    "kind": "semantic_group",
+    "description": "Lock bracket body and main-hole geometry.",
+    "fixed_locked_names": [
+      "wall_thickness",
+      "outer_span",
+      "leg_length",
+      "depth",
+      "main_hole_offset_from_open_end",
+      "main_hole_radius",
+      "overhang_span_y"
+    ],
+    "requires_baseline": false
+  },
+  {
+    "constraint_id": "lock_main_bracket_user",
+    "kind": "semantic_group",
+    "description": "Lock main bracket and roof-path geometry except main-hole radius.",
+    "fixed_locked_names": [
+      "wall_thickness",
+      "outer_span",
+      "leg_length",
+      "depth",
+      "main_hole_offset_from_open_end",
+      "overhang_span_y"
+    ],
+    "requires_baseline": false
+  },
+  {
+    "constraint_id": "lock_splint",
+    "kind": "semantic_group",
+    "description": "Lock cross-hole and splint geometry.",
+    "fixed_locked_names": [
+      "cross_hole_radius",
+      "cross_hole_distance_from_free_end",
+      "splint_radius",
+      "splint_length"
+    ],
+    "requires_baseline": false
+  },
+  {
+    "constraint_id": "lock_splint_user",
+    "kind": "semantic_group",
+    "description": "Lock splint radius, splint length, and cross-hole radius.",
+    "fixed_locked_names": [
+      "cross_hole_radius",
+      "splint_radius",
+      "splint_length"
+    ],
+    "requires_baseline": false
+  },
+  {
+    "constraint_id": "lock_roof_path",
+    "kind": "semantic_group",
+    "description": "Lock leg length, overhang span, and main pin length.",
+    "fixed_locked_names": [
+      "leg_length",
+      "overhang_span_y",
+      "main_pin_length"
+    ],
+    "requires_baseline": false
+  },
+  {
+    "constraint_id": "random_1_seed0",
+    "kind": "random_control",
+    "description": "Lock 1 random parameter(s), deterministic seed 0.",
+    "fixed_locked_names": [],
+    "requires_baseline": false
+  },
+  {
+    "constraint_id": "random_1_seed1",
+    "kind": "random_control",
+    "description": "Lock 1 random parameter(s), deterministic seed 1.",
+    "fixed_locked_names": [],
+    "requires_baseline": false
+  },
+  {
+    "constraint_id": "random_1_seed2",
+    "kind": "random_control",
+    "description": "Lock 1 random parameter(s), deterministic seed 2.",
+    "fixed_locked_names": [],
+    "requires_baseline": false
+  },
+  {
+    "constraint_id": "random_2_seed0",
+    "kind": "random_control",
+    "description": "Lock 2 random parameter(s), deterministic seed 0.",
+    "fixed_locked_names": [],
+    "requires_baseline": false
+  },
+  {
+    "constraint_id": "random_2_seed1",
+    "kind": "random_control",
+    "description": "Lock 2 random parameter(s), deterministic seed 1.",
+    "fixed_locked_names": [],
+    "requires_baseline": false
+  },
+  {
+    "constraint_id": "random_2_seed2",
+    "kind": "random_control",
+    "description": "Lock 2 random parameter(s), deterministic seed 2.",
+    "fixed_locked_names": [],
+    "requires_baseline": false
+  },
+  {
+    "constraint_id": "random_3_seed0",
+    "kind": "random_control",
+    "description": "Lock 3 random parameter(s), deterministic seed 0.",
+    "fixed_locked_names": [],
+    "requires_baseline": false
+  },
+  {
+    "constraint_id": "random_3_seed1",
+    "kind": "random_control",
+    "description": "Lock 3 random parameter(s), deterministic seed 1.",
+    "fixed_locked_names": [],
+    "requires_baseline": false
+  },
+  {
+    "constraint_id": "random_3_seed2",
+    "kind": "random_control",
+    "description": "Lock 3 random parameter(s), deterministic seed 2.",
+    "fixed_locked_names": [],
+    "requires_baseline": false
+  }
+]

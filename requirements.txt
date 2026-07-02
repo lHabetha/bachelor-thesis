@@ -1,0 +1,28 @@
+# Pip reference for the public thesis release.
+#
+# For full CAD/render reproducibility, prefer:
+#   conda env create -f environment.yml
+#
+# CadQuery, PyTorch, and geometry backends are platform-sensitive; if a pip
+# install fails, use the conda environment file instead.
+aerosandbox==4.2.9
+cadquery==2.7.0
+casadi==3.7.2
+joblib==1.5.3
+lightgbm==4.6.0
+manifold3d
+matplotlib
+networkx
+numpy
+pandas
+pillow
+pyarrow==24.0.0
+pyquaternion
+rtree
+scikit-learn
+scipy
+seaborn
+torch==2.8.0
+tqdm
+trimesh==4.12.2
+xgboost==3.2.0

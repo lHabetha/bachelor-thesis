@@ -1,0 +1,40 @@
+{
+  "candidate_pool": {
+    "formula_reason_dist": {
+      "assemb-inward_movement": 9108,
+      "assemb-roof_clearance": 12908,
+      "assemb-splint_clearance": 22644,
+      "blocked": 5340
+    },
+    "label_dist": {
+      "assemblable": 44660,
+      "assemblable_rate": 0.8932,
+      "blocked": 5340,
+      "blocked_rate": 0.1068
+    },
+    "n_rows": 50000,
+    "path": "candidate_pool.parquet",
+    "sha256": "902244bd5ba9432eb56112ade3ecf40ceda262888efd796db78fd3cabee09f22"
+  },
+  "design_space_module": "code/chapter3_clevis_setup/design_space.py",
+  "experiment": "dense50k_v1",
+  "geometry_version": "Task 24 corrected (D5 outer wall, D7, slack-aware D4, 5% head lengths)",
+  "head_length_rule": "5% of shaft length",
+  "holdout": {
+    "n_rows": 5000,
+    "sha256": "5b9030e1852cce459e16fc8c758436a44b86221cb5df9d60875d422d52cf1ac5",
+    "public_path": "../holdout/holdout.parquet"
+  },
+  "holdout_exclusion": true,
+  "label_taxonomy": [
+    "assemb-roof_clearance",
+    "assemb-splint_clearance",
+    "assemb-inward_movement",
+    "blocked",
+    "overlap"
+  ],
+  "oracle_module": "code/chapter3_clevis_setup/exact_assemblability.py",
+  "pool_seed_base": 550001,
+  "proposal_distribution": "rejection-conditioned smart_sampler mix (uniform/boundary/extreme/lhs/uniform)",
+  "timestamp": "2026-05-31 22:47:03"
+}

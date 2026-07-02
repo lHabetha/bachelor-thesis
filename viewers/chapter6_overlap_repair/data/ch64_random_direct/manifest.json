@@ -1,0 +1,20 @@
+{
+  "schema_version": "v1",
+  "run_id": "ch64_random_direct",
+  "optimizer_id": "random_direct__none",
+  "model_id": "none",
+  "benchmark_set": "strict_overlap_repair_ch64_v1",
+  "tau": 1e-06,
+  "n_starts": 50,
+  "timestamp": "2026-06-30T13:02:36.883207+00:00",
+  "task": "ch64_overlap_repair",
+  "category": "new_6_4",
+  "title": "Random directions + direct verify (control)",
+  "results_summary": {
+    "oracle_confirmed": 40,
+    "false_success": 0,
+    "mean_distance": 0.17280003460124135,
+    "strict_success": 40,
+    "mean_pct_overlap_reduction": 95.77917317066405
+  }
+}

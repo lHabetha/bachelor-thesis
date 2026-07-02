@@ -1,0 +1,53 @@
+{
+  "architecture": "MLP64 (13->64->32->1)",
+  "best_epoch": 142,
+  "best_val_loss": 0.06875547021627426,
+  "feature_names": [
+    "wall_thickness",
+    "outer_span",
+    "leg_length",
+    "depth",
+    "main_hole_offset_from_open_end",
+    "main_hole_radius",
+    "main_pin_length",
+    "main_pin_radius",
+    "cross_hole_radius",
+    "cross_hole_distance_from_free_end",
+    "splint_radius",
+    "splint_length",
+    "overhang_span_y"
+  ],
+  "n_features": 13,
+  "source": "50k row1_uncertainty_disagreement B=1000 T=2500",
+  "seed_split": 6,
+  "eval_seed": 55166,
+  "holdout_balanced_accuracy": 0.9926206568803464,
+  "holdout_metrics": {
+    "balanced_accuracy": 0.9926206568803464,
+    "accuracy": 0.9926,
+    "macro_f1": 0.9813551500250295,
+    "mcc": 0.9631248393416441,
+    "recall_blocked": 0.9926470588235294,
+    "recall_assemblable": 0.9925942549371634,
+    "precision_blocked": 0.9424083769633508,
+    "train_pos_rate": 0.8912,
+    "roc_auc": 0.9996885395765128,
+    "brier": 0.007024191602622284
+  },
+  "n_train": 2500,
+  "row": "row1_uncertainty_disagreement",
+  "base_size": 1000,
+  "total_labels": 2500,
+  "pool_source": "datasets/chapter4_clevis_pools/pool_50k/candidate_pool.parquet",
+  "holdout_source": "datasets/chapter4_clevis_pools/holdout/holdout.parquet",
+  "all_splits_bac": {
+    "R001": 0.9894359224838949,
+    "R002": 0.9853535220192207,
+    "R003": 0.9812331687612208,
+    "R004": 0.9884474997359806,
+    "R005": 0.9825747174992079,
+    "R006": 0.9926206568803464,
+    "R007": 0.9810516554018376,
+    "R008": 0.9904193948674622
+  }
+}

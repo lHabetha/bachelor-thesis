@@ -1,0 +1,18 @@
+{
+  "run_id": "mlp__v3__tauvol0/shard_000_010",
+  "method": "mlp",
+  "method_label": "mlp__v3__tauvol0",
+  "model_kind": "v3",
+  "model_dir": "results/chapter6_overlap/checkpoints/overlap_regressor_regression_v3_selected",
+  "tau_vol": 0.0,
+  "tau_bin": null,
+  "strict_threshold_norm": 1e-06,
+  "starts_csv": "datasets/chapter6_overlap_clevis/benchmark_strict_repair_ch64_v1/starts.csv",
+  "n_starts": 10,
+  "strict_success": 1,
+  "mean_pct_overlap_reduction": 64.27290126346747,
+  "median_pct_overlap_reduction": 66.23490339710673,
+  "mean_verifier_calls": 11.7,
+  "mean_active_coordinates": 11.1,
+  "mean_wall_time_s": 1.009446111100027
+}

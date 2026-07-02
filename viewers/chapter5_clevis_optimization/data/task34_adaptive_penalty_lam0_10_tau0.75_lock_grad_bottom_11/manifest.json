@@ -1,0 +1,29 @@
+{
+  "schema_version": "v1",
+  "run_id": "task34_adaptive_penalty_lam0_10_tau0.75_lock_grad_bottom_11",
+  "optimizer_id": "adaptive_multistep_penalty_lam0_10_v1",
+  "model_id": "row1_uncertainty_disagreement_B1000_T2500_best",
+  "model_dir": "results/chapter5_optimization/checkpoints/row1_uncertainty_disagreement_B1000_T2500_best",
+  "benchmark_set": "blocked_200_v1",
+  "tau": 0.75,
+  "n_starts": 200,
+  "constraint_id": "grad_bottom_11",
+  "locked_params": [],
+  "baseline_run_id": "task34_adaptive_penalty_lam0_10_tau0.75",
+  "wall_time_s": 0.9858160018920898,
+  "timestamp": "2026-06-14T01:15:23.995719",
+  "results_summary": {
+    "surrogate_success": 192,
+    "oracle_confirmed": 192,
+    "false_success": 0,
+    "no_crossing": 8,
+    "mean_distance": 0.4880463717424132
+  },
+  "constraint": {
+    "constraint_id": "grad_bottom_11",
+    "scenario_kind": "gradient_ranked",
+    "baseline_run_id": "task34_adaptive_penalty_lam0_10_tau0.75",
+    "manual_locked_params": [],
+    "locked_names_vary_by_start": true
+  }
+}

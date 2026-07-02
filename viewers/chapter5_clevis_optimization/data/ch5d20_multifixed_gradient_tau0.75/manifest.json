@@ -1,0 +1,22 @@
+{
+  "schema_version": "v1",
+  "run_id": "ch5d20_multifixed_gradient_tau0.75",
+  "optimizer_id": "receding_gradient_multiscale_v1",
+  "model_id": "row1_uncertainty_disagreement_B1000_T2500_best",
+  "model_dir": "results/chapter5_optimization/checkpoints/row1_uncertainty_disagreement_B1000_T2500_best",
+  "benchmark_set": "blocked_200_v1",
+  "tau": 0.75,
+  "n_starts": 200,
+  "constraint_id": null,
+  "locked_params": [],
+  "baseline_run_id": null,
+  "wall_time_s": 2.1322600841522217,
+  "timestamp": "2026-06-14T12:04:23.937507",
+  "results_summary": {
+    "surrogate_success": 159,
+    "oracle_confirmed": 164,
+    "false_success": 0,
+    "no_crossing": 41,
+    "mean_distance": 0.45042958611853506
+  }
+}

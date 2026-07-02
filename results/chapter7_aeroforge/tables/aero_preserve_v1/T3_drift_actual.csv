@@ -1,0 +1,16 @@
+# SOURCE: generated=2026-06-23T12:18:19+00:00
+run_id,optimizer,strength_param,strength,n_actual,median_R_actual,iqr_R_actual,p90_R_actual,within_R_0p5,within_R_1p0
+aero_preserve__aero_budget_trust_region__beta_0p04__eng_multitask_gate_strong_100k,aero_budget_trust_region,beta,0.04,64,0.031340317,0.1938498,1.2187215,0.8125,0.84375
+aero_preserve__aero_budget_trust_region__beta_0p25__eng_multitask_gate_strong_100k,aero_budget_trust_region,beta,0.25,65,0.031510444,0.21970261,1.2441448,0.81538462,0.84615385
+aero_preserve__aero_budget_trust_region__beta_1__eng_multitask_gate_strong_100k,aero_budget_trust_region,beta,1.0,65,0.031510444,0.21970261,1.2441448,0.81538462,0.84615385
+aero_preserve__aero_budget_trust_region__beta_4__eng_multitask_gate_strong_100k,aero_budget_trust_region,beta,4.0,65,0.031510444,0.21970261,1.2441448,0.81538462,0.84615385
+aero_preserve__aero_budget_trust_region__beta_inf__eng_multitask_gate_strong_100k,aero_budget_trust_region,beta,1e+99,65,0.031510444,0.21970261,1.2441448,0.81538462,0.84615385
+aero_preserve__aero_penalized_receding__lambda_0__eng_multitask_gate_strong_100k,aero_penalized_receding,lambda_aero,0.0,83,0.63758002,1.0713196,2.7221507,0.42168675,0.63855422
+aero_preserve__aero_penalized_receding__lambda_0p1__eng_multitask_gate_strong_100k,aero_penalized_receding,lambda_aero,0.1,83,0.48234694,1.0758384,2.7221507,0.51807229,0.68674699
+aero_preserve__aero_penalized_receding__lambda_100__eng_multitask_gate_strong_100k,aero_penalized_receding,lambda_aero,100.0,43,0.10667342,0.22013376,0.94742994,0.81395349,0.90697674
+aero_preserve__aero_penalized_receding__lambda_10__eng_multitask_gate_strong_100k,aero_penalized_receding,lambda_aero,10.0,70,0.35209509,0.52249784,1.9894366,0.7,0.8
+aero_preserve__aero_penalized_receding__lambda_1__eng_multitask_gate_strong_100k,aero_penalized_receding,lambda_aero,1.0,79,0.41332974,0.89633252,2.1377722,0.58227848,0.73417722
+aero_preserve__aero_tangent_receding__alpha_0__eng_multitask_gate_strong_100k,aero_tangent_receding,alpha,0.0,83,0.80498613,1.1560313,2.3878534,0.3253012,0.59036145
+aero_preserve__aero_tangent_receding__alpha_0p5__eng_multitask_gate_strong_100k,aero_tangent_receding,alpha,0.5,82,0.55553596,0.88307314,2.5688601,0.45121951,0.7195122
+aero_preserve__aero_tangent_receding__alpha_0p99__eng_multitask_gate_strong_100k,aero_tangent_receding,alpha,0.99,79,0.31657228,1.0368902,3.8016134,0.59493671,0.70886076
+aero_preserve__aero_tangent_receding__alpha_0p9__eng_multitask_gate_strong_100k,aero_tangent_receding,alpha,0.9,83,0.30290853,0.91689413,2.2316335,0.59036145,0.72289157

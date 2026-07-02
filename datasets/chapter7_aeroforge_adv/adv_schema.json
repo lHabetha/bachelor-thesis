@@ -1,0 +1,97 @@
+{
+  "source": "code/chapter7_aeroforge/overlap_search/core.py (ADV_KEYS)",
+  "n_keys": 43,
+  "per_sample_files": "advs/{sample_idx:06d}.json",
+  "record_schema": {
+    "sample_idx": "integer 0-based dataset index",
+    "seed": "seed_base + sample_idx",
+    "family": "weighted generator family name (see manifest.json family_weights)",
+    "adv": "object with exactly the 43 keys listed in adv_keys"
+  },
+  "adv_keys": [
+    "length",
+    "max_width",
+    "max_height",
+    "wingspan",
+    "wing_position",
+    "wing_height_ratio",
+    "tail_position",
+    "design_name",
+    "wall_thickness",
+    "end_cap_percent",
+    "aspect_ratio",
+    "taper",
+    "sweep",
+    "dihedral",
+    "twist",
+    "root_incidence",
+    "airfoil_source",
+    "root_naca_code",
+    "tip_naca_code",
+    "root_csv_filepath",
+    "tip_csv_filepath",
+    "tail_type",
+    "v_tail_angle",
+    "hstab_semispan",
+    "hstab_aspect_ratio",
+    "hstab_taper",
+    "hstab_sweep",
+    "hstab_dihedral",
+    "hstab_root_incidence",
+    "hstab_airfoil_source",
+    "hstab_root_naca_code",
+    "hstab_tip_naca_code",
+    "hstab_root_csv_filepath",
+    "hstab_tip_csv_filepath",
+    "vstab_height",
+    "vstab_aspect_ratio",
+    "vstab_taper",
+    "vstab_sweep",
+    "vstab_airfoil_source",
+    "vstab_root_naca_code",
+    "vstab_tip_naca_code",
+    "vstab_root_csv_filepath",
+    "vstab_tip_csv_filepath"
+  ],
+  "categorical_domains": {
+    "design_name": [
+      "standard",
+      "simple",
+      "transport",
+      "racing",
+      "blended"
+    ],
+    "tail_type": [
+      "conv_tail",
+      "v_tail"
+    ],
+    "root_naca_code": [
+      "2412",
+      "2410",
+      "0012"
+    ],
+    "tip_naca_code": [
+      "2412",
+      "2408",
+      "0009"
+    ]
+  },
+  "model_input_notes": {
+    "raw_numeric_inputs": 39,
+    "engineered_inputs": 45,
+    "dropped_from_models": [
+      "root_csv_filepath",
+      "tip_csv_filepath",
+      "hstab_root_csv_filepath",
+      "hstab_tip_csv_filepath",
+      "vstab_root_csv_filepath",
+      "vstab_tip_csv_filepath"
+    ],
+    "encoding": "One-hot categoricals; see thesis appendix tab:appendix-aeroforge-adv-kept"
+  },
+  "overlap_label": {
+    "metric": "cadquery_cut_each_overlap_fast",
+    "threshold_mm3": 1.0,
+    "definition": "(wings - fuselage) intersect (tail - fuselage) > 1 mm^3"
+  }
+}

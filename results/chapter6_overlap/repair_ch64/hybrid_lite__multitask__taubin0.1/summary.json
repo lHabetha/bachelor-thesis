@@ -1,0 +1,18 @@
+{
+  "run_id": "hybrid_lite__multitask__taubin0.1/shard_000_010",
+  "method": "hybrid_lite",
+  "method_label": "hybrid_lite__multitask__taubin0.1",
+  "model_kind": "multitask",
+  "model_dir": "results/chapter6_overlap/checkpoints/overlap_regressor_multitask_v1_selected",
+  "tau_vol": 0.0,
+  "tau_bin": 0.1,
+  "strict_threshold_norm": 1e-06,
+  "starts_csv": "datasets/chapter6_overlap_clevis/benchmark_strict_repair_ch64_v1/starts.csv",
+  "n_starts": 10,
+  "strict_success": 10,
+  "mean_pct_overlap_reduction": 100.0,
+  "median_pct_overlap_reduction": 100.0,
+  "mean_verifier_calls": 149.7,
+  "mean_active_coordinates": 9.1,
+  "mean_wall_time_s": 8.128118362299972
+}

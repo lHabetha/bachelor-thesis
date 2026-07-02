@@ -1,0 +1,20 @@
+{
+  "schema_version": "v1",
+  "run_id": "ch64_hybrid_lite_reduced_calls_v3",
+  "optimizer_id": "hybrid_lite_reduced_calls__v3__tauvol0",
+  "model_id": "overlap_regressor_v3",
+  "benchmark_set": "strict_overlap_repair_ch64_v1",
+  "tau": 1e-06,
+  "n_starts": 50,
+  "timestamp": "2026-07-01T17:51:34.201450+00:00",
+  "task": "ch64_overlap_repair",
+  "category": "new_6_4",
+  "title": "Hybrid-lite reduced-calls (v3)",
+  "results_summary": {
+    "oracle_confirmed": 35,
+    "false_success": 0,
+    "mean_distance": 0.2249052132293582,
+    "strict_success": 35,
+    "mean_pct_overlap_reduction": 92.23856179436362
+  }
+}

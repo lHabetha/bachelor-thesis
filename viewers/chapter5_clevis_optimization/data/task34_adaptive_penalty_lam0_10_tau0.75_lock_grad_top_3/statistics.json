@@ -1,0 +1,86 @@
+{
+  "total_starts": 200,
+  "surrogate_success_count": 111,
+  "oracle_confirmed_count": 124,
+  "false_success_count": 0,
+  "false_success_rate": 0.0,
+  "no_crossing_count": 89,
+  "validity_failure_count": 0,
+  "distances": {
+    "all_mean": 0.4518951540806955,
+    "all_median": 0.3750000000000002,
+    "oracle_confirmed_mean": 0.5466977930559033,
+    "oracle_confirmed_median": 0.5657966453394498,
+    "false_success_mean": 0.0,
+    "stuck_mean": 0.3028113332794825
+  },
+  "sparse_metrics": {
+    "active_epsilon": 0.0001,
+    "active_coordinate_count_mean": 9.46,
+    "active_coordinate_count_median": 10.0,
+    "l1_distance_mean": 1.0484317027391512,
+    "l1_distance_median": 0.8667775030363158,
+    "moved_parameter_counts": {
+      "wall_thickness": 189,
+      "outer_span": 162,
+      "leg_length": 27,
+      "depth": 185,
+      "main_hole_offset_from_open_end": 115,
+      "main_hole_radius": 188,
+      "main_pin_length": 32,
+      "main_pin_radius": 191,
+      "cross_hole_radius": 189,
+      "cross_hole_distance_from_free_end": 193,
+      "splint_radius": 190,
+      "splint_length": 157,
+      "overhang_span_y": 74
+    }
+  },
+  "subgroups": {
+    "nearest_inward_movement": {
+      "count": 66,
+      "surrogate_success": 27,
+      "oracle_confirmed": 34,
+      "mean_distance": 0.3092345427403071
+    },
+    "nearest_splint_clearance": {
+      "count": 134,
+      "surrogate_success": 84,
+      "oracle_confirmed": 90,
+      "mean_distance": 0.5221608283229764
+    }
+  },
+  "parameter_locks": {
+    "constraint_id": "grad_top_3",
+    "scenario_kind": "gradient_ranked",
+    "starts_with_locks": 200,
+    "locked_count_mean": 3.0,
+    "locked_gradient_mass_mean": 0.6179301695936883,
+    "locked_delta_mass_mean": 0.5964226361876271,
+    "parameter_lock_counts": {
+      "wall_thickness": 0,
+      "outer_span": 31,
+      "leg_length": 169,
+      "depth": 0,
+      "main_hole_offset_from_open_end": 77,
+      "main_hole_radius": 0,
+      "main_pin_length": 167,
+      "main_pin_radius": 0,
+      "cross_hole_radius": 0,
+      "cross_hole_distance_from_free_end": 0,
+      "splint_radius": 0,
+      "splint_length": 33,
+      "overhang_span_y": 123
+    },
+    "paired_baseline": {
+      "baseline_run_id": "task34_adaptive_penalty_lam0_10_tau0.75",
+      "baseline_oracle_confirmed": 165,
+      "constrained_oracle_confirmed": 124,
+      "oracle_success_drop": 41,
+      "recoverability_among_baseline_successes": 0.7272727272727273,
+      "mean_distance_delta_vs_baseline": 0.12193431152947788,
+      "median_distance_delta_vs_baseline": 0.12822524357514353,
+      "same_or_better_distance_success_count": 0
+    }
+  }
+}

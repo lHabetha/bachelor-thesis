@@ -1,0 +1,18 @@
+{
+  "schema_version": "v1",
+  "run_id": "ch65_zigzag_hybrid_lite",
+  "optimizer_id": "strict_zigzag_ch65_hybrid_lite_v3",
+  "model_id": "overlap_regressor_v3 + row1_uncertainty_disagreement_B1000_T2500_best",
+  "benchmark_set": "strict_overlap_blocked_v2",
+  "tau": 1e-06,
+  "n_starts": 50,
+  "timestamp": "2026-06-30T12:53:47.270929+00:00",
+  "task": "ch65_zigzag",
+  "category": "ch65_zigzag_success",
+  "title": "6.5 zig-zag (hybrid-lite overlap + trust-region asm)",
+  "results_summary": {
+    "pipeline_success": 50,
+    "oracle_confirmed": 50,
+    "false_success": 0
+  }
+}

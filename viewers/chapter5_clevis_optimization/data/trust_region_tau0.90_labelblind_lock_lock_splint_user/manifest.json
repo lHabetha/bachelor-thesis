@@ -1,0 +1,29 @@
+{
+  "schema_version": "v1",
+  "run_id": "trust_region_tau0.90_labelblind_lock_lock_splint_user",
+  "optimizer_id": "trust_region_hybrid_v1",
+  "model_id": "row1_uncertainty_disagreement_B1000_T2500_best",
+  "model_dir": "results/chapter5_optimization/checkpoints/row1_uncertainty_disagreement_B1000_T2500_best",
+  "benchmark_set": "blocked_200_v1",
+  "tau": 0.9,
+  "n_starts": 200,
+  "constraint_id": "lock_splint_user",
+  "locked_params": [],
+  "baseline_run_id": "trust_region_tau0.90_labelblind",
+  "wall_time_s": 7.805070877075195,
+  "timestamp": "2026-06-13T19:47:55.020286",
+  "results_summary": {
+    "surrogate_success": 200,
+    "oracle_confirmed": 200,
+    "false_success": 0,
+    "no_crossing": 0,
+    "mean_distance": 0.6259999999999999
+  },
+  "constraint": {
+    "constraint_id": "lock_splint_user",
+    "scenario_kind": "semantic_group",
+    "baseline_run_id": "trust_region_tau0.90_labelblind",
+    "manual_locked_params": [],
+    "locked_names_vary_by_start": false
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "total_starts": 200,
+  "surrogate_success_count": 148,
+  "oracle_confirmed_count": 163,
+  "false_success_count": 0,
+  "false_success_rate": 0.0,
+  "no_crossing_count": 52,
+  "validity_failure_count": 0,
+  "distances": {
+    "all_mean": 0.92,
+    "all_median": 0.9999999999999998,
+    "oracle_confirmed_mean": 0.9392638036809816,
+    "oracle_confirmed_median": 0.9999999999999997,
+    "false_success_mean": 0.0,
+    "stuck_mean": 0.8961538461538461
+  },
+  "sparse_metrics": {
+    "active_epsilon": 0.0001,
+    "active_coordinate_count_mean": 12.98,
+    "active_coordinate_count_median": 13.0,
+    "l1_distance_mean": 2.6856191059387955,
+    "l1_distance_median": 2.6683656902868025,
+    "moved_parameter_counts": {
+      "wall_thickness": 199,
+      "outer_span": 200,
+      "leg_length": 200,
+      "depth": 200,
+      "main_hole_offset_from_open_end": 199,
+      "main_hole_radius": 200,
+      "main_pin_length": 200,
+      "main_pin_radius": 199,
+      "cross_hole_radius": 199,
+      "cross_hole_distance_from_free_end": 200,
+      "splint_radius": 200,
+      "splint_length": 200,
+      "overhang_span_y": 200
+    }
+  },
+  "subgroups": {
+    "nearest_inward_movement": {
+      "count": 66,
+      "surrogate_success": 55,
+      "oracle_confirmed": 60,
+      "mean_distance": 0.643939393939394
+    },
+    "nearest_splint_clearance": {
+      "count": 134,
+      "surrogate_success": 93,
+      "oracle_confirmed": 103,
+      "mean_distance": 1.0559701492537314
+    }
+  }
+}

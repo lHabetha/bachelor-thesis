@@ -1,0 +1,9 @@
+run_id,model,optimizer,tau,verified_ok,surrogate_ok,false_ok,mean_l2,oracle_mean_l2,wall_time_s
+task30_labelblind_hgb_coordinate_tau0.90,HistGradientBoosting,Coordinate,0.9,200,200,0,1.4169999999999998,1.4169999999999998,1138.7415606975555
+task30_labelblind_hgb_probcoord_tau0.90,HistGradientBoosting,Prob.-guided coord.,0.9,200,200,0,1.4169999999999998,1.4169999999999998,1090.3413631916046
+task30_labelblind_xgb_probcoord_tau0.90,XGBoost,Prob.-guided coord.,0.9,200,172,0,2.436,2.436,11.673073053359985
+task30_labelblind_xgb_coordinate_tau0.90,XGBoost,Coordinate,0.9,200,172,0,4.8935,4.8935,12.170243978500366
+task30_labelblind_hgb_cem_tau0.75,HistGradientBoosting,CEM local search,0.75,184,178,6,1.7986283606587583,1.872146114753364,941.8325629234314
+task30_labelblind_hgb_adaptive_sphere_tau0.90,HistGradientBoosting,Adaptive sphere,0.9,181,158,2,1.0454293707847595,1.0767509708088405,1406.7455129623413
+task30_labelblind_hgb_sphere_shrink_tau0.90,HistGradientBoosting,Sphere shrink,0.9,168,100,2,0.8999114594188427,0.9284361011781421,1917.1646029949188
+task30_labelblind_xgb_sphere_shrink_tau0.90,XGBoost,Sphere shrink,0.9,159,35,1,1.3553320344627888,1.4541366461657304,15.583937644958496

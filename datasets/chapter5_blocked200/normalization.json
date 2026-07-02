@@ -1,0 +1,51 @@
+{
+  "benchmark_id": "blocked_200_v1",
+  "parameter_order": [
+    "wall_thickness",
+    "outer_span",
+    "leg_length",
+    "depth",
+    "main_hole_offset_from_open_end",
+    "main_hole_radius",
+    "main_pin_length",
+    "main_pin_radius",
+    "cross_hole_radius",
+    "cross_hole_distance_from_free_end",
+    "splint_radius",
+    "splint_length",
+    "overhang_span_y"
+  ],
+  "medians": [
+    5.2885,
+    82.97550000000001,
+    34.7855,
+    35.031000000000006,
+    19.02,
+    5.6245,
+    114.852,
+    5.12,
+    2.3175,
+    9.2165,
+    1.848,
+    26.0335,
+    149.9505
+  ],
+  "stds": [
+    3.150343146008066,
+    18.976986831406474,
+    17.11310388450617,
+    14.711934432017255,
+    13.301661567615339,
+    2.145884142049613,
+    27.104500061227842,
+    1.9668367783766403,
+    1.021197134543571,
+    6.361019795282436,
+    0.8061748619096235,
+    5.706321745038569,
+    37.887609589278654
+  ],
+  "description": "x_norm = (x - median) / std; distance = ||x_norm_1 - x_norm_0||_2",
+  "n_starts": 200,
+  "seed": 6202001
+}

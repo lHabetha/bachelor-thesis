@@ -1,0 +1,206 @@
+{
+  "created_at_utc": "2026-06-21T22:34:51Z",
+  "arch_id": "mlp_256_128_64_32",
+  "hidden": [
+    256,
+    128,
+    64,
+    32
+  ],
+  "seed": 42,
+  "epochs": 180,
+  "n_filtered": 90630,
+  "n_train_split": 81567,
+  "n_val_split": 9063,
+  "val_frac": 0.1,
+  "in_dim": 39,
+  "out_dim": 8,
+  "target_names": [
+    "CD0",
+    "L_D_analytic",
+    "CD0_wing",
+    "CD0_tail",
+    "CD0_fuselage",
+    "L_D_vlm",
+    "CL_vlm",
+    "Cm_vlm"
+  ],
+  "feature_names": [
+    "wing_position",
+    "length",
+    "max_width",
+    "max_height",
+    "wingspan",
+    "wing_height_ratio",
+    "tail_position",
+    "wall_thickness",
+    "end_cap_percent",
+    "aspect_ratio",
+    "taper",
+    "sweep",
+    "dihedral",
+    "twist",
+    "root_incidence",
+    "v_tail_angle",
+    "hstab_semispan",
+    "hstab_aspect_ratio",
+    "hstab_taper",
+    "hstab_sweep",
+    "hstab_dihedral",
+    "hstab_root_incidence",
+    "vstab_height",
+    "vstab_aspect_ratio",
+    "vstab_taper",
+    "vstab_sweep",
+    "tail_type_conv_tail",
+    "tail_type_v_tail",
+    "design_name_blended",
+    "design_name_racing",
+    "design_name_simple",
+    "design_name_standard",
+    "design_name_transport",
+    "root_naca_code_0012",
+    "root_naca_code_2410",
+    "root_naca_code_2412",
+    "tip_naca_code_0009",
+    "tip_naca_code_2408",
+    "tip_naca_code_2412"
+  ],
+  "val_metrics": {
+    "mae_CD0": 0.0003683920710341591,
+    "mae_L_D_analytic": 2.2094224470454664,
+    "mae_CD0_wing": 5.0130651861477654e-05,
+    "mae_CD0_tail": 0.00019002425563196585,
+    "mae_CD0_fuselage": 0.00024142527155153747,
+    "mae_L_D_vlm": 1.3212666169718539,
+    "mae_CL_vlm": 0.04128039945266832,
+    "mae_Cm_vlm": 0.042595094318745724,
+    "mae_mean": 0.45192681625485165
+  },
+  "full_fit_metrics": {
+    "mae_CD0": 0.000344664766784959,
+    "mae_L_D_analytic": 2.171935023719184,
+    "mae_CD0_wing": 4.898682663125839e-05,
+    "mae_CD0_tail": 0.0001726960045544056,
+    "mae_CD0_fuselage": 0.00022356014956957115,
+    "mae_L_D_vlm": 1.218462808547576,
+    "mae_CL_vlm": 0.03882353424249734,
+    "mae_Cm_vlm": 0.04258620887817512,
+    "mae_mean": 0.43407468539187155
+  },
+  "checkpoint": "results/chapter7_aeroforge/checkpoints/performance_mlp_90k.pt",
+  "filter": {
+    "vlm_ok": true,
+    "physical_bounds": [
+      {
+        "name": "CD0",
+        "lo": 0.008,
+        "hi": 0.08
+      },
+      {
+        "name": "L_D_analytic",
+        "lo": 0.5,
+        "hi": 60.0
+      },
+      {
+        "name": "CD0_wing",
+        "lo": 0.005,
+        "hi": 0.04
+      },
+      {
+        "name": "CD0_tail",
+        "lo": 0.0,
+        "hi": 0.02
+      },
+      {
+        "name": "CD0_fuselage",
+        "lo": 0.001,
+        "hi": 0.04
+      },
+      {
+        "name": "L_D_vlm",
+        "lo": 0.5,
+        "hi": 40.0
+      },
+      {
+        "name": "CL_vlm",
+        "lo": -0.8,
+        "hi": 1.5
+      },
+      {
+        "name": "Cm_vlm",
+        "lo": -2.0,
+        "hi": 2.0
+      }
+    ]
+  },
+  "gradient_demo_mean_adv": {
+    "L_D_analytic_top5_sensitive": [
+      {
+        "feature": "wingspan",
+        "abs_grad": 0.14653053879737854
+      },
+      {
+        "feature": "aspect_ratio",
+        "abs_grad": 0.1330975592136383
+      },
+      {
+        "feature": "hstab_semispan",
+        "abs_grad": 0.09103874117136002
+      },
+      {
+        "feature": "hstab_aspect_ratio",
+        "abs_grad": 0.061739664524793625
+      },
+      {
+        "feature": "max_width",
+        "abs_grad": 0.05320307984948158
+      }
+    ],
+    "L_D_analytic_bottom5_insensitive": [
+      {
+        "feature": "twist",
+        "abs_grad": 0.001971864141523838
+      },
+      {
+        "feature": "vstab_height",
+        "abs_grad": 0.0017009300645440817
+      },
+      {
+        "feature": "root_naca_code_2410",
+        "abs_grad": 0.0010391527321189642
+      },
+      {
+        "feature": "root_naca_code_0012",
+        "abs_grad": 0.00041781607433222234
+      },
+      {
+        "feature": "taper",
+        "abs_grad": 0.0003043472534045577
+      }
+    ],
+    "CD0_bottom5_insensitive": [
+      {
+        "feature": "wall_thickness",
+        "abs_grad": 0.0041971164755523205
+      },
+      {
+        "feature": "design_name_blended",
+        "abs_grad": 0.003992911893874407
+      },
+      {
+        "feature": "tail_type_conv_tail",
+        "abs_grad": 0.0036562480963766575
+      },
+      {
+        "feature": "tail_position",
+        "abs_grad": 0.0027707612607628107
+      },
+      {
+        "feature": "vstab_taper",
+        "abs_grad": 0.0025208499282598495
+      }
+    ]
+  },
+  "wall_s": 38.322739458992146
+}

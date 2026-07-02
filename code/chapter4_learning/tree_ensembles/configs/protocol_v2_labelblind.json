@@ -1,0 +1,95 @@
+{
+  "protocol_id": "task30_tree_ensembles_v2_labelblind",
+  "created": "2026-06-10",
+  "description": "Tree-ensemble vs MLP64 label-efficiency comparison with label-blind active learning on the dense50k clevis formula-label pool.",
+  "paths": {
+    "pool": "datasets/chapter4_clevis_pools/pool_50k/candidate_pool.parquet",
+    "holdout": "datasets/chapter4_clevis_pools/holdout/holdout.parquet",
+    "optimizer_benchmark": "(Chapter 5 — not released)"
+  },
+  "seeds": {
+    "n_splits": 8,
+    "base_seed": 830000,
+    "random_baseline_seed": 831000,
+    "model_seed": 832000
+  },
+  "labels": {
+    "t_values": [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 1100, 1200, 1300, 1400, 1500, 1600, 1700, 1800, 1900, 2000, 2100, 2200, 2300, 2400, 2500, 2600, 2700, 2800, 2900, 3000],
+    "t_max": 3000,
+    "step_size": 100,
+    "base_sizes": [200, 400, 600, 800, 1000, 1500, 2000]
+  },
+  "rows": [
+    "random_baseline",
+    "al_uncertainty_disagreement",
+    "al_diverse_uncertainty"
+  ],
+  "models": {
+    "mlp64": {
+      "kind": "mlp",
+      "enabled": true,
+      "description": "Task 22 MLP64 control, retrained under Task 30 protocol."
+    },
+    "random_forest": {
+      "kind": "sklearn_random_forest",
+      "enabled": true,
+      "n_estimators": 160,
+      "max_depth": null,
+      "min_samples_leaf": 2,
+      "max_features": "sqrt"
+    },
+    "extra_trees": {
+      "kind": "sklearn_extra_trees",
+      "enabled": true,
+      "n_estimators": 160,
+      "max_depth": null,
+      "min_samples_leaf": 2,
+      "max_features": "sqrt"
+    },
+    "hist_gradient_boosting": {
+      "kind": "sklearn_hist_gradient_boosting",
+      "enabled": true,
+      "max_iter": 180,
+      "learning_rate": 0.05,
+      "max_leaf_nodes": 31,
+      "l2_regularization": 0.001
+    },
+    "xgboost": {
+      "kind": "xgboost",
+      "enabled_if_available": true,
+      "n_estimators": 220,
+      "max_depth": 3,
+      "learning_rate": 0.05,
+      "subsample": 0.9,
+      "colsample_bytree": 0.9,
+      "reg_lambda": 1.0
+    }
+  },
+  "acquisition": {
+    "label_blind": true,
+    "forbidden_pre_label_inputs": [
+      "label",
+      "formula_margin_min",
+      "formula_reason",
+      "blocked indicators",
+      "inward-movement indicators",
+      "any exact oracle diagnostic column"
+    ],
+    "uncertainty_disagreement": {
+      "allowed_inputs": ["p_mean", "p_uncertainty"],
+      "uncertainty_weight": 0.60,
+      "model_disagreement_weight": 0.40
+    },
+    "diverse_uncertainty": {
+      "allowed_inputs": ["p_mean", "raw_13d_parameters"],
+      "preselect": 3000,
+      "uncertainty_weight": 0.70,
+      "diversity_weight": 0.30
+    }
+  },
+  "execution": {
+    "workers": 14,
+    "single_thread_per_worker": true,
+    "resume_by_default": true
+  }
+}

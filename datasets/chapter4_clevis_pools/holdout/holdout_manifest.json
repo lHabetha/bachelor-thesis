@@ -1,0 +1,27 @@
+{
+  "experiment": "clevis_formula_holdout_v1",
+  "geometry_version": "Task 24 corrected (D5 outer wall, D7, slack-aware D4, 5% head lengths)",
+  "n_rows": 5000,
+  "path": "holdout.parquet",
+  "sha256": "5b9030e1852cce459e16fc8c758436a44b86221cb5df9d60875d422d52cf1ac5",
+  "label_dist": {
+    "assemblable": 4456,
+    "assemblable_rate": 0.8912,
+    "blocked": 544,
+    "blocked_rate": 0.1088
+  },
+  "formula_reason_dist": {
+    "assemb-roof_clearance": 1279,
+    "assemb-splint_clearance": 2262,
+    "assemb-inward_movement": 915,
+    "blocked": 544
+  },
+  "usage": "Evaluation only — never used for active-learning acquisition or training.",
+  "label_taxonomy": [
+    "assemb-roof_clearance",
+    "assemb-splint_clearance",
+    "assemb-inward_movement",
+    "blocked",
+    "overlap"
+  ]
+}

@@ -1,0 +1,1253 @@
+{
+  "chapter": 5,
+  "title": "Surrogate-Based Optimization viewer allowlist",
+  "policy": {
+    "viewer_dropdown_rule": "One allowlist entry per thesis table row; duplicate run_id allowed when the same folder backs multiple table rows.",
+    "allowlist_entries": 88,
+    "unique_run_folders": 80
+  },
+  "required_files": [
+    "manifest.json",
+    "viewer_data.json",
+    "statistics.json",
+    "statistics.md",
+    "algorithm.md"
+  ],
+  "optional_files": {
+    "trajectories.json": "Not loaded by the viewer server."
+  },
+  "entries": [
+    {
+      "entry_id": "5.2.1/one_shot_gradient_tau0.50",
+      "thesis_anchor": "tab:one-shot-gradient",
+      "display_label": "§5.2.1 — one shot gradient tau0.50",
+      "run_id": "one_shot_gradient_bracket_v1_tau0.50_labelblind",
+      "public_viewer_path": "viewers/chapter5_clevis_optimization/data/one_shot_gradient_bracket_v1_tau0.50_labelblind/",
+      "required_files": [
+        "manifest.json",
+        "viewer_data.json",
+        "statistics.json",
+        "statistics.md",
+        "algorithm.md"
+      ]
+    },
+    {
+      "entry_id": "5.2.1/one_shot_gradient_tau0.60",
+      "thesis_anchor": "tab:one-shot-gradient",
+      "display_label": "§5.2.1 — one shot gradient tau0.60",
+      "run_id": "one_shot_gradient_bracket_v1_tau0.60_labelblind",
+      "public_viewer_path": "viewers/chapter5_clevis_optimization/data/one_shot_gradient_bracket_v1_tau0.60_labelblind/",
+      "required_files": [
+        "manifest.json",
+        "viewer_data.json",
+        "statistics.json",
+        "statistics.md",
+        "algorithm.md"
+      ]
+    },
+    {
+      "entry_id": "5.2.1/one_shot_gradient_tau0.70",
+      "thesis_anchor": "tab:one-shot-gradient",
+      "display_label": "§5.2.1 — one shot gradient tau0.70",
+      "run_id": "one_shot_gradient_bracket_v1_tau0.70_labelblind",
+      "public_viewer_path": "viewers/chapter5_clevis_optimization/data/one_shot_gradient_bracket_v1_tau0.70_labelblind/",
+      "required_files": [
+        "manifest.json",
+        "viewer_data.json",
+        "statistics.json",
+        "statistics.md",
+        "algorithm.md"
+      ]
+    },
+    {
+      "entry_id": "5.2.1/one_shot_gradient_tau0.75",
+      "thesis_anchor": "tab:one-shot-gradient",
+      "display_label": "§5.2.1 — one shot gradient tau0.75",
+      "run_id": "one_shot_gradient_bracket_v1_tau0.75_ch5",
+      "public_viewer_path": "viewers/chapter5_clevis_optimization/data/one_shot_gradient_bracket_v1_tau0.75_ch5/",
+      "required_files": [
+        "manifest.json",
+        "viewer_data.json",
+        "statistics.json",
+        "statistics.md",
+        "algorithm.md"
+      ]
+    },
+    {
+      "entry_id": "5.2.1/one_shot_gradient_tau0.80",
+      "thesis_anchor": "tab:one-shot-gradient",
+      "display_label": "§5.2.1 — one shot gradient tau0.80",
+      "run_id": "one_shot_gradient_bracket_v1_tau0.80_labelblind",
+      "public_viewer_path": "viewers/chapter5_clevis_optimization/data/one_shot_gradient_bracket_v1_tau0.80_labelblind/",
+      "required_files": [
+        "manifest.json",
+        "viewer_data.json",
+        "statistics.json",
+        "statistics.md",
+        "algorithm.md"
+      ]
+    },
+    {
+      "entry_id": "5.2.1/one_shot_gradient_tau0.90",
+      "thesis_anchor": "tab:one-shot-gradient",
+      "display_label": "§5.2.1 — one shot gradient tau0.90",
+      "run_id": "one_shot_gradient_bracket_v1_tau0.90_labelblind",
+      "public_viewer_path": "viewers/chapter5_clevis_optimization/data/one_shot_gradient_bracket_v1_tau0.90_labelblind/",
+      "required_files": [
+        "manifest.json",
+        "viewer_data.json",
+        "statistics.json",
+        "statistics.md",
+        "algorithm.md"
+      ]
+    },
+    {
+      "entry_id": "5.2.2/multi_fixed_step_gradient_tau0.60",
+      "thesis_anchor": "tab:multifixed-penalty",
+      "display_label": "§5.2.2 — multi fixed step gradient tau0.60",
+      "run_id": "ch5d20_multifixed_gradient_tau0.60",
+      "public_viewer_path": "viewers/chapter5_clevis_optimization/data/ch5d20_multifixed_gradient_tau0.60/",
+      "required_files": [
+        "manifest.json",
+        "viewer_data.json",
+        "statistics.json",
+        "statistics.md",
+        "algorithm.md"
+      ]
+    },
+    {
+      "entry_id": "5.2.2/multi_fixed_step_gradient_tau0.75",
+      "thesis_anchor": "tab:multifixed-penalty",
+      "display_label": "§5.2.2 — multi fixed step gradient tau0.75",
+      "run_id": "ch5d20_multifixed_gradient_tau0.75",
+      "public_viewer_path": "viewers/chapter5_clevis_optimization/data/ch5d20_multifixed_gradient_tau0.75/",
+      "required_files": [
+        "manifest.json",
+        "viewer_data.json",
+        "statistics.json",
+        "statistics.md",
+        "algorithm.md"
+      ]
+    },
+    {
+      "entry_id": "5.2.2/multi_fixed_step_gradient_tau0.90",
+      "thesis_anchor": "tab:multifixed-penalty",
+      "display_label": "§5.2.2 — multi fixed step gradient tau0.90",
+      "run_id": "ch5d20_multifixed_gradient_tau0.90",
+      "public_viewer_path": "viewers/chapter5_clevis_optimization/data/ch5d20_multifixed_gradient_tau0.90/",
+      "required_files": [
+        "manifest.json",
+        "viewer_data.json",
+        "statistics.json",
+        "statistics.md",
+        "algorithm.md"
+      ]
+    },
+    {
+      "entry_id": "5.2.2/multi_fixed_step_penalty_lambda0.10_tau0.60",
+      "thesis_anchor": "tab:multifixed-penalty",
+      "display_label": "§5.2.2 — multi fixed step penalty lambda0.10 tau0.60",
+      "run_id": "ch5d20_multifixed_penalty_lam0_10_tau0.60",
+      "public_viewer_path": "viewers/chapter5_clevis_optimization/data/ch5d20_multifixed_penalty_lam0_10_tau0.60/",
+      "required_files": [
+        "manifest.json",
+        "viewer_data.json",
+        "statistics.json",
+        "statistics.md",
+        "algorithm.md"
+      ]
+    },
+    {
+      "entry_id": "5.2.2/multi_fixed_step_penalty_lambda0.10_tau0.75",
+      "thesis_anchor": "tab:multifixed-penalty",
+      "display_label": "§5.2.2 — multi fixed step penalty lambda0.10 tau0.75",
+      "run_id": "ch5d20_multifixed_penalty_lam0_10_tau0.75",
+      "public_viewer_path": "viewers/chapter5_clevis_optimization/data/ch5d20_multifixed_penalty_lam0_10_tau0.75/",
+      "required_files": [
+        "manifest.json",
+        "viewer_data.json",
+        "statistics.json",
+        "statistics.md",
+        "algorithm.md"
+      ]
+    },
+    {
+      "entry_id": "5.2.2/multi_fixed_step_penalty_lambda0.10_tau0.90",
+      "thesis_anchor": "tab:multifixed-penalty",
+      "display_label": "§5.2.2 — multi fixed step penalty lambda0.10 tau0.90",
+      "run_id": "ch5d20_multifixed_penalty_lam0_10_tau0.90",
+      "public_viewer_path": "viewers/chapter5_clevis_optimization/data/ch5d20_multifixed_penalty_lam0_10_tau0.90/",
+      "required_files": [
+        "manifest.json",
+        "viewer_data.json",
+        "statistics.json",
+        "statistics.md",
+        "algorithm.md"
+      ]
+    },
+    {
+      "entry_id": "5.2.2/multi_fixed_step_penalty_lambda0.20_tau0.75",
+      "thesis_anchor": "tab:multifixed-penalty",
+      "display_label": "§5.2.2 — multi fixed step penalty lambda0.20 tau0.75",
+      "run_id": "ch5d20_multifixed_penalty_lam0_20_tau0.75",
+      "public_viewer_path": "viewers/chapter5_clevis_optimization/data/ch5d20_multifixed_penalty_lam0_20_tau0.75/",
+      "required_files": [
+        "manifest.json",
+        "viewer_data.json",
+        "statistics.json",
+        "statistics.md",
+        "algorithm.md"
+      ]
+    },
+    {
+      "entry_id": "5.2.2/multi_fixed_step_penalty_lambda0.30_tau0.75",
+      "thesis_anchor": "tab:multifixed-penalty",
+      "display_label": "§5.2.2 — multi fixed step penalty lambda0.30 tau0.75",
+      "run_id": "ch5d20_multifixed_penalty_lam0_30_tau0.75",
+      "public_viewer_path": "viewers/chapter5_clevis_optimization/data/ch5d20_multifixed_penalty_lam0_30_tau0.75/",
+      "required_files": [
+        "manifest.json",
+        "viewer_data.json",
+        "statistics.json",
+        "statistics.md",
+        "algorithm.md"
+      ]
+    },
+    {
+      "entry_id": "5.2.2/multi_fixed_step_penalty_lambda0.50_tau0.75",
+      "thesis_anchor": "tab:multifixed-penalty",
+      "display_label": "§5.2.2 — multi fixed step penalty lambda0.50 tau0.75",
+      "run_id": "ch5d20_multifixed_penalty_lam0_50_tau0.75",
+      "public_viewer_path": "viewers/chapter5_clevis_optimization/data/ch5d20_multifixed_penalty_lam0_50_tau0.75/",
+      "required_files": [
+        "manifest.json",
+        "viewer_data.json",
+        "statistics.json",
+        "statistics.md",
+        "algorithm.md"
+      ]
+    },
+    {
+      "entry_id": "5.2.3/adaptive_gradient_tau0.60",
+      "thesis_anchor": "tab:adaptive-multistep",
+      "display_label": "§5.2.3 — adaptive gradient tau0.60",
+      "run_id": "task34_adaptive_gradient_tau0.60",
+      "public_viewer_path": "viewers/chapter5_clevis_optimization/data/task34_adaptive_gradient_tau0.60/",
+      "required_files": [
+        "manifest.json",
+        "viewer_data.json",
+        "statistics.json",
+        "statistics.md",
+        "algorithm.md"
+      ]
+    },
+    {
+      "entry_id": "5.2.3/adaptive_gradient_tau0.75",
+      "thesis_anchor": "tab:adaptive-multistep",
+      "display_label": "§5.2.3 — adaptive gradient tau0.75",
+      "run_id": "task34_adaptive_gradient_tau0.75",
+      "public_viewer_path": "viewers/chapter5_clevis_optimization/data/task34_adaptive_gradient_tau0.75/",
+      "required_files": [
+        "manifest.json",
+        "viewer_data.json",
+        "statistics.json",
+        "statistics.md",
+        "algorithm.md"
+      ]
+    },
+    {
+      "entry_id": "5.2.3/adaptive_gradient_tau0.90",
+      "thesis_anchor": "tab:adaptive-multistep",
+      "display_label": "§5.2.3 — adaptive gradient tau0.90",
+      "run_id": "task34_adaptive_gradient_tau0.90",
+      "public_viewer_path": "viewers/chapter5_clevis_optimization/data/task34_adaptive_gradient_tau0.90/",
+      "required_files": [
+        "manifest.json",
+        "viewer_data.json",
+        "statistics.json",
+        "statistics.md",
+        "algorithm.md"
+      ]
+    },
+    {
+      "entry_id": "5.2.3/adaptive_penalty_lambda0.10_tau0.60",
+      "thesis_anchor": "tab:adaptive-multistep",
+      "display_label": "§5.2.3 — adaptive penalty lambda0.10 tau0.60",
+      "run_id": "task34_adaptive_penalty_lam0_10_tau0.60",
+      "public_viewer_path": "viewers/chapter5_clevis_optimization/data/task34_adaptive_penalty_lam0_10_tau0.60/",
+      "required_files": [
+        "manifest.json",
+        "viewer_data.json",
+        "statistics.json",
+        "statistics.md",
+        "algorithm.md"
+      ]
+    },
+    {
+      "entry_id": "5.2.3/adaptive_penalty_lambda0.10_tau0.75",
+      "thesis_anchor": "tab:adaptive-multistep",
+      "display_label": "§5.2.3 — adaptive penalty lambda0.10 tau0.75",
+      "run_id": "task34_adaptive_penalty_lam0_10_tau0.75",
+      "public_viewer_path": "viewers/chapter5_clevis_optimization/data/task34_adaptive_penalty_lam0_10_tau0.75/",
+      "required_files": [
+        "manifest.json",
+        "viewer_data.json",
+        "statistics.json",
+        "statistics.md",
+        "algorithm.md"
+      ]
+    },
+    {
+      "entry_id": "5.2.3/adaptive_penalty_lambda0.10_tau0.90",
+      "thesis_anchor": "tab:adaptive-multistep",
+      "display_label": "§5.2.3 — adaptive penalty lambda0.10 tau0.90",
+      "run_id": "task34_adaptive_penalty_lam0_10_tau0.90",
+      "public_viewer_path": "viewers/chapter5_clevis_optimization/data/task34_adaptive_penalty_lam0_10_tau0.90/",
+      "required_files": [
+        "manifest.json",
+        "viewer_data.json",
+        "statistics.json",
+        "statistics.md",
+        "algorithm.md"
+      ]
+    },
+    {
+      "entry_id": "5.2.3/adaptive_penalty_lambda0.05_tau0.75",
+      "thesis_anchor": "tab:adaptive-penalty-sweep",
+      "display_label": "§5.2.3 — adaptive penalty lambda0.05 tau0.75",
+      "run_id": "task34_adaptive_penalty_lam0_05_tau0.75",
+      "public_viewer_path": "viewers/chapter5_clevis_optimization/data/task34_adaptive_penalty_lam0_05_tau0.75/",
+      "required_files": [
+        "manifest.json",
+        "viewer_data.json",
+        "statistics.json",
+        "statistics.md",
+        "algorithm.md"
+      ]
+    },
+    {
+      "entry_id": "5.2.3/adaptive_penalty_lambda0.20_tau0.75",
+      "thesis_anchor": "tab:adaptive-penalty-sweep",
+      "display_label": "§5.2.3 — adaptive penalty lambda0.20 tau0.75",
+      "run_id": "task34_adaptive_penalty_lam0_20_tau0.75",
+      "public_viewer_path": "viewers/chapter5_clevis_optimization/data/task34_adaptive_penalty_lam0_20_tau0.75/",
+      "required_files": [
+        "manifest.json",
+        "viewer_data.json",
+        "statistics.json",
+        "statistics.md",
+        "algorithm.md"
+      ]
+    },
+    {
+      "entry_id": "5.2.3/adaptive_penalty_lambda0.30_tau0.75",
+      "thesis_anchor": "tab:adaptive-penalty-sweep",
+      "display_label": "§5.2.3 — adaptive penalty lambda0.30 tau0.75",
+      "run_id": "task34_adaptive_penalty_lam0_30_tau0.75",
+      "public_viewer_path": "viewers/chapter5_clevis_optimization/data/task34_adaptive_penalty_lam0_30_tau0.75/",
+      "required_files": [
+        "manifest.json",
+        "viewer_data.json",
+        "statistics.json",
+        "statistics.md",
+        "algorithm.md"
+      ]
+    },
+    {
+      "entry_id": "5.2.3/adaptive_penalty_lambda0.50_tau0.75",
+      "thesis_anchor": "tab:adaptive-penalty-sweep",
+      "display_label": "§5.2.3 — adaptive penalty lambda0.50 tau0.75",
+      "run_id": "task34_adaptive_penalty_lam0_50_tau0.75",
+      "public_viewer_path": "viewers/chapter5_clevis_optimization/data/task34_adaptive_penalty_lam0_50_tau0.75/",
+      "required_files": [
+        "manifest.json",
+        "viewer_data.json",
+        "statistics.json",
+        "statistics.md",
+        "algorithm.md"
+      ]
+    },
+    {
+      "entry_id": "5.2.4/coordinate_axis_tau0.75",
+      "thesis_anchor": "tab:coordinate-axis",
+      "display_label": "§5.2.4 — coordinate axis tau0.75",
+      "run_id": "coordinate_axis_tau0.75_labelblind",
+      "public_viewer_path": "viewers/chapter5_clevis_optimization/data/coordinate_axis_tau0.75_labelblind/",
+      "required_files": [
+        "manifest.json",
+        "viewer_data.json",
+        "statistics.json",
+        "statistics.md",
+        "algorithm.md"
+      ]
+    },
+    {
+      "entry_id": "5.2.4/coordinate_axis_tau0.90",
+      "thesis_anchor": "tab:coordinate-axis",
+      "display_label": "§5.2.4 — coordinate axis tau0.90",
+      "run_id": "coordinate_axis_tau0.90_labelblind",
+      "public_viewer_path": "viewers/chapter5_clevis_optimization/data/coordinate_axis_tau0.90_labelblind/",
+      "required_files": [
+        "manifest.json",
+        "viewer_data.json",
+        "statistics.json",
+        "statistics.md",
+        "algorithm.md"
+      ]
+    },
+    {
+      "entry_id": "5.2.5/trust_region_tau0.75",
+      "thesis_anchor": "tab:trust-region",
+      "display_label": "§5.2.5 — trust region tau0.75",
+      "run_id": "trust_region_tau0.75_labelblind",
+      "public_viewer_path": "viewers/chapter5_clevis_optimization/data/trust_region_tau0.75_labelblind/",
+      "required_files": [
+        "manifest.json",
+        "viewer_data.json",
+        "statistics.json",
+        "statistics.md",
+        "algorithm.md"
+      ]
+    },
+    {
+      "entry_id": "5.2.5/trust_region_no_gradient_tau0.75",
+      "thesis_anchor": "tab:trust-region",
+      "display_label": "§5.2.5 — trust region no gradient tau0.75",
+      "run_id": "ch5_trust_region_no_gradient_tau0.75",
+      "public_viewer_path": "viewers/chapter5_clevis_optimization/data/ch5_trust_region_no_gradient_tau0.75/",
+      "required_files": [
+        "manifest.json",
+        "viewer_data.json",
+        "statistics.json",
+        "statistics.md",
+        "algorithm.md"
+      ]
+    },
+    {
+      "entry_id": "5.2.5/trust_region_tau0.90",
+      "thesis_anchor": "tab:trust-region",
+      "display_label": "§5.2.5 — trust region tau0.90",
+      "run_id": "trust_region_tau0.90_labelblind",
+      "public_viewer_path": "viewers/chapter5_clevis_optimization/data/trust_region_tau0.90_labelblind/",
+      "required_files": [
+        "manifest.json",
+        "viewer_data.json",
+        "statistics.json",
+        "statistics.md",
+        "algorithm.md"
+      ]
+    },
+    {
+      "entry_id": "5.2.5/trust_region_no_gradient_tau0.90",
+      "thesis_anchor": "tab:trust-region",
+      "display_label": "§5.2.5 — trust region no gradient tau0.90",
+      "run_id": "ch5_trust_region_no_gradient_tau0.90",
+      "public_viewer_path": "viewers/chapter5_clevis_optimization/data/ch5_trust_region_no_gradient_tau0.90/",
+      "required_files": [
+        "manifest.json",
+        "viewer_data.json",
+        "statistics.json",
+        "statistics.md",
+        "algorithm.md"
+      ]
+    },
+    {
+      "entry_id": "5.2.6/expanding_sphere_32dirs_tau0.90",
+      "thesis_anchor": "tab:random-sphere",
+      "display_label": "§5.2.6 — expanding sphere 32dirs tau0.90",
+      "run_id": "ch5_sphere_expanding_32_matched_tau0.90",
+      "public_viewer_path": "viewers/chapter5_clevis_optimization/data/ch5_sphere_expanding_32_matched_tau0.90/",
+      "required_files": [
+        "manifest.json",
+        "viewer_data.json",
+        "statistics.json",
+        "statistics.md",
+        "algorithm.md"
+      ]
+    },
+    {
+      "entry_id": "5.2.6/sphere_coordinate_shrink_32dirs_tau0.90",
+      "thesis_anchor": "tab:random-sphere",
+      "display_label": "§5.2.6 — sphere coordinate shrink 32dirs tau0.90",
+      "run_id": "ch5_sphere_shrink_32_matched_tau0.90",
+      "public_viewer_path": "viewers/chapter5_clevis_optimization/data/ch5_sphere_shrink_32_matched_tau0.90/",
+      "required_files": [
+        "manifest.json",
+        "viewer_data.json",
+        "statistics.json",
+        "statistics.md",
+        "algorithm.md"
+      ]
+    },
+    {
+      "entry_id": "5.2.6/expanding_sphere_64dirs_tau0.90",
+      "thesis_anchor": "tab:random-sphere",
+      "display_label": "§5.2.6 — expanding sphere 64dirs tau0.90",
+      "run_id": "ch5_sphere_expanding_64_matched_tau0.90",
+      "public_viewer_path": "viewers/chapter5_clevis_optimization/data/ch5_sphere_expanding_64_matched_tau0.90/",
+      "required_files": [
+        "manifest.json",
+        "viewer_data.json",
+        "statistics.json",
+        "statistics.md",
+        "algorithm.md"
+      ]
+    },
+    {
+      "entry_id": "5.2.6/sphere_coordinate_shrink_64dirs_tau0.90",
+      "thesis_anchor": "tab:random-sphere",
+      "display_label": "§5.2.6 — sphere coordinate shrink 64dirs tau0.90",
+      "run_id": "ch5_sphere_shrink_64_matched_tau0.90",
+      "public_viewer_path": "viewers/chapter5_clevis_optimization/data/ch5_sphere_shrink_64_matched_tau0.90/",
+      "required_files": [
+        "manifest.json",
+        "viewer_data.json",
+        "statistics.json",
+        "statistics.md",
+        "algorithm.md"
+      ]
+    },
+    {
+      "entry_id": "5.2.6/expanding_sphere_128dirs_tau0.90",
+      "thesis_anchor": "tab:random-sphere",
+      "display_label": "§5.2.6 — expanding sphere 128dirs tau0.90",
+      "run_id": "ch5_sphere_expanding_128_matched_tau0.90",
+      "public_viewer_path": "viewers/chapter5_clevis_optimization/data/ch5_sphere_expanding_128_matched_tau0.90/",
+      "required_files": [
+        "manifest.json",
+        "viewer_data.json",
+        "statistics.json",
+        "statistics.md",
+        "algorithm.md"
+      ]
+    },
+    {
+      "entry_id": "5.2.6/sphere_coordinate_shrink_128dirs_tau0.90",
+      "thesis_anchor": "tab:random-sphere",
+      "display_label": "§5.2.6 — sphere coordinate shrink 128dirs tau0.90",
+      "run_id": "ch5_sphere_shrink_128_matched_tau0.90",
+      "public_viewer_path": "viewers/chapter5_clevis_optimization/data/ch5_sphere_shrink_128_matched_tau0.90/",
+      "required_files": [
+        "manifest.json",
+        "viewer_data.json",
+        "statistics.json",
+        "statistics.md",
+        "algorithm.md"
+      ]
+    },
+    {
+      "entry_id": "5.2.6/expanding_sphere_256dirs_tau0.90",
+      "thesis_anchor": "tab:random-sphere",
+      "display_label": "§5.2.6 — expanding sphere 256dirs tau0.90",
+      "run_id": "ch5_sphere_expanding_256_matched_tau0.90",
+      "public_viewer_path": "viewers/chapter5_clevis_optimization/data/ch5_sphere_expanding_256_matched_tau0.90/",
+      "required_files": [
+        "manifest.json",
+        "viewer_data.json",
+        "statistics.json",
+        "statistics.md",
+        "algorithm.md"
+      ]
+    },
+    {
+      "entry_id": "5.2.6/sphere_coordinate_shrink_256dirs_tau0.90",
+      "thesis_anchor": "tab:random-sphere",
+      "display_label": "§5.2.6 — sphere coordinate shrink 256dirs tau0.90",
+      "run_id": "ch5_sphere_shrink_256_matched_tau0.90",
+      "public_viewer_path": "viewers/chapter5_clevis_optimization/data/ch5_sphere_shrink_256_matched_tau0.90/",
+      "required_files": [
+        "manifest.json",
+        "viewer_data.json",
+        "statistics.json",
+        "statistics.md",
+        "algorithm.md"
+      ]
+    },
+    {
+      "entry_id": "5.3/semantic/one_shot_none",
+      "thesis_anchor": "tab:semantic-locks",
+      "display_label": "§5.3 — semantic/one shot none",
+      "run_id": "one_shot_gradient_bracket_v1_tau0.60_labelblind",
+      "public_viewer_path": "viewers/chapter5_clevis_optimization/data/one_shot_gradient_bracket_v1_tau0.60_labelblind/",
+      "required_files": [
+        "manifest.json",
+        "viewer_data.json",
+        "statistics.json",
+        "statistics.md",
+        "algorithm.md"
+      ]
+    },
+    {
+      "entry_id": "5.3/semantic/one_shot_splint_locked",
+      "thesis_anchor": "tab:semantic-locks",
+      "display_label": "§5.3 — semantic/one shot splint locked",
+      "run_id": "one_shot_gradient_bracket_v1_tau0.60_labelblind_lock_lock_splint_user",
+      "public_viewer_path": "viewers/chapter5_clevis_optimization/data/one_shot_gradient_bracket_v1_tau0.60_labelblind_lock_lock_splint_user/",
+      "required_files": [
+        "manifest.json",
+        "viewer_data.json",
+        "statistics.json",
+        "statistics.md",
+        "algorithm.md"
+      ]
+    },
+    {
+      "entry_id": "5.3/semantic/one_shot_pin_locked",
+      "thesis_anchor": "tab:semantic-locks",
+      "display_label": "§5.3 — semantic/one shot pin locked",
+      "run_id": "one_shot_gradient_bracket_v1_tau0.60_labelblind_lock_lock_pin_user",
+      "public_viewer_path": "viewers/chapter5_clevis_optimization/data/one_shot_gradient_bracket_v1_tau0.60_labelblind_lock_lock_pin_user/",
+      "required_files": [
+        "manifest.json",
+        "viewer_data.json",
+        "statistics.json",
+        "statistics.md",
+        "algorithm.md"
+      ]
+    },
+    {
+      "entry_id": "5.3/semantic/one_shot_bracket_locked",
+      "thesis_anchor": "tab:semantic-locks",
+      "display_label": "§5.3 — semantic/one shot bracket locked",
+      "run_id": "one_shot_gradient_bracket_v1_tau0.60_labelblind_lock_lock_main_bracket_user",
+      "public_viewer_path": "viewers/chapter5_clevis_optimization/data/one_shot_gradient_bracket_v1_tau0.60_labelblind_lock_lock_main_bracket_user/",
+      "required_files": [
+        "manifest.json",
+        "viewer_data.json",
+        "statistics.json",
+        "statistics.md",
+        "algorithm.md"
+      ]
+    },
+    {
+      "entry_id": "5.3/semantic/fixed_step_penalty_none",
+      "thesis_anchor": "tab:semantic-locks",
+      "display_label": "§5.3 — semantic/fixed step penalty none",
+      "run_id": "ch5d20_multifixed_penalty_lam0_10_tau0.75",
+      "public_viewer_path": "viewers/chapter5_clevis_optimization/data/ch5d20_multifixed_penalty_lam0_10_tau0.75/",
+      "required_files": [
+        "manifest.json",
+        "viewer_data.json",
+        "statistics.json",
+        "statistics.md",
+        "algorithm.md"
+      ]
+    },
+    {
+      "entry_id": "5.3/semantic/fixed_step_penalty_splint_locked",
+      "thesis_anchor": "tab:semantic-locks",
+      "display_label": "§5.3 — semantic/fixed step penalty splint locked",
+      "run_id": "ch5d20_multifixed_penalty_lam0_10_tau0.75_lock_lock_splint_user",
+      "public_viewer_path": "viewers/chapter5_clevis_optimization/data/ch5d20_multifixed_penalty_lam0_10_tau0.75_lock_lock_splint_user/",
+      "required_files": [
+        "manifest.json",
+        "viewer_data.json",
+        "statistics.json",
+        "statistics.md",
+        "algorithm.md"
+      ]
+    },
+    {
+      "entry_id": "5.3/semantic/fixed_step_penalty_pin_locked",
+      "thesis_anchor": "tab:semantic-locks",
+      "display_label": "§5.3 — semantic/fixed step penalty pin locked",
+      "run_id": "ch5d20_multifixed_penalty_lam0_10_tau0.75_lock_lock_pin_user",
+      "public_viewer_path": "viewers/chapter5_clevis_optimization/data/ch5d20_multifixed_penalty_lam0_10_tau0.75_lock_lock_pin_user/",
+      "required_files": [
+        "manifest.json",
+        "viewer_data.json",
+        "statistics.json",
+        "statistics.md",
+        "algorithm.md"
+      ]
+    },
+    {
+      "entry_id": "5.3/semantic/fixed_step_penalty_bracket_locked",
+      "thesis_anchor": "tab:semantic-locks",
+      "display_label": "§5.3 — semantic/fixed step penalty bracket locked",
+      "run_id": "ch5d20_multifixed_penalty_lam0_10_tau0.75_lock_lock_main_bracket_user",
+      "public_viewer_path": "viewers/chapter5_clevis_optimization/data/ch5d20_multifixed_penalty_lam0_10_tau0.75_lock_lock_main_bracket_user/",
+      "required_files": [
+        "manifest.json",
+        "viewer_data.json",
+        "statistics.json",
+        "statistics.md",
+        "algorithm.md"
+      ]
+    },
+    {
+      "entry_id": "5.3/semantic/adaptive_penalty_none",
+      "thesis_anchor": "tab:semantic-locks",
+      "display_label": "§5.3 — semantic/adaptive penalty none",
+      "run_id": "task34_adaptive_penalty_lam0_10_tau0.75",
+      "public_viewer_path": "viewers/chapter5_clevis_optimization/data/task34_adaptive_penalty_lam0_10_tau0.75/",
+      "required_files": [
+        "manifest.json",
+        "viewer_data.json",
+        "statistics.json",
+        "statistics.md",
+        "algorithm.md"
+      ]
+    },
+    {
+      "entry_id": "5.3/semantic/adaptive_penalty_splint_locked",
+      "thesis_anchor": "tab:semantic-locks",
+      "display_label": "§5.3 — semantic/adaptive penalty splint locked",
+      "run_id": "task34_adaptive_penalty_lam0_10_tau0.75_lock_lock_splint_user",
+      "public_viewer_path": "viewers/chapter5_clevis_optimization/data/task34_adaptive_penalty_lam0_10_tau0.75_lock_lock_splint_user/",
+      "required_files": [
+        "manifest.json",
+        "viewer_data.json",
+        "statistics.json",
+        "statistics.md",
+        "algorithm.md"
+      ]
+    },
+    {
+      "entry_id": "5.3/semantic/adaptive_penalty_pin_locked",
+      "thesis_anchor": "tab:semantic-locks",
+      "display_label": "§5.3 — semantic/adaptive penalty pin locked",
+      "run_id": "task34_adaptive_penalty_lam0_10_tau0.75_lock_lock_pin_user",
+      "public_viewer_path": "viewers/chapter5_clevis_optimization/data/task34_adaptive_penalty_lam0_10_tau0.75_lock_lock_pin_user/",
+      "required_files": [
+        "manifest.json",
+        "viewer_data.json",
+        "statistics.json",
+        "statistics.md",
+        "algorithm.md"
+      ]
+    },
+    {
+      "entry_id": "5.3/semantic/adaptive_penalty_bracket_locked",
+      "thesis_anchor": "tab:semantic-locks",
+      "display_label": "§5.3 — semantic/adaptive penalty bracket locked",
+      "run_id": "task34_adaptive_penalty_lam0_10_tau0.75_lock_lock_main_bracket_user",
+      "public_viewer_path": "viewers/chapter5_clevis_optimization/data/task34_adaptive_penalty_lam0_10_tau0.75_lock_lock_main_bracket_user/",
+      "required_files": [
+        "manifest.json",
+        "viewer_data.json",
+        "statistics.json",
+        "statistics.md",
+        "algorithm.md"
+      ]
+    },
+    {
+      "entry_id": "5.3/semantic/trust_region_none",
+      "thesis_anchor": "tab:semantic-locks",
+      "display_label": "§5.3 — semantic/trust region none",
+      "run_id": "trust_region_tau0.90_labelblind",
+      "public_viewer_path": "viewers/chapter5_clevis_optimization/data/trust_region_tau0.90_labelblind/",
+      "required_files": [
+        "manifest.json",
+        "viewer_data.json",
+        "statistics.json",
+        "statistics.md",
+        "algorithm.md"
+      ]
+    },
+    {
+      "entry_id": "5.3/semantic/trust_region_splint_locked",
+      "thesis_anchor": "tab:semantic-locks",
+      "display_label": "§5.3 — semantic/trust region splint locked",
+      "run_id": "trust_region_tau0.90_labelblind_lock_lock_splint_user",
+      "public_viewer_path": "viewers/chapter5_clevis_optimization/data/trust_region_tau0.90_labelblind_lock_lock_splint_user/",
+      "required_files": [
+        "manifest.json",
+        "viewer_data.json",
+        "statistics.json",
+        "statistics.md",
+        "algorithm.md"
+      ]
+    },
+    {
+      "entry_id": "5.3/semantic/trust_region_pin_locked",
+      "thesis_anchor": "tab:semantic-locks",
+      "display_label": "§5.3 — semantic/trust region pin locked",
+      "run_id": "trust_region_tau0.90_labelblind_lock_lock_pin_user",
+      "public_viewer_path": "viewers/chapter5_clevis_optimization/data/trust_region_tau0.90_labelblind_lock_lock_pin_user/",
+      "required_files": [
+        "manifest.json",
+        "viewer_data.json",
+        "statistics.json",
+        "statistics.md",
+        "algorithm.md"
+      ]
+    },
+    {
+      "entry_id": "5.3/semantic/trust_region_bracket_locked",
+      "thesis_anchor": "tab:semantic-locks",
+      "display_label": "§5.3 — semantic/trust region bracket locked",
+      "run_id": "trust_region_tau0.90_labelblind_lock_lock_main_bracket_user",
+      "public_viewer_path": "viewers/chapter5_clevis_optimization/data/trust_region_tau0.90_labelblind_lock_lock_main_bracket_user/",
+      "required_files": [
+        "manifest.json",
+        "viewer_data.json",
+        "statistics.json",
+        "statistics.md",
+        "algorithm.md"
+      ]
+    },
+    {
+      "entry_id": "5.3/semantic/sphere_shrink_128dirs_none",
+      "thesis_anchor": "tab:semantic-locks",
+      "display_label": "§5.3 — semantic/sphere shrink 128dirs none",
+      "run_id": "ch5_sphere_shrink_128_matched_tau0.90",
+      "public_viewer_path": "viewers/chapter5_clevis_optimization/data/ch5_sphere_shrink_128_matched_tau0.90/",
+      "required_files": [
+        "manifest.json",
+        "viewer_data.json",
+        "statistics.json",
+        "statistics.md",
+        "algorithm.md"
+      ]
+    },
+    {
+      "entry_id": "5.3/semantic/sphere_shrink_128dirs_splint_locked",
+      "thesis_anchor": "tab:semantic-locks",
+      "display_label": "§5.3 — semantic/sphere shrink 128dirs splint locked",
+      "run_id": "ch5_sphere_shrink_128_matched_tau0.90_lock_lock_splint_user",
+      "public_viewer_path": "viewers/chapter5_clevis_optimization/data/ch5_sphere_shrink_128_matched_tau0.90_lock_lock_splint_user/",
+      "required_files": [
+        "manifest.json",
+        "viewer_data.json",
+        "statistics.json",
+        "statistics.md",
+        "algorithm.md"
+      ]
+    },
+    {
+      "entry_id": "5.3/semantic/sphere_shrink_128dirs_pin_locked",
+      "thesis_anchor": "tab:semantic-locks",
+      "display_label": "§5.3 — semantic/sphere shrink 128dirs pin locked",
+      "run_id": "ch5_sphere_shrink_128_matched_tau0.90_lock_lock_pin_user",
+      "public_viewer_path": "viewers/chapter5_clevis_optimization/data/ch5_sphere_shrink_128_matched_tau0.90_lock_lock_pin_user/",
+      "required_files": [
+        "manifest.json",
+        "viewer_data.json",
+        "statistics.json",
+        "statistics.md",
+        "algorithm.md"
+      ]
+    },
+    {
+      "entry_id": "5.3/semantic/sphere_shrink_128dirs_bracket_locked",
+      "thesis_anchor": "tab:semantic-locks",
+      "display_label": "§5.3 — semantic/sphere shrink 128dirs bracket locked",
+      "run_id": "ch5_sphere_shrink_128_matched_tau0.90_lock_lock_main_bracket_user",
+      "public_viewer_path": "viewers/chapter5_clevis_optimization/data/ch5_sphere_shrink_128_matched_tau0.90_lock_lock_main_bracket_user/",
+      "required_files": [
+        "manifest.json",
+        "viewer_data.json",
+        "statistics.json",
+        "statistics.md",
+        "algorithm.md"
+      ]
+    },
+    {
+      "entry_id": "5.3/gradient/one_shot_top3_locked",
+      "thesis_anchor": "tab:gradient-locks",
+      "display_label": "§5.3 — gradient/one shot top3 locked",
+      "run_id": "one_shot_gradient_bracket_v1_tau0.60_labelblind_lock_grad_top_3",
+      "public_viewer_path": "viewers/chapter5_clevis_optimization/data/one_shot_gradient_bracket_v1_tau0.60_labelblind_lock_grad_top_3/",
+      "required_files": [
+        "manifest.json",
+        "viewer_data.json",
+        "statistics.json",
+        "statistics.md",
+        "algorithm.md"
+      ]
+    },
+    {
+      "entry_id": "5.3/gradient/one_shot_bottom12_locked",
+      "thesis_anchor": "tab:gradient-locks",
+      "display_label": "§5.3 — gradient/one shot bottom12 locked",
+      "run_id": "one_shot_gradient_bracket_v1_tau0.60_labelblind_lock_grad_bottom_12",
+      "public_viewer_path": "viewers/chapter5_clevis_optimization/data/one_shot_gradient_bracket_v1_tau0.60_labelblind_lock_grad_bottom_12/",
+      "required_files": [
+        "manifest.json",
+        "viewer_data.json",
+        "statistics.json",
+        "statistics.md",
+        "algorithm.md"
+      ]
+    },
+    {
+      "entry_id": "5.3/gradient/one_shot_bottom11_locked",
+      "thesis_anchor": "tab:gradient-locks",
+      "display_label": "§5.3 — gradient/one shot bottom11 locked",
+      "run_id": "one_shot_gradient_bracket_v1_tau0.60_labelblind_lock_grad_bottom_11",
+      "public_viewer_path": "viewers/chapter5_clevis_optimization/data/one_shot_gradient_bracket_v1_tau0.60_labelblind_lock_grad_bottom_11/",
+      "required_files": [
+        "manifest.json",
+        "viewer_data.json",
+        "statistics.json",
+        "statistics.md",
+        "algorithm.md"
+      ]
+    },
+    {
+      "entry_id": "5.3/gradient/one_shot_bottom10_locked",
+      "thesis_anchor": "tab:gradient-locks",
+      "display_label": "§5.3 — gradient/one shot bottom10 locked",
+      "run_id": "one_shot_gradient_bracket_v1_tau0.60_labelblind_lock_grad_bottom_10",
+      "public_viewer_path": "viewers/chapter5_clevis_optimization/data/one_shot_gradient_bracket_v1_tau0.60_labelblind_lock_grad_bottom_10/",
+      "required_files": [
+        "manifest.json",
+        "viewer_data.json",
+        "statistics.json",
+        "statistics.md",
+        "algorithm.md"
+      ]
+    },
+    {
+      "entry_id": "5.3/gradient/fixed_step_penalty_top3_locked",
+      "thesis_anchor": "tab:gradient-locks",
+      "display_label": "§5.3 — gradient/fixed step penalty top3 locked",
+      "run_id": "ch5d20_multifixed_penalty_lam0_10_tau0.75_lock_grad_top_3",
+      "public_viewer_path": "viewers/chapter5_clevis_optimization/data/ch5d20_multifixed_penalty_lam0_10_tau0.75_lock_grad_top_3/",
+      "required_files": [
+        "manifest.json",
+        "viewer_data.json",
+        "statistics.json",
+        "statistics.md",
+        "algorithm.md"
+      ]
+    },
+    {
+      "entry_id": "5.3/gradient/fixed_step_penalty_bottom12_locked",
+      "thesis_anchor": "tab:gradient-locks",
+      "display_label": "§5.3 — gradient/fixed step penalty bottom12 locked",
+      "run_id": "ch5d20_multifixed_penalty_lam0_10_tau0.75_lock_grad_bottom_12",
+      "public_viewer_path": "viewers/chapter5_clevis_optimization/data/ch5d20_multifixed_penalty_lam0_10_tau0.75_lock_grad_bottom_12/",
+      "required_files": [
+        "manifest.json",
+        "viewer_data.json",
+        "statistics.json",
+        "statistics.md",
+        "algorithm.md"
+      ]
+    },
+    {
+      "entry_id": "5.3/gradient/fixed_step_penalty_bottom11_locked",
+      "thesis_anchor": "tab:gradient-locks",
+      "display_label": "§5.3 — gradient/fixed step penalty bottom11 locked",
+      "run_id": "ch5d20_multifixed_penalty_lam0_10_tau0.75_lock_grad_bottom_11",
+      "public_viewer_path": "viewers/chapter5_clevis_optimization/data/ch5d20_multifixed_penalty_lam0_10_tau0.75_lock_grad_bottom_11/",
+      "required_files": [
+        "manifest.json",
+        "viewer_data.json",
+        "statistics.json",
+        "statistics.md",
+        "algorithm.md"
+      ]
+    },
+    {
+      "entry_id": "5.3/gradient/fixed_step_penalty_bottom10_locked",
+      "thesis_anchor": "tab:gradient-locks",
+      "display_label": "§5.3 — gradient/fixed step penalty bottom10 locked",
+      "run_id": "ch5d20_multifixed_penalty_lam0_10_tau0.75_lock_grad_bottom_10",
+      "public_viewer_path": "viewers/chapter5_clevis_optimization/data/ch5d20_multifixed_penalty_lam0_10_tau0.75_lock_grad_bottom_10/",
+      "required_files": [
+        "manifest.json",
+        "viewer_data.json",
+        "statistics.json",
+        "statistics.md",
+        "algorithm.md"
+      ]
+    },
+    {
+      "entry_id": "5.3/gradient/adaptive_penalty_top3_locked",
+      "thesis_anchor": "tab:gradient-locks",
+      "display_label": "§5.3 — gradient/adaptive penalty top3 locked",
+      "run_id": "task34_adaptive_penalty_lam0_10_tau0.75_lock_grad_top_3",
+      "public_viewer_path": "viewers/chapter5_clevis_optimization/data/task34_adaptive_penalty_lam0_10_tau0.75_lock_grad_top_3/",
+      "required_files": [
+        "manifest.json",
+        "viewer_data.json",
+        "statistics.json",
+        "statistics.md",
+        "algorithm.md"
+      ]
+    },
+    {
+      "entry_id": "5.3/gradient/adaptive_penalty_bottom12_locked",
+      "thesis_anchor": "tab:gradient-locks",
+      "display_label": "§5.3 — gradient/adaptive penalty bottom12 locked",
+      "run_id": "task34_adaptive_penalty_lam0_10_tau0.75_lock_grad_bottom_12",
+      "public_viewer_path": "viewers/chapter5_clevis_optimization/data/task34_adaptive_penalty_lam0_10_tau0.75_lock_grad_bottom_12/",
+      "required_files": [
+        "manifest.json",
+        "viewer_data.json",
+        "statistics.json",
+        "statistics.md",
+        "algorithm.md"
+      ]
+    },
+    {
+      "entry_id": "5.3/gradient/adaptive_penalty_bottom11_locked",
+      "thesis_anchor": "tab:gradient-locks",
+      "display_label": "§5.3 — gradient/adaptive penalty bottom11 locked",
+      "run_id": "task34_adaptive_penalty_lam0_10_tau0.75_lock_grad_bottom_11",
+      "public_viewer_path": "viewers/chapter5_clevis_optimization/data/task34_adaptive_penalty_lam0_10_tau0.75_lock_grad_bottom_11/",
+      "required_files": [
+        "manifest.json",
+        "viewer_data.json",
+        "statistics.json",
+        "statistics.md",
+        "algorithm.md"
+      ]
+    },
+    {
+      "entry_id": "5.3/gradient/adaptive_penalty_bottom10_locked",
+      "thesis_anchor": "tab:gradient-locks",
+      "display_label": "§5.3 — gradient/adaptive penalty bottom10 locked",
+      "run_id": "task34_adaptive_penalty_lam0_10_tau0.75_lock_grad_bottom_10",
+      "public_viewer_path": "viewers/chapter5_clevis_optimization/data/task34_adaptive_penalty_lam0_10_tau0.75_lock_grad_bottom_10/",
+      "required_files": [
+        "manifest.json",
+        "viewer_data.json",
+        "statistics.json",
+        "statistics.md",
+        "algorithm.md"
+      ]
+    },
+    {
+      "entry_id": "5.3/gradient/trust_region_top3_locked",
+      "thesis_anchor": "tab:gradient-locks",
+      "display_label": "§5.3 — gradient/trust region top3 locked",
+      "run_id": "trust_region_tau0.90_labelblind_lock_grad_top_3",
+      "public_viewer_path": "viewers/chapter5_clevis_optimization/data/trust_region_tau0.90_labelblind_lock_grad_top_3/",
+      "required_files": [
+        "manifest.json",
+        "viewer_data.json",
+        "statistics.json",
+        "statistics.md",
+        "algorithm.md"
+      ]
+    },
+    {
+      "entry_id": "5.3/gradient/trust_region_bottom12_locked",
+      "thesis_anchor": "tab:gradient-locks",
+      "display_label": "§5.3 — gradient/trust region bottom12 locked",
+      "run_id": "trust_region_tau0.90_labelblind_lock_grad_bottom_12",
+      "public_viewer_path": "viewers/chapter5_clevis_optimization/data/trust_region_tau0.90_labelblind_lock_grad_bottom_12/",
+      "required_files": [
+        "manifest.json",
+        "viewer_data.json",
+        "statistics.json",
+        "statistics.md",
+        "algorithm.md"
+      ]
+    },
+    {
+      "entry_id": "5.3/gradient/trust_region_bottom11_locked",
+      "thesis_anchor": "tab:gradient-locks",
+      "display_label": "§5.3 — gradient/trust region bottom11 locked",
+      "run_id": "trust_region_tau0.90_labelblind_lock_grad_bottom_11",
+      "public_viewer_path": "viewers/chapter5_clevis_optimization/data/trust_region_tau0.90_labelblind_lock_grad_bottom_11/",
+      "required_files": [
+        "manifest.json",
+        "viewer_data.json",
+        "statistics.json",
+        "statistics.md",
+        "algorithm.md"
+      ]
+    },
+    {
+      "entry_id": "5.3/gradient/trust_region_bottom10_locked",
+      "thesis_anchor": "tab:gradient-locks",
+      "display_label": "§5.3 — gradient/trust region bottom10 locked",
+      "run_id": "trust_region_tau0.90_labelblind_lock_grad_bottom_10",
+      "public_viewer_path": "viewers/chapter5_clevis_optimization/data/trust_region_tau0.90_labelblind_lock_grad_bottom_10/",
+      "required_files": [
+        "manifest.json",
+        "viewer_data.json",
+        "statistics.json",
+        "statistics.md",
+        "algorithm.md"
+      ]
+    },
+    {
+      "entry_id": "5.3/gradient/sphere_shrink_128dirs_top3_locked",
+      "thesis_anchor": "tab:gradient-locks",
+      "display_label": "§5.3 — gradient/sphere shrink 128dirs top3 locked",
+      "run_id": "ch5_sphere_shrink_128_matched_tau0.90_lock_grad_top_3",
+      "public_viewer_path": "viewers/chapter5_clevis_optimization/data/ch5_sphere_shrink_128_matched_tau0.90_lock_grad_top_3/",
+      "required_files": [
+        "manifest.json",
+        "viewer_data.json",
+        "statistics.json",
+        "statistics.md",
+        "algorithm.md"
+      ]
+    },
+    {
+      "entry_id": "5.3/gradient/sphere_shrink_128dirs_bottom12_locked",
+      "thesis_anchor": "tab:gradient-locks",
+      "display_label": "§5.3 — gradient/sphere shrink 128dirs bottom12 locked",
+      "run_id": "ch5_sphere_shrink_128_matched_tau0.90_lock_grad_bottom_12",
+      "public_viewer_path": "viewers/chapter5_clevis_optimization/data/ch5_sphere_shrink_128_matched_tau0.90_lock_grad_bottom_12/",
+      "required_files": [
+        "manifest.json",
+        "viewer_data.json",
+        "statistics.json",
+        "statistics.md",
+        "algorithm.md"
+      ]
+    },
+    {
+      "entry_id": "5.3/gradient/sphere_shrink_128dirs_bottom11_locked",
+      "thesis_anchor": "tab:gradient-locks",
+      "display_label": "§5.3 — gradient/sphere shrink 128dirs bottom11 locked",
+      "run_id": "ch5_sphere_shrink_128_matched_tau0.90_lock_grad_bottom_11",
+      "public_viewer_path": "viewers/chapter5_clevis_optimization/data/ch5_sphere_shrink_128_matched_tau0.90_lock_grad_bottom_11/",
+      "required_files": [
+        "manifest.json",
+        "viewer_data.json",
+        "statistics.json",
+        "statistics.md",
+        "algorithm.md"
+      ]
+    },
+    {
+      "entry_id": "5.3/gradient/sphere_shrink_128dirs_bottom10_locked",
+      "thesis_anchor": "tab:gradient-locks",
+      "display_label": "§5.3 — gradient/sphere shrink 128dirs bottom10 locked",
+      "run_id": "ch5_sphere_shrink_128_matched_tau0.90_lock_grad_bottom_10",
+      "public_viewer_path": "viewers/chapter5_clevis_optimization/data/ch5_sphere_shrink_128_matched_tau0.90_lock_grad_bottom_10/",
+      "required_files": [
+        "manifest.json",
+        "viewer_data.json",
+        "statistics.json",
+        "statistics.md",
+        "algorithm.md"
+      ]
+    },
+    {
+      "entry_id": "5.4/adaptive_penalty_original_l2",
+      "thesis_anchor": "tab:sparse-norm-selection",
+      "display_label": "§5.4 — adaptive penalty original l2",
+      "run_id": "task34_adaptive_penalty_lam0_10_tau0.75",
+      "public_viewer_path": "viewers/chapter5_clevis_optimization/data/task34_adaptive_penalty_lam0_10_tau0.75/",
+      "required_files": [
+        "manifest.json",
+        "viewer_data.json",
+        "statistics.json",
+        "statistics.md",
+        "algorithm.md"
+      ]
+    },
+    {
+      "entry_id": "5.4/adaptive_penalty_one_coordinate_updates",
+      "thesis_anchor": "tab:sparse-norm-selection",
+      "display_label": "§5.4 — adaptive penalty one coordinate updates",
+      "run_id": "ch5_sparse_adaptive_penalty_process_l0_l2_k1_tau0.75",
+      "public_viewer_path": "viewers/chapter5_clevis_optimization/data/ch5_sparse_adaptive_penalty_process_l0_l2_k1_tau0.75/",
+      "required_files": [
+        "manifest.json",
+        "viewer_data.json",
+        "statistics.json",
+        "statistics.md",
+        "algorithm.md"
+      ]
+    },
+    {
+      "entry_id": "5.4/trust_region_original_l2",
+      "thesis_anchor": "tab:sparse-norm-selection",
+      "display_label": "§5.4 — trust region original l2",
+      "run_id": "trust_region_tau0.75_labelblind",
+      "public_viewer_path": "viewers/chapter5_clevis_optimization/data/trust_region_tau0.75_labelblind/",
+      "required_files": [
+        "manifest.json",
+        "viewer_data.json",
+        "statistics.json",
+        "statistics.md",
+        "algorithm.md"
+      ]
+    },
+    {
+      "entry_id": "5.4/trust_region_mixed_l2_l0_40_60",
+      "thesis_anchor": "tab:sparse-norm-selection",
+      "display_label": "§5.4 — trust region mixed l2 l0 40 60",
+      "run_id": "ch5_trust_region_mixed_l2_l0_40_60_tau0.75",
+      "public_viewer_path": "viewers/chapter5_clevis_optimization/data/ch5_trust_region_mixed_l2_l0_40_60_tau0.75/",
+      "required_files": [
+        "manifest.json",
+        "viewer_data.json",
+        "statistics.json",
+        "statistics.md",
+        "algorithm.md"
+      ]
+    },
+    {
+      "entry_id": "5.4/sphere_shrink_128dirs_original_l2",
+      "thesis_anchor": "tab:sparse-norm-selection",
+      "display_label": "§5.4 — sphere shrink 128dirs original l2",
+      "run_id": "ch5_sphere_shrink_128_matched_tau0.90",
+      "public_viewer_path": "viewers/chapter5_clevis_optimization/data/ch5_sphere_shrink_128_matched_tau0.90/",
+      "required_files": [
+        "manifest.json",
+        "viewer_data.json",
+        "statistics.json",
+        "statistics.md",
+        "algorithm.md"
+      ]
+    },
+    {
+      "entry_id": "5.4/sphere_shrink_128dirs_fewest_coordinates_then_l2",
+      "thesis_anchor": "tab:sparse-norm-selection",
+      "display_label": "§5.4 — sphere shrink 128dirs fewest coordinates then l2",
+      "run_id": "ch5_sphere_shrink_128_sparse_l0_l2_tau0.90",
+      "public_viewer_path": "viewers/chapter5_clevis_optimization/data/ch5_sphere_shrink_128_sparse_l0_l2_tau0.90/",
+      "required_files": [
+        "manifest.json",
+        "viewer_data.json",
+        "statistics.json",
+        "statistics.md",
+        "algorithm.md"
+      ]
+    },
+    {
+      "entry_id": "5.2.7/hgb_coordinate_tau0.90",
+      "thesis_anchor": "tab:tree-gradient-free-control",
+      "display_label": "§5.2.7 — HGB coordinate-axis (τ=0.90)",
+      "run_id": "task30_labelblind_hgb_coordinate_tau0.90",
+      "public_viewer_path": "viewers/chapter5_clevis_optimization/data/task30_labelblind_hgb_coordinate_tau0.90/",
+      "required_files": [
+        "manifest.json",
+        "viewer_data.json",
+        "statistics.json",
+        "statistics.md",
+        "algorithm.md"
+      ]
+    },
+    {
+      "entry_id": "5.2.7/xgb_probcoord_tau0.90",
+      "thesis_anchor": "tab:tree-gradient-free-control",
+      "display_label": "§5.2.7 — XGB probability-guided coordinate (τ=0.90)",
+      "run_id": "task30_labelblind_xgb_probcoord_tau0.90",
+      "public_viewer_path": "viewers/chapter5_clevis_optimization/data/task30_labelblind_xgb_probcoord_tau0.90/",
+      "required_files": [
+        "manifest.json",
+        "viewer_data.json",
+        "statistics.json",
+        "statistics.md",
+        "algorithm.md"
+      ]
+    },
+    {
+      "entry_id": "5.2.7/hgb_sphere_shrink_tau0.90",
+      "thesis_anchor": "tab:tree-gradient-free-control",
+      "display_label": "§5.2.7 — HGB sphere-shrink 128 dirs (τ=0.90)",
+      "run_id": "task30_labelblind_hgb_sphere_shrink_tau0.90",
+      "public_viewer_path": "viewers/chapter5_clevis_optimization/data/task30_labelblind_hgb_sphere_shrink_tau0.90/",
+      "required_files": [
+        "manifest.json",
+        "viewer_data.json",
+        "statistics.json",
+        "statistics.md",
+        "algorithm.md"
+      ]
+    }
+  ]
+}
